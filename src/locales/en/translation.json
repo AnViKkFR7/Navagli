@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Properties",
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Quality Integral Renovations",
+    "subtitle": "We transform your home with the best professionals in the industry",
+    "cta_primary": "View Properties",
+    "cta_secondary": "Contact Us"
+  },
+  "home": {
+    "featured_properties": "Featured Properties",
+    "featured_projects": "Completed Projects",
+    "our_services": "Our Services",
+    "testimonials": "What our clients say",
+    "view_all": "View all"
+  },
+  "properties": {
+    "title": "Properties",
+    "description_label": "Description",
+    "filter_type": "Type",
+    "filter_category": "Category",
+    "filter_status": "Status",
+    "filter_city": "City",
+    "filter_price_min": "Min price",
+    "filter_price_max": "Max price",
+    "search_placeholder": "Search properties...",
+    "no_results": "No properties found",
+    "price": "Price",
+    "area": "Area",
+    "location": "Location",
+    "type": {
+      "apartment": "Apartment",
+      "house": "House",
+      "villa": "Villa",
+      "commercial": "Commercial Space",
+      "office": "Office",
+      "land": "Land"
+    },
+    "category": {
+      "sale": "For Sale",
+      "rent": "For Rent",
+      "renovation": "Renovation"
+    },
+    "status": {
+      "available": "Available",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "sold": "Sold"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Discover our most outstanding work",
+    "category_label": "Category",
+    "gallery": "Gallery",
+    "no_results": "No projects available",
+    "status": {
+      "planning": "Planning",
+      "in_progress": "In Progress",
+      "completed": "Completed"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "We offer complete solutions for your home"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Over 20 years of experience in integral renovations",
+    "description": "We are a company specialised in integral renovations, offering high-quality services with the best professionals in the industry.",
+    "values_title": "Our Values",
+    "values": {
+      "quality": "Quality",
+      "quality_desc": "We use the best materials and techniques on the market.",
+      "experience": "Experience",
+      "experience_desc": "Over 20 years transforming homes and businesses.",
+      "trust": "Trust",
+      "trust_desc": "We meet agreed deadlines and budgets."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We are here to help you",
+    "contact_info": "Contact Information",
+    "interested": "Interested?",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We will get in touch with you soon.",
+    "error": "An error has occurred. Please try again.",
+    "required_fields": "All required fields must be filled in."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error has occurred",
+    "back": "Back",
+    "view_details": "View details",
+    "read_more": "Read more",
+    "m2": "m²",
+    "eur": "€",
+    "not_found": "Page not found",
+    "not_found_desc": "The page you are looking for does not exist or has been removed.",
+    "go_home": "Go to home"
+  },
+  "footer": {
+    "description": "Specialists in integral renovations with over 20 years of experience.",
+    "quick_links": "Quick links",
+    "follow_us": "Follow us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English",
+    "fr": "Français"
+  }
+}

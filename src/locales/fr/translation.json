@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "properties": "Propriétés",
+    "projects": "Projets",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Rénovations Intégrales de Qualité",
+    "subtitle": "Nous transformons votre maison avec les meilleurs professionnels du secteur",
+    "cta_primary": "Voir les Propriétés",
+    "cta_secondary": "Nous Contacter"
+  },
+  "home": {
+    "featured_properties": "Propriétés en Vedette",
+    "featured_projects": "Projets Réalisés",
+    "our_services": "Nos Services",
+    "testimonials": "Ce que disent nos clients",
+    "view_all": "Voir tout"
+  },
+  "properties": {
+    "title": "Propriétés",
+    "description_label": "Description",
+    "filter_type": "Type",
+    "filter_category": "Catégorie",
+    "filter_status": "Statut",
+    "filter_city": "Ville",
+    "filter_price_min": "Prix minimum",
+    "filter_price_max": "Prix maximum",
+    "search_placeholder": "Rechercher des propriétés...",
+    "no_results": "Aucune propriété trouvée",
+    "price": "Prix",
+    "area": "Surface",
+    "location": "Emplacement",
+    "type": {
+      "apartment": "Appartement",
+      "house": "Maison",
+      "villa": "Villa",
+      "commercial": "Local Commercial",
+      "office": "Bureau",
+      "land": "Terrain"
+    },
+    "category": {
+      "sale": "À Vendre",
+      "rent": "À Louer",
+      "renovation": "Rénovation"
+    },
+    "status": {
+      "available": "Disponible",
+      "in_progress": "En Cours",
+      "completed": "Terminé",
+      "sold": "Vendu"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Découvrez nos travaux les plus remarquables",
+    "category_label": "Catégorie",
+    "gallery": "Galerie",
+    "no_results": "Aucun projet disponible",
+    "status": {
+      "planning": "Planification",
+      "in_progress": "En Cours",
+      "completed": "Terminé"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Nous offrons des solutions complètes pour votre maison"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "subtitle": "Plus de 20 ans d'expérience dans les rénovations intégrales",
+    "description": "Nous sommes une entreprise spécialisée dans les rénovations intégrales, offrant des services de haute qualité avec les meilleurs professionnels du secteur.",
+    "values_title": "Nos Valeurs",
+    "values": {
+      "quality": "Qualité",
+      "quality_desc": "Nous utilisons les meilleurs matériaux et techniques du marché.",
+      "experience": "Expérience",
+      "experience_desc": "Plus de 20 ans à transformer maisons et entreprises.",
+      "trust": "Confiance",
+      "trust_desc": "Nous respectons les délais et budgets convenus."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Nous sommes là pour vous aider",
+    "contact_info": "Informations de Contact",
+    "interested": "Intéressé(e) ?",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès ! Nous vous contacterons bientôt.",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "required_fields": "Tous les champs obligatoires doivent être remplis."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "back": "Retour",
+    "view_details": "Voir les détails",
+    "read_more": "En savoir plus",
+    "m2": "m²",
+    "eur": "€",
+    "not_found": "Page introuvable",
+    "not_found_desc": "La page que vous recherchez n'existe pas ou a été supprimée.",
+    "go_home": "Aller à l'accueil"
+  },
+  "footer": {
+    "description": "Spécialistes en rénovations intégrales avec plus de 20 ans d'expérience.",
+    "quick_links": "Liens rapides",
+    "follow_us": "Suivez-nous",
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Termes et Conditions"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English",
+    "fr": "Français"
+  }
+}
