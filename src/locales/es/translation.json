@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Reformas Integrales de Calidad",
+    "subtitle": "Transformamos tu hogar con los mejores profesionales del sector",
+    "cta_primary": "Ver Propiedades",
+    "cta_secondary": "Contactar"
+  },
+  "home": {
+    "featured_properties": "Propiedades Destacadas",
+    "featured_projects": "Proyectos Realizados",
+    "our_services": "Nuestros Servicios",
+    "testimonials": "Lo que dicen nuestros clientes",
+    "view_all": "Ver todos"
+  },
+  "properties": {
+    "title": "Propiedades",
+    "description_label": "Descripción",
+    "filter_type": "Tipo",
+    "filter_category": "Categoría",
+    "filter_status": "Estado",
+    "filter_city": "Ciudad",
+    "filter_price_min": "Precio mínimo",
+    "filter_price_max": "Precio máximo",
+    "search_placeholder": "Buscar propiedades...",
+    "no_results": "No se encontraron propiedades",
+    "price": "Precio",
+    "area": "Superficie",
+    "location": "Ubicación",
+    "type": {
+      "apartment": "Apartamento",
+      "house": "Casa",
+      "villa": "Chalet",
+      "commercial": "Local Comercial",
+      "office": "Oficina",
+      "land": "Terreno"
+    },
+    "category": {
+      "sale": "Venta",
+      "rent": "Alquiler",
+      "renovation": "Reforma"
+    },
+    "status": {
+      "available": "Disponible",
+      "in_progress": "En Proceso",
+      "completed": "Completado",
+      "sold": "Vendido"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Conoce nuestros trabajos más destacados",
+    "category_label": "Categoría",
+    "gallery": "Galería",
+    "no_results": "No hay proyectos disponibles",
+    "status": {
+      "planning": "Planificación",
+      "in_progress": "En Progreso",
+      "completed": "Completado"
+    }
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Ofrecemos soluciones completas para tu hogar"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Más de 20 años de experiencia en reformas integrales",
+    "description": "Somos una empresa especializada en reformas integrales, ofreciendo servicios de alta calidad con los mejores profesionales del sector.",
+    "values_title": "Nuestros Valores",
+    "values": {
+      "quality": "Calidad",
+      "quality_desc": "Utilizamos los mejores materiales y técnicas del mercado.",
+      "experience": "Experiencia",
+      "experience_desc": "Más de 20 años transformando hogares y negocios.",
+      "trust": "Confianza",
+      "trust_desc": "Cumplimos con los plazos y presupuestos acordados."
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para ayudarte",
+    "contact_info": "Información de Contacto",
+    "interested": "¿Interesado?",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.",
+    "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+    "required_fields": "Todos los campos obligatorios deben estar rellenados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "back": "Volver",
+    "view_details": "Ver detalles",
+    "read_more": "Leer más",
+    "m2": "m²",
+    "eur": "€",
+    "not_found": "Página no encontrada",
+    "not_found_desc": "La página que buscas no existe o ha sido eliminada.",
+    "go_home": "Ir al inicio"
+  },
+  "footer": {
+    "description": "Especialistas en reformas integrales con más de 20 años de experiencia.",
+    "quick_links": "Enlaces rápidos",
+    "follow_us": "Síguenos",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English",
+    "fr": "Français"
+  }
+}
