@@ -1,6 +1,7 @@
 ﻿import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import CTAForm from '../../components/CTAForm/CTAForm';
+import styles from './ContactPage.module.css';
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -8,78 +9,78 @@ export default function ContactPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="relative pt-32 pb-16 px-4 md:px-8 lg:px-16 bg-[#151515]">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs md:text-lg lg:text-xl font-semibold tracking-[0.3em] uppercase text-[#da9a4d] mb-3">
+      <section id="page-hero" className={styles.pageHero}>
+        <div className={styles.heroInner}>
+          <p className={styles.heroLabel}>
             Navagli
           </p>
-          <h1 className="text-4xl md:text-5xl font-light text-white">
+          <h1 className={styles.heroTitle}>
             {t('contactPage.heroTitle')}
           </h1>
-          <p className="mt-3 text-[#8f999b] text-lg">{t('contactPage.heroSubtitle')}</p>
+          <p className={styles.heroSubtitle}>{t('contactPage.heroSubtitle')}</p>
         </div>
       </section>
 
       {/* Contact content */}
-      <section className="py-20 px-4 md:px-8 lg:px-16 bg-[#fefefe]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section id="contact-content" className={styles.contactSection}>
+        <div className={styles.contentGrid}>
           {/* Left - Inline form */}
           <div>
-            <h2 className="text-2xl font-light text-[#151515] mb-8">
+            <h2 className={styles.colTitle}>
               {t('contactPage.writeUs')}
             </h2>
             <CTAForm isOpen={true} onClose={() => {}} inline={true} />
           </div>
 
           {/* Right - Company info */}
-          <div className="lg:pl-8">
-            <h2 className="text-2xl font-light text-[#151515] mb-8">
+          <div className={styles.infoCol}>
+            <h2 className={styles.colTitle}>
               {t('contactPage.contactInfo')}
             </h2>
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-[#e7ded2] p-3 flex-shrink-0">
-                  <Phone size={20} className="text-[#da9a4d]" />
+            <div className={styles.infoList}>
+              <div className={styles.infoItem}>
+                <div className={styles.iconBox}>
+                  <Phone size={20} className={styles.iconEl} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#8f999b] mb-1">
+                  <p className={styles.infoLabel}>
                     {t('contactPage.phone')}
                   </p>
-                  <p className="text-[#151515]">+34 XXX XXX XXX</p>
+                  <p className={styles.infoValue}>+34 XXX XXX XXX</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-[#e7ded2] p-3 flex-shrink-0">
-                  <Mail size={20} className="text-[#da9a4d]" />
+              <div className={styles.infoItem}>
+                <div className={styles.iconBox}>
+                  <Mail size={20} className={styles.iconEl} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#8f999b] mb-1">
+                  <p className={styles.infoLabel}>
                     {t('contactPage.email')}
                   </p>
-                  <p className="text-[#151515]">info@navagli.com</p>
+                  <p className={styles.infoValue}>info@navagli.com</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-[#e7ded2] p-3 flex-shrink-0">
-                  <MapPin size={20} className="text-[#da9a4d]" />
+              <div className={styles.infoItem}>
+                <div className={styles.iconBox}>
+                  <MapPin size={20} className={styles.iconEl} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#8f999b] mb-1">
+                  <p className={styles.infoLabel}>
                     {t('contactPage.office')}
                   </p>
-                  <p className="text-[#151515]">Direccion, Barcelona</p>
-                  <p className="text-[#8f999b] text-sm">08XXX Barcelona, Espana</p>
+                  <p className={styles.infoValue}>Direccion, Barcelona</p>
+                  <p className={styles.infoValueSub}>08XXX Barcelona, Espana</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-[#e7ded2] p-3 flex-shrink-0">
-                  <Clock size={20} className="text-[#da9a4d]" />
+              <div className={styles.infoItem}>
+                <div className={styles.iconBox}>
+                  <Clock size={20} className={styles.iconEl} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#8f999b] mb-1">
+                  <p className={styles.infoLabel}>
                     {t('contactPage.schedule')}
                   </p>
-                  <p className="text-[#151515]">{t('contactPage.scheduleText')}</p>
+                  <p className={styles.infoValue}>{t('contactPage.scheduleText')}</p>
                 </div>
               </div>
             </div>

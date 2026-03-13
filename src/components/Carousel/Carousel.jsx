@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import styles from './Carousel.module.css';
 
 /**
  * Modern image carousel with arrows and dot indicators.
@@ -19,18 +20,18 @@ export default function Carousel({ images, alts = [] }) {
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#151515] select-none">
-      {/* Images */}
+    <div id="carousel" className={styles.carousel}>
+      {/* Slide track */}
       <div
-        className="flex transition-transform duration-500 ease-in-out"
+        className={styles.track}
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((src, i) => (
-          <div key={i} className="min-w-full aspect-[16/9] md:aspect-[21/9]">
+          <div key={i} className={styles.slide}>
             <img
               src={src}
               alt={alts[i] || `Imagen ${i + 1}`}
-              className="w-full h-full object-cover"
+              className={styles.slideImg}
               loading={i === 0 ? 'eager' : 'lazy'}
             />
           </div>
@@ -42,14 +43,14 @@ export default function Carousel({ images, alts = [] }) {
         <>
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 transition-colors duration-200"
+            className={`${styles.arrowBtn} ${styles.arrowBtnPrev}`}
             aria-label="Anterior"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 transition-colors duration-200"
+            className={`${styles.arrowBtn} ${styles.arrowBtnNext}`}
             aria-label="Siguiente"
           >
             <ChevronRight size={20} />
@@ -59,14 +60,12 @@ export default function Carousel({ images, alts = [] }) {
 
       {/* Dots */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className={styles.dotsRow}>
           {images.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === current ? 'bg-[#da9a4d] w-6' : 'bg-white/50 hover:bg-white/80'
-              }`}
+              className={`${styles.dot} ${i === current ? styles.dotActive : ''}`}
               aria-label={`Ir a imagen ${i + 1}`}
             />
           ))}

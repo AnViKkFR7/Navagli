@@ -2,6 +2,11 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "servicesDropdown": {
+      "integral": "Comprehensive Renovations",
+      "painting": "Decorative Painting",
+      "consulting": "Professional Consulting"
+    },
     "projects": "Projects",
     "about": "Who we are",
     "contact": "Get your quote"
@@ -140,5 +145,98 @@
     "legalNotice": "Legal Notice",
     "cookies": "Cookie Policy",
     "privacy": "Privacy Policy"
+  },
+  "reformas": {
+    "heroLabel": "Comprehensive Renovations",
+    "heroTitle": "Your home, transformed from start to finish",
+    "heroSubtitle": "We manage every phase of your renovation: design, materials, execution and finishes.",
+    "introLabel": "Our approach",
+    "introTitle": "Full renovation, total management",
+    "introText": "At Navagli we take care of the entire process, from the initial visit to the delivery of keys. We coordinate every trade, control timelines and guarantee quality at every stage. Your stress-free renovation, in the hands of experts with over 20 years of experience.",
+    "areasLabel": "Spaces",
+    "areasTitle": "Everything we renovate",
+    "areas": {
+      "kitchen":  { "title": "Kitchens",                      "desc": "We design and build modern, functional kitchens. We work with the best brands in cabinetry, silestone or quartz countertops and integrated appliances." },
+      "bathroom": { "title": "Bathrooms",                      "desc": "We renovate bathrooms with premium materials: porcelain tiles, custom shower trays, screens, wall-hung sanitary ware and LED lighting solutions." },
+      "floors":   { "title": "Floors and tiling",              "desc": "We install and renovate all types of flooring: parquet, porcelain, microcement, mosaic and vinyl. We advise on material choice based on use and style." },
+      "exterior": { "title": "Exteriors and facades",          "desc": "We renovate terraces, balconies, gardens and facades. Waterproofing, exterior paving, cladding and structural review with weather-resistant finishes." },
+      "interior": { "title": "Interior design and layout",     "desc": "We redistribute spaces, add or remove partitions and design the optimal layout to maximise light, space and comfort in your home." },
+      "rehab":    { "title": "Rehabilitation",                 "desc": "Structural rehabilitation of facades, roofs and common areas. With professional direction and strict compliance with current regulations." }
+    },
+    "processLabel": "Methodology",
+    "processTitle": "Your renovation, step by step",
+    "steps": {
+      "s1": { "title": "Visit and assessment",      "desc": "We visit the space free of charge, assess the current condition and listen to your needs before proposing any solution." },
+      "s2": { "title": "Design and fixed quote",    "desc": "We produce a detailed technical project with materials, timelines and a fixed price. Full transparency, no surprises at the end." },
+      "s3": { "title": "Execution and monitoring",  "desc": "We coordinate all trades and carry out quality checks at every phase. You will receive progress updates throughout the project." },
+      "s4": { "title": "Handover and guarantee",   "desc": "We hand over the completed work clean, reviewed and with all documentation. Post-works guarantee and after-sales service included." }
+    }
+  },
+  "pintura": {
+    "heroLabel": "Decorative Painting",
+    "heroTitle": "The art of transforming surfaces",
+    "heroSubtitle": "Exclusive artisan techniques that turn walls and surfaces into unique design elements.",
+    "whatLabel": "What it is",
+    "whatTitle": "Much more than paint",
+    "whatText": "Decorative painting is an artisan discipline that combines natural pigments, textures and hand-applied techniques to create unique, unrepeatable finishes. Unlike conventional painting, each work is a personalised piece that visually transforms the space without the need for major works. Our specialised technicians adapt each technique to the client's style and the characteristics of the space.",
+    "whatPoints": {
+      "p1": "Unique and unrepeatable finishes",
+      "p2": "Artisan techniques applied by hand",
+      "p3": "Personalised colour and texture advice",
+      "p4": "Applicable to walls, floors and furniture"
+    },
+    "techniquesLabel": "Specialities",
+    "techniquesTitle": "Our decorative techniques",
+    "techniques": {
+      "venetian":    { "title": "Venetian Plaster",                "desc": "A classical-inspired finish achieved with multiple layers of lime plaster and natural pigments. It adds depth, satin sheen and a texture that imitates polished marble." },
+      "microcement": { "title": "Microcement",                     "desc": "An ultra-thin continuous coating applicable to existing walls, floors and furniture without construction works. Resistant, waterproof and available in over 50 shades." },
+      "chalk":       { "title": "Distemper, Limewash and Matte",   "desc": "Traditional techniques renewed with modern formulations for soft, enveloping matte finishes. Perfect for Nordic, rustic and Mediterranean-style interiors." },
+      "effects":     { "title": "Special Effects and Murals",      "desc": "Stone, concrete or wood imitations and custom artistic murals. We work with the client to design unique compositions tailored to the space." }
+    },
+    "processLabel": "Process",
+    "processTitle": "From idea to final finish",
+    "steps": {
+      "s1": { "title": "Consultation and technique selection", "desc": "We advise on the most suitable technique based on the space, natural light and desired decorating style." },
+      "s2": { "title": "Surface preparation",                  "desc": "Cleaning, sanding and application of specific primer to ensure perfect adhesion and maximum durability." },
+      "s3": { "title": "Artisan application",                  "desc": "Our technicians apply the technique in successive layers, respecting drying times for a flawless result." },
+      "s4": { "title": "Sealing and protection",               "desc": "Finishing with varnish, wax or sealer according to the chosen technique, to protect the surface and ease maintenance." }
+    }
+  },
+  "asesoria": {
+    "heroLabel": "Professional Consulting",
+    "heroTitle": "The expert team by your side from day one",
+    "heroSubtitle": "Architects, interior designers and specialist technicians who guide your project with expertise and precision.",
+    "introLabel": "The service",
+    "introTitle": "Comprehensive advice at every stage",
+    "introText": "At Navagli we have a multidisciplinary team of professionals who accompany you from the initial idea to the final result. We help you make informed decisions, optimise your investment and avoid the most common mistakes in renovation and construction projects. Because a good project starts with good advice.",
+    "introBenefits": {
+      "b1": "Technical project with full legal guarantees",
+      "b2": "Detailed budget with no hidden costs",
+      "b3": "Complete permit and licence management",
+      "b4": "Coordination of all professionals involved"
+    },
+    "pillarsLabel": "Our specialists",
+    "pillarsTitle": "A team tailored to you",
+    "pillars": {
+      "arch":       { "title": "Architecture and Design",      "desc": "Our architects produce complete technical projects, manage major and minor works permits, and ensure compliance with urban planning, accessibility and energy efficiency regulations." },
+      "designer":   { "title": "Interior Design",              "desc": "We create 3D design proposals so you can visualise the result before starting. We select materials, colour palettes, furniture and lighting with aesthetic and functional coherence." },
+      "specialist": { "title": "Specialist Technicians",       "desc": "Certified installers for electrical, plumbing, HVAC and home automation. All work is delivered with an installation certificate and complies with current regulations." }
+    },
+    "servicesLabel": "What is included",
+    "servicesTitle": "Scope of consulting",
+    "servicesList": {
+      "viability": { "title": "Feasibility study",       "desc": "We analyse the technical, economic and regulatory feasibility of your project before committing any resources." },
+      "licenses":  { "title": "Permit management",       "desc": "We handle all permits and licences with local authorities and relevant bodies. No bureaucracy for you." },
+      "budget":    { "title": "Cost control",             "desc": "We produce detailed budgets and monitor execution so that actual costs do not deviate from what was agreed." },
+      "vendors":   { "title": "Supplier coordination",    "desc": "We select trusted suppliers, negotiate terms and coordinate deliveries to guarantee timelines and material quality." }
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Cookie consent",
+    "title": "We use cookies",
+    "body": "We use our own and third-party cookies to improve your browsing experience and analyse traffic on our website.",
+    "moreInfo": "Cookie Policy",
+    "accept": "Accept",
+    "decline": "Close without accepting"
   }
 }

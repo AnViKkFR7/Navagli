@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
+import styles from './CTAForm.module.css';
 
 const SERVICE_OPTIONS_KEYS = [
   'integral',
@@ -48,11 +49,11 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
   };
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form id="cta-form" onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.fieldRow}>
         <div>
-          <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-            {t('form.name')} <span className="text-[#da9a4d]">*</span>
+          <label className={styles.label}>
+            {t('form.name')} <span className={styles.required}>*</span>
           </label>
           <input
             type="text"
@@ -60,12 +61,12 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors"
+            className={styles.input}
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-            {t('form.city')} <span className="text-[#da9a4d]">*</span>
+          <label className={styles.label}>
+            {t('form.city')} <span className={styles.required}>*</span>
           </label>
           <input
             type="text"
@@ -73,21 +74,21 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
             value={form.city}
             onChange={handleChange}
             required
-            className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors"
+            className={styles.input}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-          {t('form.serviceType')} <span className="text-[#da9a4d]">*</span>
+        <label className={styles.label}>
+          {t('form.serviceType')} <span className={styles.required}>*</span>
         </label>
         <select
           name="serviceType"
           value={form.serviceType}
           onChange={handleChange}
           required
-          className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors appearance-none"
+          className={styles.select}
         >
           <option value="" disabled>— Selecciona —</option>
           {SERVICE_OPTIONS_KEYS.map((key) => (
@@ -98,10 +99,10 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className={styles.fieldRow}>
         <div>
-          <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-            {t('form.email')} <span className="text-[#da9a4d]">*</span>
+          <label className={styles.label}>
+            {t('form.email')} <span className={styles.required}>*</span>
           </label>
           <input
             type="email"
@@ -109,12 +110,12 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors"
+            className={styles.input}
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-            {t('form.phone')} <span className="text-[#da9a4d]">*</span>
+          <label className={styles.label}>
+            {t('form.phone')} <span className={styles.required}>*</span>
           </label>
           <input
             type="tel"
@@ -122,68 +123,56 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
             value={form.phone}
             onChange={handleChange}
             required
-            className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors"
+            className={styles.input}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-semibold tracking-widest uppercase text-[#151515] mb-1">
-          {t('form.description')}
-        </label>
+        <label className={styles.label}>{t('form.description')}</label>
         <textarea
           name="description"
           value={form.description}
           onChange={handleChange}
           rows={5}
-          className="w-full border border-[#e7ded2] bg-white px-4 py-3 text-sm text-[#151515] focus:outline-none focus:border-[#da9a4d] transition-colors resize-none"
+          className={styles.textarea}
         />
       </div>
 
-      <button
-        type="submit"
-        className="bg-[#da9a4d] text-white px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-[#151515] transition-colors duration-300 mt-2"
-      >
+      <button type="submit" className={styles.submitBtn}>
         {t('form.submit')}
       </button>
     </form>
   );
 
   if (inline) {
-    return (
-      <div>
-        {formContent}
-      </div>
-    );
+    return <div>{formContent}</div>;
   }
 
   // Modal mode
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      id="cta-modal"
+      className={styles.overlay}
       role="dialog"
       aria-modal="true"
     >
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className={styles.backdrop} onClick={onClose} />
+
       {/* Panel */}
-      <div className="relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
-        <div className="flex items-center justify-between px-8 pt-8 pb-6 border-b border-[#e7ded2]">
-          <h2 className="text-xl font-light tracking-wide text-[#151515]">
-            {t('form.title')}
-          </h2>
+      <div className={styles.panel}>
+        <div className={styles.panelHeader}>
+          <h2 className={styles.panelTitle}>{t('form.title')}</h2>
           <button
             onClick={onClose}
-            className="text-[#8f999b] hover:text-[#151515] transition-colors"
+            className={styles.closeBtn}
             aria-label="Cerrar"
           >
             <X size={22} />
           </button>
         </div>
-        <div className="px-8 py-8">{formContent}</div>
+        <div className={styles.panelBody}>{formContent}</div>
       </div>
     </div>
   );

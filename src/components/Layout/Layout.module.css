@@ -1,0 +1,13 @@
+/* ── App wrapper ─────────────────────────────────────────── */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Main content area ───────────────────────────────────── */
+
+.main {
+  flex: 1;
+}

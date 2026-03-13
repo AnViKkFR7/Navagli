@@ -1,0 +1,154 @@
+/* ── Banner wrapper ───────────────────────────────────────── */
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #1e1e1e;
+  border-top: 2px solid #da9a4d;
+  padding: 1rem 1rem;
+  animation: slideUp 350ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (min-width: 768px) {
+  .banner {
+    padding: 1.25rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    padding: 1.25rem 4rem;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Inner layout ─────────────────────────────────────────── */
+
+.inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .inner {
+    align-items: center;
+  }
+}
+
+/* ── Cookie icon column ───────────────────────────────────── */
+
+.iconCol {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 0.125rem;
+}
+
+.icon {
+  color: #da9a4d;
+}
+
+/* ── Text column ──────────────────────────────────────────── */
+
+.textCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1rem;
+  }
+}
+
+.body {
+  font-size: 0.8125rem;
+  color: #8f999b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .body {
+    font-size: 0.875rem;
+  }
+}
+
+.link {
+  color: #da9a4d;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 200ms;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+/* ── Action buttons ───────────────────────────────────────── */
+
+.actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.acceptBtn {
+  background-color: #da9a4d;
+  color: #151515;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 200ms, color 200ms;
+}
+
+@media (min-width: 768px) {
+  .acceptBtn {
+    font-size: 0.8125rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.acceptBtn:hover {
+  background-color: #c4882f;
+}
+
+.declineBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #8f999b;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 200ms, border-color 200ms;
+}
+
+.declineBtn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}

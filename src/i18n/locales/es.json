@@ -2,6 +2,11 @@
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
+    "servicesDropdown": {
+      "integral": "Reformas Integrales",
+      "painting": "Pintura Decorativa",
+      "consulting": "Asesoramiento Profesional"
+    },
     "projects": "Proyectos",
     "about": "Quiénes somos",
     "contact": "Pide tu presupuesto"
@@ -140,5 +145,98 @@
     "legalNotice": "Aviso Legal",
     "cookies": "Política de Cookies",
     "privacy": "Política de Privacidad"
+  },
+  "reformas": {
+    "heroLabel": "Reformas Integrales",
+    "heroTitle": "Tu hogar, transformado de principio a fin",
+    "heroSubtitle": "Gestionamos cada fase de tu reforma: proyecto, materiales, ejecución y acabados.",
+    "introLabel": "Nuestro enfoque",
+    "introTitle": "Reforma integral, gestión completa",
+    "introText": "En Navagli nos encargamos de todo el proceso, desde la visita inicial hasta la entrega de llaves. Coordinamos cada gremio, controlamos los plazos y garantizamos la calidad en cada etapa. Tu reforma sin estrés, en manos de expertos con más de 20 años de experiencia.",
+    "areasLabel": "Espacios",
+    "areasTitle": "Todo lo que reformamos",
+    "areas": {
+      "kitchen":  { "title": "Cocinas",                     "desc": "Diseñamos y ejecutamos cocinas modernas y funcionales. Trabajamos con las mejores marcas en mobiliario, encimeras de silestone o cuarzo y electrodomésticos integrados." },
+      "bathroom": { "title": "Baños",                       "desc": "Renovamos baños con materiales premium: gres porcelánico, platos de ducha a medida, mamparas, sanitarios suspendidos y soluciones de iluminación LED." },
+      "floors":   { "title": "Suelos y alicatados",         "desc": "Instalamos y renovamos pavimentos de todo tipo: parquet, porcelánico, microcemento, mosaico y vinilo. Asesoramos en la elección del material según uso y estilo." },
+      "exterior": { "title": "Exteriores y fachadas",       "desc": "Reformamos terrazas, balcones, jardines y fachadas. Impermeabilización, solados exteriores, revestimientos y revisión estructural con acabados resistentes a la intemperie." },
+      "interior": { "title": "Interiorismo y distribución", "desc": "Redistribuimos espacios, eliminamos o creamos tabiques y diseñamos la distribución óptima para maximizar la luminosidad, el espacio y el confort de tu vivienda." },
+      "rehab":    { "title": "Rehabilitación",              "desc": "Proyectos de rehabilitación estructural en fachadas, cubiertas y zonas comunes. Con dirección facultativa y cumplimiento estricto de la normativa vigente." }
+    },
+    "processLabel": "Metodología",
+    "processTitle": "Tu reforma, paso a paso",
+    "steps": {
+      "s1": { "title": "Visita y diagnóstico",      "desc": "Visitamos el espacio sin compromiso, evaluamos el estado actual y escuchamos tus necesidades antes de proponer solución alguna." },
+      "s2": { "title": "Proyecto y presupuesto",    "desc": "Elaboramos un proyecto técnico detallado con materiales, plazos y precio cerrado. Transparencia total, sin sorpresas." },
+      "s3": { "title": "Ejecución y seguimiento",   "desc": "Coordinamos todos los gremios y realizamos controles de calidad en cada fase. Recibirás informes de avance durante toda la obra." },
+      "s4": { "title": "Entrega y garantía",        "desc": "Entregamos la obra limpia, revisada y con toda la documentación. Garantía post-obra y atención postventa incluidas." }
+    }
+  },
+  "pintura": {
+    "heroLabel": "Pintura Decorativa",
+    "heroTitle": "El arte de transformar superficies",
+    "heroSubtitle": "Técnicas artesanales exclusivas que convierten muros y paredes en elementos de diseño singular.",
+    "whatLabel": "Qué es",
+    "whatTitle": "Mucho más que pintura",
+    "whatText": "La pintura decorativa es una disciplina artesanal que combina pigmentos naturales, texturas y técnicas aplicadas a mano para crear acabados únicos e irrepetibles. A diferencia de la pintura convencional, cada trabajo es una pieza personalizada que transforma visualmente el espacio sin necesidad de grandes obras. Nuestros técnicos especializados adaptan cada técnica al estilo del cliente y a las características del espacio.",
+    "whatPoints": {
+      "p1": "Acabados únicos e irrepetibles",
+      "p2": "Técnicas artesanales aplicadas a mano",
+      "p3": "Asesoramiento personalizado de color y textura",
+      "p4": "Aplicable en paredes, suelos y mobiliario"
+    },
+    "techniquesLabel": "Especialidades",
+    "techniquesTitle": "Nuestras técnicas decorativas",
+    "techniques": {
+      "venetian":   { "title": "Estuco Veneciano",                   "desc": "Acabado de inspiración clásica obtenido con varias capas de estuco de cal y pigmentos naturales. Aporta profundidad, brillo satinado y una textura que imita el mármol pulido." },
+      "microcement":{ "title": "Microcemento",                        "desc": "Revestimiento continuo ultrafino aplicable sobre paredes, suelos y muebles existentes sin necesidad de obra. Resistente, impermeable y disponible en más de 50 tonalidades." },
+      "chalk":      { "title": "Temple, Encalado y Efectos Mate",    "desc": "Técnicas tradicionales renovadas con formulaciones modernas para acabados suaves y envolventes. Perfectas para ambientes nórdicos, rústicos y de estilo mediterráneo." },
+      "effects":    { "title": "Efectos Especiales y Murales",       "desc": "Imitaciones de piedra, hormigón o madera y murales artísticos a medida. Diseñamos junto al cliente cada composición para que sea única y adaptada al espacio." }
+    },
+    "processLabel": "Proceso",
+    "processTitle": "De la idea al acabado final",
+    "steps": {
+      "s1": { "title": "Consulta y selección de técnica", "desc": "Te asesoramos sobre la técnica más adecuada según el espacio, la luz natural y el estilo de decoración deseado." },
+      "s2": { "title": "Preparación de superficie",       "desc": "Limpieza, lijado y aplicación de imprimación específica para garantizar adherencia perfecta y máxima durabilidad." },
+      "s3": { "title": "Aplicación artesanal",            "desc": "Nuestros técnicos aplican la técnica en capas sucesivas, respetando los tiempos de secado para un resultado impecable." },
+      "s4": { "title": "Sellado y protección",            "desc": "Acabado con barniz, cera o sellador según la técnica elegida, para proteger la superficie y facilitar el mantenimiento." }
+    }
+  },
+  "asesoria": {
+    "heroLabel": "Asesoramiento Profesional",
+    "heroTitle": "El equipo experto a tu lado desde el principio",
+    "heroSubtitle": "Arquitectos, diseñadores de interiores y técnicos especializados que guían tu proyecto con criterio y precisión.",
+    "introLabel": "El servicio",
+    "introTitle": "Asesoramiento integral en cada fase",
+    "introText": "En Navagli contamos con un equipo multidisciplinar de profesionales que te acompañan desde la idea hasta el resultado final. Te ayudamos a tomar decisiones informadas, a optimizar tu inversión y a evitar los errores más comunes en proyectos de reforma y construcción. Porque una buena obra empieza con un buen asesoramiento.",
+    "introBenefits": {
+      "b1": "Proyecto técnico con todas las garantías legales",
+      "b2": "Presupuesto detallado sin costes ocultos",
+      "b3": "Gestión completa de licencias y permisos",
+      "b4": "Coordinación de todos los profesionales implicados"
+    },
+    "pillarsLabel": "Nuestros especialistas",
+    "pillarsTitle": "Un equipo a tu medida",
+    "pillars": {
+      "arch":       { "title": "Arquitectura y Proyecto",    "desc": "Nuestros arquitectos elaboran proyectos técnicos completos, gestionan licencias de obras mayor y menor, y garantizan el cumplimiento de normativa urbanística, accesibilidad y eficiencia energética." },
+      "designer":   { "title": "Diseño de Interiores",       "desc": "Creamos propuestas de diseño en 3D para que visualices el resultado antes de comenzar. Seleccionamos materiales, paletas cromáticas, mobiliario e iluminación con coherencia estética y funcional." },
+      "specialist": { "title": "Técnicos Especializados",    "desc": "Instaladores certificados en electricidad, fontanería, climatización y domótica. Todos los trabajos se entregan con certificado de instalación y cumplen la normativa vigente." }
+    },
+    "servicesLabel": "Lo que incluye",
+    "servicesTitle": "Alcance del asesoramiento",
+    "servicesList": {
+      "viability": { "title": "Estudio de viabilidad",      "desc": "Analizamos la viabilidad técnica, económica y normativa de tu proyecto antes de comprometer ningún recurso." },
+      "licenses":  { "title": "Gestión de licencias",       "desc": "Tramitamos todas las licencias y permisos ante el ayuntamiento y los organismos competentes. Sin burocracia para ti." },
+      "budget":    { "title": "Control de costes",           "desc": "Elaboramos presupuestos detallados y supervisamos la ejecución para que el coste real no se desvíe del acordado." },
+      "vendors":   { "title": "Coordinación de proveedores", "desc": "Seleccionamos proveedores de confianza, negociamos condiciones y coordinamos entregas para garantizar plazos y calidad de materiales." }
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Consentimiento de cookies",
+    "title": "Usamos cookies",
+    "body": "Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el tráfico de nuestro sitio web.",
+    "moreInfo": "Política de cookies",
+    "accept": "Aceptar",
+    "decline": "Cerrar sin aceptar"
   }
 }

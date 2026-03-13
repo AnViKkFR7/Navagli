@@ -1,106 +1,84 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   const services = [
-    t('services.integral.title'),
-    t('services.kitchen.title'),
-    t('services.bathroom.title'),
-    t('services.interior.title'),
-    t('services.rehabilitation.title'),
-    t('services.commercial.title'),
+    { label: t('nav.servicesDropdown.integral'),   to: '/reformas-integrales' },
+    { label: t('nav.servicesDropdown.painting'),   to: '/pintura-decorativa' },
+    { label: t('nav.servicesDropdown.consulting'), to: '/asesoramiento-profesional' },
   ];
 
   return (
-    <footer className="bg-[#151515] text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer id="footer" className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
           {/* Col 1 – Logo */}
-          <div>
+          <div id="footer-brand">
             <Link to="/">
               <img
                 src="/img/Logo_Navagli.png"
                 alt="Navagli"
-                className="h-14 brightness-0 invert mb-4"
+                className={styles.logo}
               />
             </Link>
-            <p className="text-[#8f999b] text-sm leading-relaxed">
+            <p className={styles.tagline}>
               Inversiones y Construcciones Navagli S.L.<br />
               {t('footer.tagline')}
             </p>
           </div>
 
           {/* Col 2 – Services */}
-          <div>
-            <h3 className="text-xs md:text-lg lg:text-xl font-semibold tracking-widest uppercase text-[#da9a4d] mb-5">
-              {t('footer.services')}
-            </h3>
-            <ul className="space-y-2">
+          <div id="footer-services">
+            <h3 className={styles.colHeading}>{t('footer.services')}</h3>
+            <ul className={styles.serviceList}>
               {services.map((s) => (
-                <li key={s}>
-                  <Link
-                    to="/servicios"
-                    className="text-[#8f999b] text-sm hover:text-white transition-colors"
-                  >
-                    {s}
-                  </Link>
+                <li key={s.to}>
+                  <Link to={s.to} className={styles.serviceLink}>{s.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Col 3 – Contact */}
-          <div>
-            <h3 className="text-xs md:text-lg lg:text-xl font-semibold tracking-widest uppercase text-[#da9a4d] mb-5">
-              {t('footer.contact')}
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-[#8f999b] text-sm">
-                <Phone size={15} className="mt-0.5 flex-shrink-0" />
+          <div id="footer-contact">
+            <h3 className={styles.colHeading}>{t('footer.contact')}</h3>
+            <ul className={styles.contactList}>
+              <li className={styles.contactItem}>
+                <Phone size={15} className={styles.contactIcon} />
                 <span>+34 XXX XXX XXX</span>
               </li>
-              <li className="flex items-start gap-2 text-[#8f999b] text-sm">
-                <Mail size={15} className="mt-0.5 flex-shrink-0" />
+              <li className={styles.contactItem}>
+                <Mail size={15} className={styles.contactIcon} />
                 <span>info@navagli.com</span>
               </li>
-              <li className="flex items-start gap-2 text-[#8f999b] text-sm">
-                <MapPin size={15} className="mt-0.5 flex-shrink-0" />
+              <li className={styles.contactItem}>
+                <MapPin size={15} className={styles.contactIcon} />
                 <span>Barcelona, España</span>
               </li>
             </ul>
           </div>
 
           {/* Col 4 – Legal */}
-          <div>
-            <h3 className="text-xs md:text-lg lg:text-xl font-semibold tracking-widest uppercase text-[#da9a4d] mb-5">
-              {t('footer.legal')}
-            </h3>
-            <ul className="space-y-2">
+          <div id="footer-legal">
+            <h3 className={styles.colHeading}>{t('footer.legal')}</h3>
+            <ul className={styles.legalList}>
               <li>
-                <Link
-                  to="/aviso-legal"
-                  className="text-[#8f999b] text-sm hover:text-white transition-colors"
-                >
+                <Link to="/aviso-legal" className={styles.legalLink}>
                   {t('footer.legalNotice')}
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/politica-cookies"
-                  className="text-[#8f999b] text-sm hover:text-white transition-colors"
-                >
+                <Link to="/politica-cookies" className={styles.legalLink}>
                   {t('footer.cookies')}
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/politica-privacidad"
-                  className="text-[#8f999b] text-sm hover:text-white transition-colors"
-                >
+                <Link to="/politica-privacidad" className={styles.legalLink}>
                   {t('footer.privacy')}
                 </Link>
               </li>
@@ -109,14 +87,29 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-2 text-[#8f999b] text-xs">
-          <p>© {year} Inversiones y Construcciones Navagli S.L. — {t('footer.rights')}</p>
-          <div className="flex gap-4">
-            <Link to="/aviso-legal" className="hover:text-white transition-colors">
+        <div id="footer-bottom" className={styles.bottomBar}>
+          <div style={{display: 'flex'}}>
+            <p>© {year} Inversiones y Construcciones Navagli S.L.</p>
+            <span style={{ margin: '0 12px', color: 'inherit' }}>|</span>
+            <a
+              href="https://moiraordo.es/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'none', fontWeight: 500 }}
+            >
+              Developed by MoiraOrdo
+            </a>
+          </div>
+          
+          <div className={styles.bottomLinks}>
+            <Link to="/aviso-legal" className={styles.bottomLink}>
               {t('footer.legalNotice')}
             </Link>
-            <Link to="/politica-privacidad" className="hover:text-white transition-colors">
+            <Link to="/politica-privacidad" className={styles.bottomLink}>
               {t('footer.privacy')}
+            </Link>
+            <Link to="/politica-cookies" className={styles.bottomLink}>
+              {t('footer.cookies')}
             </Link>
           </div>
         </div>

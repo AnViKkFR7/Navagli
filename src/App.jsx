@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/Home/HomePage';
-import ServicesPage from './pages/Services/ServicesPage';
+import ReformasIntegralesPage from './pages/ReformasIntegrales/ReformasIntegralesPage';
+import PinturaDecorativaPage from './pages/PinturaDecorativa/PinturaDecorativaPage';
+import AsesoramientoProfesionalPage from './pages/AsesoramientoProfesional/AsesoramientoProfesionalPage';
 import ProjectsPage from './pages/Projects/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectDetail/ProjectDetailPage';
 import AboutPage from './pages/About/AboutPage';
@@ -16,7 +18,9 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/reformas-integrales" element={<ReformasIntegralesPage />} />
+          <Route path="/pintura-decorativa" element={<PinturaDecorativaPage />} />
+          <Route path="/asesoramiento-profesional" element={<AsesoramientoProfesionalPage />} />
           <Route path="/proyectos" element={<ProjectsPage />} />
           <Route path="/proyectos/:id" element={<ProjectDetailPage />} />
           <Route path="/sobre-nosotros" element={<AboutPage />} />

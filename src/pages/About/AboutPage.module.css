@@ -1,0 +1,393 @@
+/* ── PAGE HERO ───────────────────────────────────── */
+.pageHero {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #151515;
+}
+
+@media (min-width: 768px) {
+  .pageHero {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageHero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.heroInner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.heroPageLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .heroPageLabel {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroPageLabel {
+    font-size: 1.25rem;
+  }
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+.heroSubtitle {
+  margin-top: 0.75rem;
+  color: #8f999b;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── HISTORY ─────────────────────────────────────── */
+.historySection {
+  padding: 6rem 1rem;
+  background-color: #fefefe;
+}
+
+@media (min-width: 768px) {
+  .historySection {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .historySection {
+    padding: 6rem 4rem;
+  }
+}
+
+.twoColGrid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .twoColGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.historyLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .historyLabel {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .historyLabel {
+    font-size: 1.25rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: #151515;
+  margin-bottom: 1.5rem;
+}
+
+.bodyText {
+  color: #8f999b;
+  line-height: 1.625;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bodyText {
+    font-size: 1.125rem;
+  }
+}
+
+.imgWrapper {
+  overflow: hidden;
+}
+
+.historyImg {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+}
+
+/* ── PHILOSOPHY ──────────────────────────────────── */
+.philosophySection {
+  padding: 6rem 1rem;
+  background-color: #151515;
+}
+
+@media (min-width: 768px) {
+  .philosophySection {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .philosophySection {
+    padding: 6rem 4rem;
+  }
+}
+
+.philosophyInner {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophyLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .philosophyLabel {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .philosophyLabel {
+    font-size: 1.25rem;
+  }
+}
+
+.philosophyTitle {
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .philosophyTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.philosophyText {
+  color: #8f999b;
+  line-height: 1.625;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .philosophyText {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── VALUES ──────────────────────────────────────── */
+.valuesSection {
+  padding: 6rem 1rem;
+  background-color: #fafaf9;
+}
+
+@media (min-width: 768px) {
+  .valuesSection {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .valuesSection {
+    padding: 6rem 4rem;
+  }
+}
+
+.valuesInner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.valuesHeader {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.valuesLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .valuesLabel {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .valuesLabel {
+    font-size: 1.25rem;
+  }
+}
+
+.valuesTitle {
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: #151515;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .valuesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.valueCard {
+  background-color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #e7ded2;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.valueIcon {
+  color: #da9a4d;
+}
+
+.valueTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #151515;
+  margin-bottom: 0.5rem;
+}
+
+.valueText {
+  font-size: 0.9375rem;
+  color: #8f999b;
+}
+
+@media (min-width: 768px) {
+  .valueText {
+    font-size: 1rem;
+  }
+}
+
+/* ── STATS ───────────────────────────────────────── */
+.statsSection {
+  padding: 5rem 1rem;
+  background-color: #e7ded2;
+}
+
+@media (min-width: 768px) {
+  .statsSection {
+    padding: 5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .statsSection {
+    padding: 5rem 4rem;
+  }
+}
+
+.statsGrid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statNum {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #151515;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .statNum {
+    font-size: 3rem;
+  }
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #8f999b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .statLabel {
+    font-size: 1rem;
+  }
+}

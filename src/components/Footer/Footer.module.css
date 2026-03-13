@@ -1,0 +1,199 @@
+/* ── Footer wrapper ──────────────────────────────────────── */
+
+.footer {
+  background-color: #151515;
+  color: white;
+}
+
+/* ── Container ───────────────────────────────────────────── */
+
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ── Columns grid ────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Logo column ─────────────────────────────────────────── */
+
+.logo {
+  display: block;
+  height: 3.5rem;
+  filter: brightness(0) invert(1);
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  color: #8f999b;
+  font-size: 0.9375rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 768px) {
+  .tagline {
+    font-size: 1rem;
+  }
+}
+
+/* ── Column headings ─────────────────────────────────────── */
+
+.colHeading {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .colHeading {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .colHeading {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── Service list ────────────────────────────────────────── */
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.serviceLink {
+  color: #8f999b;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.serviceLink:hover {
+  color: white;
+}
+
+/* ── Contact list ────────────────────────────────────────── */
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: #8f999b;
+  font-size: 0.9375rem;
+}
+
+.contactIcon {
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+/* ── Legal list ──────────────────────────────────────────── */
+
+.legalList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legalLink {
+  color: #8f999b;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.legalLink:hover {
+  color: white;
+}
+
+/* ── Bottom bar ──────────────────────────────────────────── */
+
+.bottomBar {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: #8f999b;
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+    font-size: 0.875rem;
+  }
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.bottomLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.bottomLink:hover {
+  color: white;
+}

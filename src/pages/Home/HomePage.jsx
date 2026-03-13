@@ -5,6 +5,7 @@ import ProjectGrid from '../../components/ProjectGrid/ProjectGrid';
 import CTAForm from '../../components/CTAForm/CTAForm';
 import CTASection from '../../components/CTASection/CTASection';
 import { getProjects } from '../../services/projectsService';
+import styles from './HomePage.module.css';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -18,28 +19,28 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+      <section id="hero" className={styles.hero}>
         <img
           src="/img/landing-image3.jpg"
           alt="Navagli hero"
-          className="absolute inset-0 w-full h-full object-cover"
+          className={styles.heroImg}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={styles.heroOverlay} />
 
-        <div className="relative z-10 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto w-full">
-          <p className="text-xl font-semibold tracking-[0.3em] uppercase text-[#da9a4d] mb-5 animate-fade-in">
+        <div className={styles.heroContent}>
+          <p className={styles.heroLabel}>
             Inversiones y Construcciones Navagli S.L.
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white max-w-3xl leading-tight mb-8">
+          <h1 className={styles.heroTitle}>
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-white/80 max-w-xl mb-10">
+          <p className={styles.heroSubtitle}>
             {t('hero.subtitle')}
           </p>
           <button
             onClick={() => setFormOpen(true)}
-            className="bg-[#da9a4d] text-white px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-white hover:text-[#151515] transition-colors duration-300"
+            className={styles.heroButton}
           >
             {t('hero.cta')}
           </button>
@@ -47,50 +48,50 @@ export default function HomePage() {
       </section>
 
       {/* ── QUIÉNES SOMOS ────────────────────────────────── */}
-      <section className="py-24 px-4 md:px-8 lg:px-16 bg-[#fefefe]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section id="about-section" className={styles.aboutSection}>
+        <div className={styles.aboutGrid}>
           <div>
-            <p className="text-xs md:text-lg lg:text-xl font-semibold tracking-[0.3em] uppercase text-[#da9a4d] mb-4">
+            <p className={styles.aboutLabel}>
               {t('about.sectionLabel')}
             </p>
-            <h2 className="text-3xl md:text-4xl font-light text-[#151515] mb-6 leading-snug">
+            <h2 className={styles.aboutTitle}>
               {t('about.title')}
             </h2>
-            <p className="text-[#8f999b] leading-relaxed text-base md:text-lg">
+            <p className={styles.bodyText}>
               {t('about.text')}
             </p>
             <Link
               to="/quienes-somos"
-              className="inline-block mt-8 text-xs font-semibold tracking-widest uppercase text-[#151515] border-b border-[#151515] pb-0.5 hover:text-[#da9a4d] hover:border-[#da9a4d] transition-colors"
+              className={styles.learnMoreLink}
             >
               {t('about.learnMore')} →
             </Link>
           </div>
-          <div className="overflow-hidden">
+          <div className={styles.imgWrapper}>
             <img
               src="/img/landing-image4.jpg"
               alt="Sobre Navagli"
-              className="w-full h-[460px] object-cover"
+              className={styles.aboutImg}
             />
           </div>
         </div>
       </section>
 
       {/* ── PROYECTOS DESTACADOS ─────────────────────────── */}
-      <section className="py-24 px-4 md:px-8 lg:px-16 bg-[#fafaf9]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <section id="projects-section" className={styles.projectsSection}>
+        <div className={styles.projectsInner}>
+          <div className={styles.projectsHeader}>
             <div>
-              <p className="text-xs md:text-lg lg:text-xl font-semibold tracking-[0.3em] uppercase text-[#da9a4d] mb-3">
+              <p className={styles.projectsLabel}>
                 {t('projects.sectionLabel')}
               </p>
-              <h2 className="text-3xl md:text-4xl font-light text-[#151515]">
+              <h2 className={styles.projectsTitle}>
                 {t('projects.title')}
               </h2>
             </div>
             <Link
               to="/proyectos"
-              className="text-xs font-semibold tracking-widest uppercase text-[#151515] border-b border-[#151515] pb-0.5 hover:text-[#da9a4d] hover:border-[#da9a4d] transition-colors whitespace-nowrap"
+              className={styles.viewAllLink}
             >
               {t('projects.viewAll')} →
             </Link>

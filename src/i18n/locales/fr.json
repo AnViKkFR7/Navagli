@@ -2,6 +2,11 @@
   "nav": {
     "home": "Accueil",
     "services": "Services",
+    "servicesDropdown": {
+      "integral": "Rénovations Complètes",
+      "painting": "Peinture Décorative",
+      "consulting": "Conseil Professionnel"
+    },
     "projects": "Projets",
     "about": "Qui sommes-nous",
     "contact": "Obtenez votre devis"
@@ -140,5 +145,98 @@
     "legalNotice": "Mentions légales",
     "cookies": "Politique de cookies",
     "privacy": "Politique de confidentialité"
+  },
+  "reformas": {
+    "heroLabel": "Rénovations Complètes",
+    "heroTitle": "Votre maison, transformée de A à Z",
+    "heroSubtitle": "Nous gérons chaque étape de votre rénovation : projet, matériaux, exécution et finitions.",
+    "introLabel": "Notre approche",
+    "introTitle": "Rénovation intégrale, gestion totale",
+    "introText": "Chez Navagli, nous prenons en charge l'ensemble du processus, de la première visite à la remise des clés. Nous coordonnons tous les corps de métier, contrôlons les délais et garantissons la qualité à chaque étape. Votre rénovation sans stress, entre les mains d'experts avec plus de 20 ans d'expérience.",
+    "areasLabel": "Espaces",
+    "areasTitle": "Tout ce que nous rénovons",
+    "areas": {
+      "kitchen":  { "title": "Cuisines",                 "desc": "Nous concevons et réalisons des cuisines modernes et fonctionnelles. Nous travaillons avec les meilleures marques en mobilier, plans de travail et électroménager intégré." },
+      "bathroom": { "title": "Salles de bain",           "desc": "Nous rénovons les salles de bain avec des matériaux premium : grès cérame, receveurs sur mesure, parois, sanitaires suspendus et éclairage LED." },
+      "floors":   { "title": "Sols et carrelages",       "desc": "Nous installons et rénovou tous types de revêtements : parquet, grès, microciment, mosaïque et vinyle. Nous conseillons sur le choix selon l'usage et le style." },
+      "exterior": { "title": "Extérieurs et façades",   "desc": "Nous rénovons terrasses, balcons, jardins et façades. Étanchéité, dallage extérieur, revêtements et révision structurelle avec finitions résistantes aux intempéries." },
+      "interior": { "title": "Architecture intérieure", "desc": "Nous redistribuons les espaces, créons ou supprimons des cloisons et concevons la disposition optimale pour maximiser lumière, espace et confort." },
+      "rehab":    { "title": "Réhabilitation",           "desc": "Réhabilitation structurelle des façades, toitures et parties communes. Avec maîtrise d'œuvre et respect strict de la réglementation en vigueur." }
+    },
+    "processLabel": "Méthodologie",
+    "processTitle": "Votre rénovation, étape par étape",
+    "steps": {
+      "s1": { "title": "Visite et diagnostic",        "desc": "Nous visitons votre espace gratuitement, évaluons l'état actuel et écoutons vos besoins avant de proposer toute solution." },
+      "s2": { "title": "Projet et devis fixe",        "desc": "Nous élaborons un projet technique détaillé avec matériaux, délais et prix ferme. Transparence totale, sans surprises." },
+      "s3": { "title": "Exécution et suivi",          "desc": "Nous coordonnons tous les corps de métier et effectuons des contrôles qualité à chaque phase. Rapports d'avancement tout au long du chantier." },
+      "s4": { "title": "Livraison et garantie",       "desc": "Nous livrons le chantier propre, vérifié et documenté. Garantie après travaux et service après-vente inclus." }
+    }
+  },
+  "pintura": {
+    "heroLabel": "Peinture Décorative",
+    "heroTitle": "L'art de transformer les surfaces",
+    "heroSubtitle": "Des techniques artisanales exclusives qui font des murs et des surfaces des éléments de design uniques.",
+    "whatLabel": "Qu'est-ce que c'est",
+    "whatTitle": "Bien plus que de la peinture",
+    "whatText": "La peinture décorative est une discipline artisanale qui combine pigments naturels, textures et techniques appliquées à la main pour créer des finitions uniques et irremplaçables. Contrairement à la peinture conventionnelle, chaque ouvrage est une pièce personnalisée qui transforme visuellement l'espace sans nécessiter de gros travaux. Nos techniciens spécialisés adaptent chaque technique au style du client.",
+    "whatPoints": {
+      "p1": "Finitions uniques et irremplaçables",
+      "p2": "Techniques artisanales appliquées à la main",
+      "p3": "Conseil personnalisé couleur et texture",
+      "p4": "Applicable sur murs, sols et mobilier"
+    },
+    "techniquesLabel": "Spécialités",
+    "techniquesTitle": "Nos techniques décoratives",
+    "techniques": {
+      "venetian":    { "title": "Stuc Vénitien",                      "desc": "Une finition d'inspiration classique obtenue avec plusieurs couches de stuc de chaux et pigments naturels. Elle apporte profondeur, brillance satinée et texture rappelant le marbre poli." },
+      "microcement": { "title": "Microciment",                        "desc": "Revêtement continu ultra-fin applicable sur murs, sols et meubles existants sans travaux. Résistant, imperméable et disponible en plus de 50 teintes." },
+      "chalk":       { "title": "Badigeon, Chaux et Effets Mats",    "desc": "Techniques traditionnelles revisitées pour des finitions mates douces et enveloppantes. Parfaites pour les intérieurs nordiques, rustiques et méditerranéens." },
+      "effects":     { "title": "Effets Spéciaux et Fresques",       "desc": "Imitations de pierre, béton ou bois et fresques artistiques sur mesure. Nous travaillons avec le client pour concevoir des compositions uniques adaptées à l'espace." }
+    },
+    "processLabel": "Processus",
+    "processTitle": "De l'idée à la finition finale",
+    "steps": {
+      "s1": { "title": "Consultation et choix de technique", "desc": "Nous conseillons sur la technique la plus adaptée selon l'espace, la lumière naturelle et le style de décoration souhaité." },
+      "s2": { "title": "Préparation de surface",            "desc": "Nettoyage, ponçage et application d'une primaire spécifique pour garantir une adhérence parfaite et une durabilité maximale." },
+      "s3": { "title": "Application artisanale",            "desc": "Nos techniciens appliquent la technique en couches successives, en respectant les temps de séchage pour un résultat impeccable." },
+      "s4": { "title": "Scellement et protection",          "desc": "Finition avec vernis, cire ou scellant selon la technique choisie, pour protéger la surface et faciliter l'entretien." }
+    }
+  },
+  "asesoria": {
+    "heroLabel": "Conseil Professionnel",
+    "heroTitle": "L'équipe d'experts à vos côtés dès le premier jour",
+    "heroSubtitle": "Architectes, designers d'intérieur et techniciens spécialisés qui guident votre projet avec expertise et précision.",
+    "introLabel": "Le service",
+    "introTitle": "Conseil intégral à chaque étape",
+    "introText": "Chez Navagli, nous disposons d'une équipe multidisciplinaire de professionnels qui vous accompagnent de l'idée initiale au résultat final. Nous vous aidons à prendre des décisions éclairées, à optimiser votre investissement et à éviter les erreurs les plus courantes dans les projets de rénovation. Parce qu'un bon projet commence par un bon conseil.",
+    "introBenefits": {
+      "b1": "Projet technique avec toutes les garanties légales",
+      "b2": "Budget détaillé sans frais cachés",
+      "b3": "Gestion complète des licences et permis",
+      "b4": "Coordination de tous les professionnels impliqués"
+    },
+    "pillarsLabel": "Nos spécialistes",
+    "pillarsTitle": "Une équipe sur mesure",
+    "pillars": {
+      "arch":       { "title": "Architecture et Projet",    "desc": "Nos architectes élaborent des projets techniques complets, gèrent les permis de travaux et garantissent le respect des réglementations urbanistiques, d'accessibilité et d'efficacité énergétique." },
+      "designer":   { "title": "Design d'Intérieur",        "desc": "Nous créons des propositions de design en 3D pour que vous visualisiez le résultat avant de commencer. Sélection de matériaux, palettes de couleurs, mobilier et éclairage." },
+      "specialist": { "title": "Techniciens Spécialisés",   "desc": "Installateurs certifiés en électricité, plomberie, CVC et domotique. Tous les travaux sont livrés avec un certificat d'installation conformes à la réglementation en vigueur." }
+    },
+    "servicesLabel": "Ce qui est inclus",
+    "servicesTitle": "Périmètre du conseil",
+    "servicesList": {
+      "viability": { "title": "Étude de faisabilité",        "desc": "Nous analysons la faisabilité technique, économique et réglementaire de votre projet avant d'engager des ressources." },
+      "licenses":  { "title": "Gestion des permis",          "desc": "Nous traitons tous les permis et autorisations auprès des autorités locales. Sans bureaucratie pour vous." },
+      "budget":    { "title": "Contrôle des coûts",          "desc": "Nous établissons des devis détaillés et surveillons l'exécution pour que les coûts réels ne s'écartent pas du convenu." },
+      "vendors":   { "title": "Coordination des fournisseurs", "desc": "Nous sélectionnons des fournisseurs de confiance, négocions les conditions et coordonnons les livraisons pour garantir qualité et délais." }
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Consentement aux cookies",
+    "title": "Nous utilisons des cookies",
+    "body": "Nous utilisons nos propres cookies et des cookies tiers pour améliorer votre expérience de navigation et analyser le trafic sur notre site.",
+    "moreInfo": "Politique de cookies",
+    "accept": "Accepter",
+    "decline": "Fermer sans accepter"
   }
 }

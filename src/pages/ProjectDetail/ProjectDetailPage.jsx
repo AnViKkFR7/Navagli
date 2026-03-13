@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Carousel from '../../components/Carousel/Carousel';
 import CTASection from '../../components/CTASection/CTASection';
 import { getProjectById } from '../../services/projectsService';
+import styles from './ProjectDetailPage.module.css';
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -21,17 +22,17 @@ export default function ProjectDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#fefefe]">
-        <div className="w-12 h-12 border-4 border-[#da9a4d] border-t-transparent rounded-full animate-spin" />
+      <div className={styles.loadingScreen}>
+        <div className={styles.spinner} />
       </div>
     );
   }
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#fefefe] gap-4">
-        <p className="text-2xl text-[#151515]">Proyecto no encontrado</p>
-        <Link to="/proyectos" className="text-[#da9a4d] underline">
+      <div className={styles.notFoundScreen}>
+        <p className={styles.notFoundText}>Proyecto no encontrado</p>
+        <Link to="/proyectos" className={styles.notFoundLink}>
           ← {t('projects.viewAll')}
         </Link>
       </div>
@@ -50,39 +51,33 @@ export default function ProjectDetailPage() {
   return (
     <>
       {/* Carousel */}
-      <div className="pt-20">
+      <div id="project-carousel" className={styles.carouselWrapper}>
         <Carousel images={images} />
       </div>
 
       {/* Back link */}
-      <div className="px-4 md:px-8 lg:px-16 py-6 max-w-7xl mx-auto">
-        <Link
-          to="/proyectos"
-          className="inline-flex items-center gap-2 text-sm text-[#8f999b] hover:text-[#da9a4d] transition-colors"
-        >
+      <div className={styles.backRow}>
+        <Link to="/proyectos" className={styles.backLink}>
           <ArrowLeft size={16} />
           {t('projects.viewAll')}
         </Link>
       </div>
 
       {/* Project info */}
-      <section className="px-4 md:px-8 lg:px-16 pb-20 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <section id="project-info" className={styles.projectInfo}>
+        <div className={styles.contentGrid}>
           {/* Main content */}
-          <div className="lg:col-span-2">
-            <h1 className="text-3xl md:text-4xl font-light text-[#151515] mb-4">
+          <div>
+            <h1 className={styles.projectTitle}>
               {project.title}
             </h1>
-            {project.location && (
-              <p className="text-[#8f999b] text-sm mb-8">{project.location}</p>
-            )}
 
             {description && (
               <>
-                <h2 className="text-xs md:text-lg lg:text-xl font-semibold tracking-widest uppercase text-[#da9a4d] mb-3">
+                <h2 className={styles.sectionLabel}>
                   {t('projects.description')}
                 </h2>
-                <p className="text-[#151515] leading-relaxed text-base md:text-lg mb-10">
+                <p className={styles.descriptionText}>
                   {description}
                 </p>
               </>
@@ -90,15 +85,15 @@ export default function ProjectDetailPage() {
 
             {worksDone.length > 0 && (
               <>
-                <h2 className="text-xs md:text-lg lg:text-xl font-semibold tracking-widest uppercase text-[#da9a4d] mb-4">
+                <h2 className={styles.sectionLabel}>
                   {t('projects.worksDone')}
                 </h2>
-                <ul className="space-y-3">
+                <ul className={styles.worksList}>
                   {worksDone.map((work, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#151515]">
+                    <li key={i} className={styles.workItem}>
                       <CheckCircle2
                         size={18}
-                        className="text-[#da9a4d] mt-0.5 flex-shrink-0"
+                        className={styles.workIcon}
                       />
                       <span>{work}</span>
                     </li>
@@ -109,22 +104,22 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Sidebar – project meta */}
-          <div className="bg-[#e7ded2] p-8 h-fit">
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-[#8f999b] mb-6">
+          <div className={styles.sidebar}>
+            <h3 className={styles.sidebarHeading}>
               Ficha del proyecto
             </h3>
-            <dl className="space-y-4">
+            <dl className={styles.metaList}>
               <div>
-                <dt className="text-xs md:text-base lg:text-lg font-semibold tracking-widest uppercase text-[#da9a4d]">
+                <dt className={styles.metaKey}>
                   {t('projects.location')}
                 </dt>
-                <dd className="mt-1 text-sm text-[#151515]">{project.location || '—'}</dd>
+                <dd className={styles.metaValue}>{project.location || '—'}</dd>
               </div>
               <div>
-                <dt className="text-xs md:text-base lg:text-lg font-semibold tracking-widest uppercase text-[#da9a4d]">
+                <dt className={styles.metaKey}>
                   Tipo
                 </dt>
-                <dd className="mt-1 text-sm text-[#151515] capitalize">
+                <dd className={styles.metaValue}>
                   {project.item_type?.replace('proyecto-reforma-', '') || '—'}
                 </dd>
               </div>

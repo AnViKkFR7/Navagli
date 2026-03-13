@@ -1,0 +1,342 @@
+/* ── Header base ─────────────────────────────────────────── */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headerTransparent {
+  background-color: transparent;
+}
+
+.headerDark {
+  background-color: #151515;
+}
+
+/* ── Inner container ─────────────────────────────────────── */
+
+.inner {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+
+.logoLink {
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 3rem;
+  filter: brightness(0) invert(1);
+  transition: all 300ms;
+}
+
+/* ── Desktop nav ─────────────────────────────────────────── */
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 925px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.navLink:hover {
+  color: #da9a4d;
+}
+
+.navLinkActive {
+  color: #da9a4d;
+}
+
+/* ── Right controls ──────────────────────────────────────── */
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Language switcher (desktop) ─────────────────────────── */
+
+.langWrapper {
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 925px) {
+  .langWrapper {
+    display: block;
+  }
+}
+
+.langButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 200ms;
+}
+
+.langButton:hover {
+  color: #da9a4d;
+}
+
+.langDropdown {
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  z-index: 50;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  min-width: 80px;
+}
+
+.langOption {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #151515;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+.langOption:hover {
+  background-color: #e7ded2;
+}
+
+.langOptionActive {
+  font-weight: 700;
+  color: #da9a4d;
+}
+
+/* ── Hamburger ───────────────────────────────────────────── */
+
+.hamburger {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+}
+
+@media (min-width: 925px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ── Mobile menu ─────────────────────────────────────────── */
+
+.mobileMenu {
+  background-color: #151515;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobileNavLink {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.mobileNavLink:hover {
+  color: #da9a4d;
+}
+
+.mobileNavLinkActive {
+  color: #da9a4d;
+}
+
+.mobileLangBar {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+}
+
+.mobileLangButton {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 200ms;
+}
+
+.mobileLangButton:hover {
+  color: #da9a4d;
+}
+
+.mobileLangButtonActive {
+  color: #da9a4d;
+}
+
+/* ── Services dropdown (desktop) ─────────────────────────── */
+
+.serviceDropdownWrapper {
+  position: relative;
+}
+
+/* invisible bridge covers the gap so onMouseLeave doesn't fire mid-travel */
+.serviceDropdownWrapper::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 0.875rem;
+}
+
+.serviceDropdownBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  /* inherits font from .navLink via className concatenation */
+}
+
+.chevron {
+  transition: transform 300ms;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.serviceDropdown {
+  position: absolute;
+  top: calc(100% + 0.875rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #151515;
+  border-top: 2px solid #da9a4d;
+  min-width: 230px;
+  z-index: 60;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.serviceDropdownItem {
+  display: block;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 200ms, background-color 200ms;
+}
+
+.serviceDropdownItem:last-child {
+  border-bottom: none;
+}
+
+.serviceDropdownItem:hover {
+  color: #da9a4d;
+  background-color: rgba(218, 154, 77, 0.07);
+}
+
+.serviceDropdownItemActive {
+  color: #da9a4d;
+}
+
+/* ── Mobile services group ───────────────────────────────── */
+
+.mobileServicesGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-left: 2px solid #da9a4d;
+  padding-left: 0.875rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.mobileServicesLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 0.125rem;
+}
+
+.mobileSubNavLink {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.mobileSubNavLink:hover {
+  color: #da9a4d;
+}

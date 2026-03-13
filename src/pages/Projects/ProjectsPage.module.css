@@ -1,0 +1,132 @@
+/* ── PAGE HERO ───────────────────────────────────── */
+.pageHero {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #151515;
+}
+
+@media (min-width: 768px) {
+  .pageHero {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageHero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.heroInner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.heroLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #da9a4d;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .heroLabel {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroLabel {
+    font-size: 1.25rem;
+  }
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+/* ── GRID SECTION ────────────────────────────────── */
+.gridSection {
+  padding: 5rem 1rem;
+  background-color: #fefefe;
+}
+
+@media (min-width: 768px) {
+  .gridSection {
+    padding: 5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gridSection {
+    padding: 5rem 4rem;
+  }
+}
+
+.gridInner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* ── SKELETON LOADING ────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skeletonItem {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeletonImg {
+  background-color: #e7ded2;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.skeletonTitle {
+  height: 1.25rem;
+  background-color: #e7ded2;
+  width: 75%;
+  margin-bottom: 0.5rem;
+}
+
+.skeletonSubtitle {
+  height: 1rem;
+  background-color: #e7ded2;
+  width: 50%;
+}
