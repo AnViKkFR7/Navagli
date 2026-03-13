@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Projets",
+    "about": "Qui sommes-nous",
+    "contact": "Obtenez votre devis"
+  },
+  "hero": {
+    "title": "Des rénovations qui transforment les espaces",
+    "subtitle": "Design, qualité et expérience au service de votre maison",
+    "cta": "Demander un devis"
+  },
+  "about": {
+    "sectionLabel": "Qui sommes-nous",
+    "title": "Experts en rénovations complètes",
+    "text": "Nous sommes Navagli, une entreprise avec plus de 20 ans d'expérience dans les rénovations complètes, la réhabilitation et le design d'intérieur à Barcelone et sa zone métropolitaine. Nous nous spécialisons dans la transformation d'espaces résidentiels et commerciaux avec les plus hauts standards de qualité, des matériaux premium et une équipe de professionnels engagés dans les détails.",
+    "learnMore": "En savoir plus"
+  },
+  "projects": {
+    "sectionLabel": "Projets",
+    "title": "Projets en vedette",
+    "viewAll": "Voir tous les projets",
+    "viewProject": "Voir le projet",
+    "location": "Emplacement",
+    "description": "Description",
+    "worksDone": "Travaux réalisés"
+  },
+  "services": {
+    "sectionLabel": "Services",
+    "title": "Nos services",
+    "subtitle": "Nous offrons des solutions complètes pour tous types de rénovations et projets de design d'intérieur",
+    "integral": {
+      "title": "Rénovations Complètes",
+      "description": "Nous transformons complètement votre logement, gérant tous les corps de métier et coordonnant chaque phase du projet pour garantir un résultat impeccable."
+    },
+    "kitchen": {
+      "title": "Rénovations de Cuisine",
+      "description": "Nous concevons et réalisons des cuisines modernes et fonctionnelles, adaptées à votre style de vie et à l'espace disponible."
+    },
+    "bathroom": {
+      "title": "Rénovations de Salle de Bain",
+      "description": "Nous rénovons vos salles de bain avec des matériaux de haute qualité, créant des espaces élégants, fonctionnels et durables."
+    },
+    "interior": {
+      "title": "Design d'Intérieur",
+      "description": "Nous créons des environnements uniques et personnalisés, combinant esthétique et fonctionnalité pour refléter votre personnalité dans chaque recoin."
+    },
+    "rehabilitation": {
+      "title": "Réhabilitation",
+      "description": "Nous redonnons vie aux bâtiments et logements avec des travaux de réhabilitation structurelle et de finitions, en respectant toutes les réglementations en vigueur."
+    },
+    "commercial": {
+      "title": "Local Commercial",
+      "description": "Nous concevons et réalisons la rénovation de votre local commercial en valorisant l'image de marque et l'expérience client."
+    },
+    "office": {
+      "title": "Bureau",
+      "description": "Nous optimisons les espaces de travail pour améliorer la productivité et le bien-être de votre équipe, avec des designs modernes et fonctionnels."
+    }
+  },
+  "cta": {
+    "title": "Vous avez un projet en tête ?",
+    "subtitle": "Dites-nous votre idée et nous préparerons un devis gratuit",
+    "button": "Demander un devis"
+  },
+  "form": {
+    "title": "Demander un devis",
+    "name": "Nom",
+    "city": "Ville",
+    "serviceType": "Type de service",
+    "email": "Email",
+    "phone": "Téléphone",
+    "description": "Parlez-nous de votre projet",
+    "submit": "Demander un devis",
+    "serviceOptions": {
+      "integral": "Rénovation complète",
+      "kitchen": "Rénovation cuisine",
+      "bathroom": "Rénovation salle de bain",
+      "interior": "Design d'intérieur",
+      "rehabilitation": "Réhabilitation",
+      "commercial": "Local commercial",
+      "office": "Bureau",
+      "other": "Autre"
+    }
+  },
+  "footer": {
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Légal",
+    "legalNotice": "Mentions légales",
+    "cookies": "Cookies",
+    "privacy": "Confidentialité",
+    "rights": "Tous droits réservés",
+    "tagline": "Spécialistes en rénovations complètes à Barcelone."
+  },
+  "aboutPage": {
+    "heroTitle": "À propos de nous",
+    "heroSubtitle": "Découvrez l'histoire et les valeurs de Navagli",
+    "historyTitle": "Notre histoire",
+    "historyText": "Navagli est née il y a plus de deux décennies de la passion pour l'architecture et de l'engagement envers la qualité. Ce qui a commencé comme une petite équipe de professionnels ambitieux est devenu l'une des entreprises de rénovation de référence à Barcelone.",
+    "philosophyTitle": "Notre philosophie",
+    "philosophyText": "Nous croyons que chaque rénovation est une opportunité d'améliorer la qualité de vie des personnes. C'est pourquoi nous nous impliquons dans chaque projet comme s'il était le nôtre, en écoutant, conseillant et exécutant avec précision.",
+    "valuesTitle": "Nos valeurs",
+    "values": {
+      "quality": "Qualité",
+      "qualityText": "Nous utilisons des matériaux et finitions de première qualité",
+      "commitment": "Engagement",
+      "commitmentText": "Nous respectons les délais et budgets convenus",
+      "trust": "Confiance",
+      "trustText": "Transparence totale tout au long du processus",
+      "innovation": "Innovation",
+      "innovationText": "Designs modernes adaptés aux dernières tendances"
+    },
+    "experienceTitle": "Notre expérience",
+    "experienceText": "Plus de 500 projets réalisés, des clients satisfaits dans toute la zone métropolitaine de Barcelone et une équipe de plus de 30 professionnels spécialisés dans chaque domaine du secteur.",
+    "historyLabel": "Histoire",
+    "philosophyLabel": "Philosophie",
+    "valuesLabel": "Valeurs",
+    "stats": {
+      "yearsLabel": "Ans d'expérience",
+      "projectsLabel": "Projets réalisés",
+      "professionalsLabel": "Professionnels",
+      "clientsLabel": "Clients satisfaits"
+    }
+  },
+  "contactPage": {
+    "heroTitle": "Contact",
+    "heroSubtitle": "Nous sommes là pour vous aider",
+    "writeUs": "Écrivez-nous",
+    "phone": "Téléphone",
+    "email": "Email",
+    "office": "Bureau",
+    "schedule": "Horaires",
+    "scheduleText": "Lun - Ven : 9h00 - 18h00",
+    "contactInfo": "Informations de contact"
+  },
+  "legal": {
+    "lastUpdated": "Dernière mise à jour",
+    "legalNotice": "Mentions légales",
+    "cookies": "Politique de cookies",
+    "privacy": "Politique de confidentialité"
+  }
+}

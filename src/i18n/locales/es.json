@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "about": "Quiénes somos",
+    "contact": "Pide tu presupuesto"
+  },
+  "hero": {
+    "title": "Reformas que transforman espacios",
+    "subtitle": "Diseño, calidad y experiencia al servicio de tu hogar",
+    "cta": "Solicitar presupuesto"
+  },
+  "about": {
+    "sectionLabel": "Quiénes somos",
+    "title": "Expertos en reformas integrales",
+    "text": "Somos Navagli, una empresa con más de 20 años de experiencia en reformas integrales, rehabilitación y diseño de interiores en Barcelona y su área metropolitana. Nos especializamos en transformar espacios residenciales y comerciales con los más altos estándares de calidad, materiales premium y un equipo de profesionales comprometidos con el detalle. Cada proyecto es único y lo tratamos como tal, ofreciendo soluciones personalizadas que se adaptan a tus necesidades y presupuesto.",
+    "learnMore": "Conocer más"
+  },
+  "projects": {
+    "sectionLabel": "Proyectos",
+    "title": "Proyectos destacados",
+    "viewAll": "Ver todos los proyectos",
+    "viewProject": "Ver proyecto",
+    "location": "Ubicación",
+    "description": "Descripción",
+    "worksDone": "Trabajos realizados"
+  },
+  "services": {
+    "sectionLabel": "Servicios",
+    "title": "Nuestros servicios",
+    "subtitle": "Ofrecemos soluciones completas para todo tipo de reformas y proyectos de interiorismo",
+    "integral": {
+      "title": "Reformas Integrales",
+      "description": "Transformamos tu vivienda de forma completa, gestionando todos los oficios y coordinando cada fase del proyecto para garantizar un resultado impecable."
+    },
+    "kitchen": {
+      "title": "Reformas de Cocina",
+      "description": "Diseñamos y ejecutamos cocinas modernas y funcionales, adaptadas a tu estilo de vida y al espacio disponible."
+    },
+    "bathroom": {
+      "title": "Reformas de Baño",
+      "description": "Renovamos tus baños con materiales de alta calidad, consiguiendo espacios elegantes, funcionales y duraderos."
+    },
+    "interior": {
+      "title": "Interiorismo",
+      "description": "Creamos ambientes únicos y personalizados, combinando estética y funcionalidad para reflejar tu personalidad en cada rincón."
+    },
+    "rehabilitation": {
+      "title": "Rehabilitación",
+      "description": "Devolvemos la vida a edificios y viviendas con obras de rehabilitación estructural y de acabados, cumpliendo toda la normativa vigente."
+    },
+    "commercial": {
+      "title": "Local Comercial",
+      "description": "Diseñamos y ejecutamos la reforma de tu local comercial potenciando la imagen de marca y la experiencia del cliente."
+    },
+    "office": {
+      "title": "Oficina",
+      "description": "Optimizamos los espacios de trabajo para mejorar la productividad y el bienestar de tu equipo, con diseños modernos y funcionales."
+    }
+  },
+  "cta": {
+    "title": "¿Tienes un proyecto en mente?",
+    "subtitle": "Cuéntanos tu idea y te preparamos un presupuesto sin compromiso",
+    "button": "Solicitar presupuesto"
+  },
+  "form": {
+    "title": "Solicitar presupuesto",
+    "name": "Nombre",
+    "city": "Población",
+    "serviceType": "Tipo de servicio",
+    "email": "Email",
+    "phone": "Teléfono",
+    "description": "Cuéntanos tu proyecto",
+    "submit": "Solicitar presupuesto",
+    "serviceOptions": {
+      "integral": "Reforma integral",
+      "kitchen": "Reforma Cocina",
+      "bathroom": "Reforma Baño",
+      "interior": "Interiorismo",
+      "rehabilitation": "Rehabilitación",
+      "commercial": "Local Comercial",
+      "office": "Oficina",
+      "other": "Otros"
+    }
+  },
+  "footer": {
+    "services": "Servicios",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "legalNotice": "Aviso Legal",
+    "cookies": "Cookies",
+    "privacy": "Privacidad",
+    "rights": "Todos los derechos reservados",
+    "tagline": "Especialistas en reformas integrales en Barcelona."
+  },
+  "aboutPage": {
+    "heroTitle": "Sobre Nosotros",
+    "heroSubtitle": "Conoce la historia y los valores de Navagli",
+    "historyTitle": "Nuestra historia",
+    "historyText": "Navagli nació hace más de dos décadas de la pasión por la arquitectura y el compromiso con la calidad. Lo que comenzó como un pequeño equipo de profesionales con altas expectativas, se ha convertido en una de las empresas de reformas de referencia en Barcelona.",
+    "philosophyTitle": "Nuestra filosofía",
+    "philosophyText": "Creemos que cada reforma es una oportunidad para mejorar la calidad de vida de las personas. Por eso nos implicamos en cada proyecto como si fuera el nuestro propio, escuchando, asesorando y ejecutando con precisión.",
+    "valuesTitle": "Nuestros valores",
+    "values": {
+      "quality": "Calidad",
+      "qualityText": "Usamos materiales y acabados de primera calidad",
+      "commitment": "Compromiso",
+      "commitmentText": "Cumplimos plazos y presupuestos acordados",
+      "trust": "Confianza",
+      "trustText": "Transparencia total durante todo el proceso",
+      "innovation": "Innovación",
+      "innovationText": "Diseños modernos adaptados a las últimas tendencias"
+    },
+    "experienceTitle": "Nuestra experiencia",
+    "experienceText": "Más de 500 proyectos realizados, clientes satisfechos en toda el área metropolitana de Barcelona y un equipo de más de 30 profesionales especializados en cada área del sector.",
+    "historyLabel": "Historia",
+    "philosophyLabel": "Filosofía",
+    "valuesLabel": "Valores",
+    "stats": {
+      "yearsLabel": "Años de experiencia",
+      "projectsLabel": "Proyectos realizados",
+      "professionalsLabel": "Profesionales",
+      "clientsLabel": "Clientes satisfechos"
+    }
+  },
+  "contactPage": {
+    "heroTitle": "Contacto",
+    "heroSubtitle": "Estamos aquí para ayudarte",
+    "writeUs": "Escríbenos",
+    "phone": "Teléfono",
+    "email": "Email",
+    "office": "Oficina",
+    "schedule": "Horario",
+    "scheduleText": "Lun - Vie: 9:00 - 18:00",
+    "contactInfo": "Datos de contacto"
+  },
+  "legal": {
+    "lastUpdated": "Última actualización",
+    "legalNotice": "Aviso Legal",
+    "cookies": "Política de Cookies",
+    "privacy": "Política de Privacidad"
+  }
+}

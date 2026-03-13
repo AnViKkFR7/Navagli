@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "Who we are",
+    "contact": "Get your quote"
+  },
+  "hero": {
+    "title": "Renovations that transform spaces",
+    "subtitle": "Design, quality and experience at the service of your home",
+    "cta": "Request a quote"
+  },
+  "about": {
+    "sectionLabel": "Who we are",
+    "title": "Experts in comprehensive renovations",
+    "text": "We are Navagli, a company with over 20 years of experience in comprehensive renovations, rehabilitation and interior design in Barcelona and its metropolitan area. We specialize in transforming residential and commercial spaces with the highest quality standards, premium materials and a team of professionals committed to detail. Each project is unique and we treat it as such, offering personalized solutions adapted to your needs and budget.",
+    "learnMore": "Learn more"
+  },
+  "projects": {
+    "sectionLabel": "Projects",
+    "title": "Featured projects",
+    "viewAll": "View all projects",
+    "viewProject": "View project",
+    "location": "Location",
+    "description": "Description",
+    "worksDone": "Works done"
+  },
+  "services": {
+    "sectionLabel": "Services",
+    "title": "Our services",
+    "subtitle": "We offer complete solutions for all types of renovations and interior design projects",
+    "integral": {
+      "title": "Comprehensive Renovations",
+      "description": "We completely transform your home, managing all trades and coordinating each phase of the project to guarantee an impeccable result."
+    },
+    "kitchen": {
+      "title": "Kitchen Renovations",
+      "description": "We design and build modern, functional kitchens adapted to your lifestyle and the available space."
+    },
+    "bathroom": {
+      "title": "Bathroom Renovations",
+      "description": "We renovate your bathrooms with high-quality materials, achieving elegant, functional and durable spaces."
+    },
+    "interior": {
+      "title": "Interior Design",
+      "description": "We create unique, personalized environments, combining aesthetics and functionality to reflect your personality in every corner."
+    },
+    "rehabilitation": {
+      "title": "Rehabilitation",
+      "description": "We restore buildings and homes with structural and finishing rehabilitation works, complying with all current regulations."
+    },
+    "commercial": {
+      "title": "Commercial Premises",
+      "description": "We design and carry out the renovation of your commercial premises, enhancing brand image and customer experience."
+    },
+    "office": {
+      "title": "Office",
+      "description": "We optimize workspaces to improve productivity and wellbeing for your team, with modern and functional designs."
+    }
+  },
+  "cta": {
+    "title": "Do you have a project in mind?",
+    "subtitle": "Tell us your idea and we will prepare a free quote",
+    "button": "Request a quote"
+  },
+  "form": {
+    "title": "Request a quote",
+    "name": "Name",
+    "city": "City",
+    "serviceType": "Type of service",
+    "email": "Email",
+    "phone": "Phone",
+    "description": "Tell us about your project",
+    "submit": "Request a quote",
+    "serviceOptions": {
+      "integral": "Comprehensive renovation",
+      "kitchen": "Kitchen renovation",
+      "bathroom": "Bathroom renovation",
+      "interior": "Interior design",
+      "rehabilitation": "Rehabilitation",
+      "commercial": "Commercial premises",
+      "office": "Office",
+      "other": "Other"
+    }
+  },
+  "footer": {
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Legal",
+    "legalNotice": "Legal Notice",
+    "cookies": "Cookies",
+    "privacy": "Privacy",
+    "rights": "All rights reserved",
+    "tagline": "Specialists in comprehensive renovations in Barcelona."
+  },
+  "aboutPage": {
+    "heroTitle": "About Us",
+    "heroSubtitle": "Learn about the history and values of Navagli",
+    "historyTitle": "Our history",
+    "historyText": "Navagli was born more than two decades ago from a passion for architecture and a commitment to quality. What started as a small team of professionals with high expectations has become one of the leading renovation companies in Barcelona.",
+    "philosophyTitle": "Our philosophy",
+    "philosophyText": "We believe that every renovation is an opportunity to improve people's quality of life. That's why we get involved in each project as if it were our own, listening, advising and executing with precision.",
+    "valuesTitle": "Our values",
+    "values": {
+      "quality": "Quality",
+      "qualityText": "We use first-class materials and finishes",
+      "commitment": "Commitment",
+      "commitmentText": "We meet agreed deadlines and budgets",
+      "trust": "Trust",
+      "trustText": "Total transparency throughout the entire process",
+      "innovation": "Innovation",
+      "innovationText": "Modern designs adapted to the latest trends"
+    },
+    "experienceTitle": "Our experience",
+    "experienceText": "More than 500 projects completed, satisfied clients throughout the metropolitan area of Barcelona and a team of more than 30 professionals specialized in each area of the sector.",
+    "historyLabel": "History",
+    "philosophyLabel": "Philosophy",
+    "valuesLabel": "Values",
+    "stats": {
+      "yearsLabel": "Years of experience",
+      "projectsLabel": "Completed projects",
+      "professionalsLabel": "Professionals",
+      "clientsLabel": "Satisfied clients"
+    }
+  },
+  "contactPage": {
+    "heroTitle": "Contact",
+    "heroSubtitle": "We are here to help you",
+    "writeUs": "Write to us",
+    "phone": "Phone",
+    "email": "Email",
+    "office": "Office",
+    "schedule": "Schedule",
+    "scheduleText": "Mon - Fri: 9:00 - 18:00",
+    "contactInfo": "Contact information"
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "legalNotice": "Legal Notice",
+    "cookies": "Cookie Policy",
+    "privacy": "Privacy Policy"
+  }
+}
