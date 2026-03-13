@@ -102,29 +102,6 @@ export default function ProjectDetailPage() {
               </>
             )}
           </div>
-
-          {/* Sidebar – project meta */}
-          <div className={styles.sidebar}>
-            <h3 className={styles.sidebarHeading}>
-              Ficha del proyecto
-            </h3>
-            <dl className={styles.metaList}>
-              <div>
-                <dt className={styles.metaKey}>
-                  {t('projects.location')}
-                </dt>
-                <dd className={styles.metaValue}>{project.location || '—'}</dd>
-              </div>
-              <div>
-                <dt className={styles.metaKey}>
-                  Tipo
-                </dt>
-                <dd className={styles.metaValue}>
-                  {project.item_type?.replace('proyecto-reforma-', '') || '—'}
-                </dd>
-              </div>
-            </dl>
-          </div>
         </div>
       </section>
 
