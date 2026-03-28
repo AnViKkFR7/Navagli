@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
                   {t('projects.description')}
                 </h2>
                 <p className={styles.descriptionText}>
-                  {description}
+                  {description.replace(/\\n/g, '\n')}
                 </p>
               </>
             )}
