@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Calendar1 } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -50,7 +50,7 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <Phone size={15} className={styles.contactIcon} />
-                <span>+34 XXX XXX XXX</span>
+                <span>+34 627 65 37 87</span>
               </li>
               <li className={styles.contactItem}>
                 <Mail size={15} className={styles.contactIcon} />
@@ -58,7 +58,11 @@ export default function Footer() {
               </li>
               <li className={styles.contactItem}>
                 <MapPin size={15} className={styles.contactIcon} />
-                <span>Barcelona, España</span>
+                <span>C/ d' Antoni Gaudí 18 room 6, Sitges</span>
+              </li>
+              <li className={styles.contactItem}>
+                <Calendar1 size={15} className={styles.contactIcon} />
+                <span>{t('footer.hours')}</span>
               </li>
             </ul>
           </div>
