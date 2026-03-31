@@ -78,6 +78,10 @@
     "phone": "Teléfono",
     "description": "Cuéntanos tu proyecto",
     "submit": "Solicitar presupuesto",
+    "sending": "Enviando...",
+    "success": "¡Solicitud enviada! Nos pondremos en contacto contigo en breve.",
+    "error": "Error al enviar. Por favor, inténtalo de nuevo.",
+    "close": "Cerrar",
     "serviceOptions": {
       "integral": "Reforma integral",
       "kitchen": "Reforma Cocina",

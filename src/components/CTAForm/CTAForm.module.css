@@ -84,6 +84,42 @@
   background-color: #151515;
 }
 
+.submitBtn:disabled {
+  background-color: #c4a97d;
+  cursor: not-allowed;
+}
+
+/* ── Feedback messages ───────────────────────────────────── */
+
+.successBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.successMsg {
+  font-size: 1rem;
+  color: #2d6a4f;
+  background-color: #d8f3dc;
+  border: 1px solid #b7e4c7;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+.errorMsg {
+  font-size: 0.875rem;
+  color: #9b2226;
+  background-color: #fde8e8;
+  border: 1px solid #f5c2c7;
+  padding: 0.75rem 1rem;
+  margin-top: -0.25rem;
+}
+
 /* ── Modal overlay ───────────────────────────────────────── */
 
 .overlay {

@@ -138,6 +138,28 @@ export default function CookiesPolicyPage() {
             </a>
             .
           </p>
+
+          <h3 className={styles.sectionTitle} style={{ fontSize: '1rem', marginTop: '1.5rem' }}>
+            Resend Inc.
+          </h3>
+          <p className={styles.bodyText}>
+            El envío de emails generados desde el formulario de solicitud de presupuesto se
+            gestiona a través de <strong className={styles.textDark}>Resend</strong>, servicio de
+            entrega de correo electrónico transaccional. Los datos introducidos en el formulario
+            (nombre, población, tipo de servicio, email, teléfono y descripción) son transmitidos
+            a los servidores de Resend para su envío a la dirección info@navagli.com. Resend no
+            utiliza estos datos con fines propios ni establece cookies en el navegador del usuario.
+            Para más información consulta su{' '}
+            <a
+              href="https://resend.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.accentLink}
+            >
+              política de privacidad
+            </a>
+            .
+          </p>
         </section>
 
         {/* 5 */}

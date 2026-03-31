@@ -78,6 +78,10 @@
     "phone": "Téléphone",
     "description": "Parlez-nous de votre projet",
     "submit": "Demander un devis",
+    "sending": "Envoi en cours...",
+    "success": "Demande envoyée ! Nous vous recontacterons très prochainement.",
+    "error": "Échec de l'envoi. Veuillez réessayer.",
+    "close": "Fermer",
     "serviceOptions": {
       "integral": "Rénovation complète",
       "kitchen": "Rénovation cuisine",

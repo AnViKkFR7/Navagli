@@ -17,9 +17,9 @@ export default function LegalNoticePage() {
           <ul className={styles.listBasic}>
             <li><strong className={styles.textDark}>Razón social:</strong> Inversiones y Construcciones Navagli S.L.</li>
             <li><strong className={styles.textDark}>CIF:</strong> [CIF de la empresa]</li>
-            <li><strong className={styles.textDark}>Domicilio:</strong> [Dirección completa], Barcelona</li>
+            <li><strong className={styles.textDark}>Domicilio:</strong> C/ d' Antoni Gaudí 18 room 6, Sitges, Barcelona</li>
             <li><strong className={styles.textDark}>Email:</strong> info@navagli.com</li>
-            <li><strong className={styles.textDark}>Teléfono:</strong> +34 XXX XXX XXX</li>
+            <li><strong className={styles.textDark}>Teléfono:</strong> +34 627 65 37 87</li>
           </ul>
         </section>
 

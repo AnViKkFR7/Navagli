@@ -78,6 +78,10 @@
     "phone": "Phone",
     "description": "Tell us about your project",
     "submit": "Request a quote",
+    "sending": "Sending...",
+    "success": "Request sent! We will get back to you shortly.",
+    "error": "Failed to send. Please try again.",
+    "close": "Close",
     "serviceOptions": {
       "integral": "Comprehensive renovation",
       "kitchen": "Kitchen renovation",

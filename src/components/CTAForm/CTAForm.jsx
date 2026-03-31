@@ -32,6 +32,7 @@ const INITIAL_STATE = {
 export default function CTAForm({ isOpen, onClose, inline = false }) {
   const { t } = useTranslation();
   const [form, setForm] = useState(INITIAL_STATE);
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   if (!inline && !isOpen) return null;
 
@@ -40,15 +41,35 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: integrate with backend / email service
-    console.log('Form submitted:', form);
-    setForm(INITIAL_STATE);
-    if (!inline) onClose();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Server error');
+      setStatus('success');
+      setForm(INITIAL_STATE);
+    } catch {
+      setStatus('error');
+    }
   };
 
-  const formContent = (
+  const formContent = status === 'success' ? (
+    <div className={styles.successBox}>
+      <p className={styles.successMsg}>{t('form.success')}</p>
+      <button
+        type="button"
+        className={styles.submitBtn}
+        onClick={() => { setStatus('idle'); if (!inline) onClose(); }}
+      >
+        {t('form.close')}
+      </button>
+    </div>
+  ) : (
     <form id="cta-form" onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.fieldRow}>
         <div>
@@ -139,8 +160,11 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
         />
       </div>
 
-      <button type="submit" className={styles.submitBtn}>
-        {t('form.submit')}
+      {status === 'error' && (
+        <p className={styles.errorMsg}>{t('form.error')}</p>
+      )}
+      <button type="submit" className={styles.submitBtn} disabled={status === 'sending'}>
+        {status === 'sending' ? t('form.sending') : t('form.submit')}
       </button>
     </form>
   );

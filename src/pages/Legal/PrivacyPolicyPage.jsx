@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
           <ul className={styles.listBasic}>
             <li><strong className={styles.textDark}>Identidad:</strong> Inversiones y Construcciones Navagli S.L.</li>
             <li><strong className={styles.textDark}>CIF:</strong> [CIF de la empresa]</li>
-            <li><strong className={styles.textDark}>Dirección:</strong> [Dirección], Barcelona</li>
+            <li><strong className={styles.textDark}>Dirección:</strong> C/ d' Antoni Gaudí 18 room 6, Sitges, Barcelona</li>
             <li><strong className={styles.textDark}>Email:</strong> info@navagli.com</li>
           </ul>
         </section>
@@ -65,10 +65,37 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className={styles.sectionTitle}>6. Cesión de datos</h2>
+          <h2 className={styles.sectionTitle}>6. Encargados del tratamiento</h2>
           <p className={styles.bodyText}>
-            No se cederán datos a terceros, salvo obligación legal o requerimiento de autoridad
-            competente.
+            Para la prestación del servicio, Navagli S.L. cuenta con los siguientes encargados del
+            tratamiento que acceden a los datos estrictamente necesarios para su función:
+          </p>
+          <ul className={styles.listDisc}>
+            <li>
+              <strong className={styles.textDark}>Supabase Inc.</strong> — Almacenamiento de datos
+              de proyectos en la nube. Servidores en AWS EU (Frankfurt). Consulta su{' '}
+              <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>política de privacidad</a>.
+            </li>
+            <li>
+              <strong className={styles.textDark}>Resend Inc.</strong> — Servicio de entrega de
+              correo electrónico transaccional utilizado para transmitir las solicitudes de
+              presupuesto recibidas a través del formulario web a la dirección info@navagli.com.
+              Los datos del formulario (nombre, población, servicio, email, teléfono y descripción)
+              son procesados por Resend exclusivamente para este fin y no son utilizados con fines
+              propios. Consulta su{' '}
+              <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>política de privacidad</a>.
+            </li>
+            <li>
+              <strong className={styles.textDark}>Vercel Inc.</strong> — Plataforma de alojamiento
+              y distribución del sitio web. Puede registrar datos técnicos de acceso (IP, agente de
+              usuario) con fines de seguridad y rendimiento. Consulta su{' '}
+              <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>política de privacidad</a>.
+            </li>
+          </ul>
+          <p className={styles.bodyText}>
+            No se ceden datos a terceros con fines comerciales ni se realizan transferencias
+            internacionales más allá de las derivadas del uso de los anteriores encargados del
+            tratamiento, quienes ofrecen garantías adecuadas conforme al RGPD.
           </p>
         </section>
 
