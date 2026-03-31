@@ -19,7 +19,7 @@
   "about": {
     "sectionLabel": "Quiénes somos",
     "title": "Expertos en reformas integrales",
-    "text": "Somos Navagli, una empresa con más de 20 años de experiencia en reformas integrales, rehabilitación y diseño de interiores en Barcelona y su área metropolitana. Nos especializamos en transformar espacios residenciales y comerciales con los más altos estándares de calidad, materiales premium y un equipo de profesionales comprometidos con el detalle. Cada proyecto es único y lo tratamos como tal, ofreciendo soluciones personalizadas que se adaptan a tus necesidades y presupuesto.",
+    "text": "Somos Navagli, una empresa especializada en reformas integrales, rehabilitación y diseño de interiores en Barcelona y su área metropolitana. Nacemos de la pasión por crear espacios únicos y del compromiso con la calidad.\n\nSomos un equipo cercano que transforma espacios residenciales y comerciales con altos estándares, materiales premium y una cuidada atención al detalle. Entendemos cada proyecto como único, por lo que ofrecemos soluciones personalizadas adaptadas a tus necesidades y presupuesto.",
     "learnMore": "Conocer más"
   },
   "projects": {
@@ -104,7 +104,7 @@
     "heroTitle": "Sobre Nosotros",
     "heroSubtitle": "Conoce la historia y los valores de Navagli",
     "historyTitle": "Nuestra historia",
-    "historyText": "Navagli nació hace más de dos décadas de la pasión por la arquitectura y el compromiso con la calidad. Lo que comenzó como un pequeño equipo de profesionales con altas expectativas, se ha convertido en una de las empresas de reformas de referencia en Barcelona.",
+    "historyText": "Somos Navagli, una empresa especializada en reformas integrales, rehabilitación y diseño de interiores en Barcelona y su área metropolitana. Nacemos de la pasión por crear espacios únicos y del compromiso con la calidad.\n\nSomos un equipo cercano que transforma espacios residenciales y comerciales con altos estándares, materiales premium y una cuidada atención al detalle. Entendemos cada proyecto como único, por lo que ofrecemos soluciones personalizadas adaptadas a tus necesidades y presupuesto.",
     "philosophyTitle": "Nuestra filosofía",
     "philosophyText": "Creemos que cada reforma es una oportunidad para mejorar la calidad de vida de las personas. Por eso nos implicamos en cada proyecto como si fuera el nuestro propio, escuchando, asesorando y ejecutando con precisión.",
     "valuesTitle": "Nuestros valores",
@@ -171,6 +171,12 @@
       "s2": { "title": "Proyecto y presupuesto",    "desc": "Elaboramos un proyecto técnico detallado con materiales, plazos y precio cerrado. Transparencia total, sin sorpresas." },
       "s3": { "title": "Ejecución y seguimiento",   "desc": "Coordinamos todos los gremios y realizamos controles de calidad en cada fase. Recibirás informes de avance durante toda la obra." },
       "s4": { "title": "Entrega y garantía",        "desc": "Entregamos la obra limpia, revisada y con toda la documentación. Garantía post-obra y atención postventa incluidas." }
+    },
+    "stats": {
+      "s1": { "num": "100%",     "label": "Presupuesto cerrado, sin sorpresas" },
+      "s2": { "num": "A medida", "label": "Soluciones únicas para cada cliente" },
+      "s3": { "num": "Premium",  "label": "Materiales de primera calidad" },
+      "s4": { "num": "Garantía", "label": "Post-obra incluida en cada reforma" }
     }
   },
   "pintura": {

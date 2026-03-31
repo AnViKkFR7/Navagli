@@ -19,7 +19,7 @@
   "about": {
     "sectionLabel": "Qui sommes-nous",
     "title": "Experts en rénovations complètes",
-    "text": "Nous sommes Navagli, une entreprise avec plus de 20 ans d'expérience dans les rénovations complètes, la réhabilitation et le design d'intérieur à Barcelone et sa zone métropolitaine. Nous nous spécialisons dans la transformation d'espaces résidentiels et commerciaux avec les plus hauts standards de qualité, des matériaux premium et une équipe de professionnels engagés dans les détails.",
+    "text": "Nous sommes Navagli, une entreprise spécialisée dans les rénovations complètes, la réhabilitation et le design d'intérieur à Barcelone et sa zone métropolitaine. Nous sommes nés de la passion pour créer des espaces uniques et de l'engagement envers la qualité.\n\nNous sommes une équipe à taille humaine qui transforme des espaces résidentiels et commerciaux avec des standards élevés, des matériaux premium et une attention soignée aux détails. Nous considérons chaque projet comme unique et proposons des solutions personnalisées adaptées à vos besoins et à votre budget.",
     "learnMore": "En savoir plus"
   },
   "projects": {
@@ -104,7 +104,7 @@
     "heroTitle": "À propos de nous",
     "heroSubtitle": "Découvrez l'histoire et les valeurs de Navagli",
     "historyTitle": "Notre histoire",
-    "historyText": "Navagli est née il y a plus de deux décennies de la passion pour l'architecture et de l'engagement envers la qualité. Ce qui a commencé comme une petite équipe de professionnels ambitieux est devenu l'une des entreprises de rénovation de référence à Barcelone.",
+    "historyText": "Nous sommes Navagli, une entreprise spécialisée dans les rénovations complètes, la réhabilitation et le design d'intérieur à Barcelone et sa zone métropolitaine. Nous sommes nés de la passion pour créer des espaces uniques et de l'engagement envers la qualité.\n\nNous sommes une équipe à taille humaine qui transforme des espaces résidentiels et commerciaux avec des standards élevés, des matériaux premium et une attention soignée aux détails. Nous considérons chaque projet comme unique et proposons des solutions personnalisées adaptées à vos besoins et à votre budget.",
     "philosophyTitle": "Notre philosophie",
     "philosophyText": "Nous croyons que chaque rénovation est une opportunité d'améliorer la qualité de vie des personnes. C'est pourquoi nous nous impliquons dans chaque projet comme s'il était le nôtre, en écoutant, conseillant et exécutant avec précision.",
     "valuesTitle": "Nos valeurs",
@@ -171,6 +171,12 @@
       "s2": { "title": "Projet et devis fixe",        "desc": "Nous élaborons un projet technique détaillé avec matériaux, délais et prix ferme. Transparence totale, sans surprises." },
       "s3": { "title": "Exécution et suivi",          "desc": "Nous coordonnons tous les corps de métier et effectuons des contrôles qualité à chaque phase. Rapports d'avancement tout au long du chantier." },
       "s4": { "title": "Livraison et garantie",       "desc": "Nous livrons le chantier propre, vérifié et documenté. Garantie après travaux et service après-vente inclus." }
+    },
+    "stats": {
+      "s1": { "num": "100%",      "label": "Prix ferme, sans mauvaises surprises" },
+      "s2": { "num": "Sur mesure", "label": "Solutions uniques pour chaque client" },
+      "s3": { "num": "Premium",   "label": "Matériaux de première qualité" },
+      "s4": { "num": "Garantie",  "label": "Après travaux incluse dans chaque rénovation" }
     }
   },
   "pintura": {

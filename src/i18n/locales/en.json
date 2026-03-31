@@ -19,7 +19,7 @@
   "about": {
     "sectionLabel": "Who we are",
     "title": "Experts in comprehensive renovations",
-    "text": "We are Navagli, a company with over 20 years of experience in comprehensive renovations, rehabilitation and interior design in Barcelona and its metropolitan area. We specialize in transforming residential and commercial spaces with the highest quality standards, premium materials and a team of professionals committed to detail. Each project is unique and we treat it as such, offering personalized solutions adapted to your needs and budget.",
+    "text": "We are Navagli, a company specialized in comprehensive renovations, rehabilitation and interior design in Barcelona and its metropolitan area. We were born from a passion for creating unique spaces and a commitment to quality.\n\nWe are a close-knit team that transforms residential and commercial spaces with high standards, premium materials and careful attention to detail. We treat each project as unique, offering personalized solutions adapted to your needs and budget.",
     "learnMore": "Learn more"
   },
   "projects": {
@@ -104,7 +104,7 @@
     "heroTitle": "About Us",
     "heroSubtitle": "Learn about the history and values of Navagli",
     "historyTitle": "Our history",
-    "historyText": "Navagli was born more than two decades ago from a passion for architecture and a commitment to quality. What started as a small team of professionals with high expectations has become one of the leading renovation companies in Barcelona.",
+    "historyText": "We are Navagli, a company specialized in comprehensive renovations, rehabilitation and interior design in Barcelona and its metropolitan area. We were born from a passion for creating unique spaces and a commitment to quality.\n\nWe are a close-knit team that transforms residential and commercial spaces with high standards, premium materials and careful attention to detail. We treat each project as unique, offering personalized solutions adapted to your needs and budget.",
     "philosophyTitle": "Our philosophy",
     "philosophyText": "We believe that every renovation is an opportunity to improve people's quality of life. That's why we get involved in each project as if it were our own, listening, advising and executing with precision.",
     "valuesTitle": "Our values",
@@ -171,6 +171,12 @@
       "s2": { "title": "Design and fixed quote",    "desc": "We produce a detailed technical project with materials, timelines and a fixed price. Full transparency, no surprises at the end." },
       "s3": { "title": "Execution and monitoring",  "desc": "We coordinate all trades and carry out quality checks at every phase. You will receive progress updates throughout the project." },
       "s4": { "title": "Handover and guarantee",   "desc": "We hand over the completed work clean, reviewed and with all documentation. Post-works guarantee and after-sales service included." }
+    },
+    "stats": {
+      "s1": { "num": "100%",     "label": "Fixed price, no hidden costs" },
+      "s2": { "num": "Bespoke",  "label": "Unique solutions for every client" },
+      "s3": { "num": "Premium",  "label": "First-class materials throughout" },
+      "s4": { "num": "Warranty", "label": "Post-works guarantee included" }
     }
   },
   "pintura": {

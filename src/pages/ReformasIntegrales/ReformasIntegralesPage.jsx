@@ -41,15 +41,10 @@ export default function ReformasIntegralesPage() {
             <p className={styles.bodyText}>{t('reformas.introText')}</p>
           </div>
           <div className={styles.statsBox}>
-            {[
-              { num: '+20', label: t('aboutPage.stats.yearsLabel') },
-              { num: '+500', label: t('aboutPage.stats.projectsLabel') },
-              { num: '+30', label: t('aboutPage.stats.professionalsLabel') },
-              { num: '100%', label: t('aboutPage.stats.clientsLabel') },
-            ].map(({ num, label }) => (
-              <div key={label} className={styles.statItem}>
-                <p className={styles.statNum}>{num}</p>
-                <p className={styles.statLabel}>{label}</p>
+            {['s1', 's2', 's3', 's4'].map((key) => (
+              <div key={key} className={styles.statItem}>
+                <p className={styles.statNum}>{t(`reformas.stats.${key}.num`)}</p>
+                <p className={styles.statLabel}>{t(`reformas.stats.${key}.label`)}</p>
               </div>
             ))}
           </div>

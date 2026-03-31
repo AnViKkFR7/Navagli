@@ -57,9 +57,11 @@ export default function HomePage() {
             <h2 className={styles.aboutTitle}>
               {t('about.title')}
             </h2>
-            <p className={styles.bodyText}>
-              {t('about.text')}
-            </p>
+            {t('about.text').split('\n\n').map((paragraph, i) => (
+              <p key={i} className={styles.bodyText}>
+                {paragraph}
+              </p>
+            ))}
             <Link
               to="/quienes-somos"
               className={styles.learnMoreLink}

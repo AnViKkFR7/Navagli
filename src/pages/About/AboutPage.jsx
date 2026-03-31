@@ -38,9 +38,11 @@ export default function AboutPage() {
             <h2 className={styles.sectionTitle}>
               {t('aboutPage.historyTitle')}
             </h2>
-            <p className={styles.bodyText}>
-              {t('aboutPage.historyText')}
-            </p>
+            {t('aboutPage.historyText').split('\n\n').map((paragraph, i) => (
+              <p key={i} className={styles.bodyText}>
+                {paragraph}
+              </p>
+            ))}
           </div>
           <div className={styles.imgWrapper}>
             <img
@@ -97,15 +99,10 @@ export default function AboutPage() {
       {/* Experience stats */}
       <section id="stats" className={styles.statsSection}>
         <div className={styles.statsGrid}>
-          {[
-            { num: '+20', labelKey: 'aboutPage.stats.yearsLabel' },
-            { num: '+500', labelKey: 'aboutPage.stats.projectsLabel' },
-            { num: '+30', labelKey: 'aboutPage.stats.professionalsLabel' },
-            { num: '100%', labelKey: 'aboutPage.stats.clientsLabel' },
-          ].map(({ num, labelKey }) => (
-            <div key={labelKey}>
-              <p className={styles.statNum}>{num}</p>
-              <p className={styles.statLabel}>{t(labelKey)}</p>
+          {['s1', 's2', 's3', 's4'].map((key) => (
+            <div key={key}>
+              <p className={styles.statNum}>{t(`reformas.stats.${key}.num`)}</p>
+              <p className={styles.statLabel}>{t(`reformas.stats.${key}.label`)}</p>
             </div>
           ))}
         </div>
