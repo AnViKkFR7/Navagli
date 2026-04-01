@@ -11,8 +11,8 @@ export default function PrivacyPolicyPage() {
           <h2 className={styles.sectionTitle}>1. Responsable del tratamiento</h2>
           <ul className={styles.listBasic}>
             <li><strong className={styles.textDark}>Identidad:</strong> Inversiones y Construcciones Navagli S.L.</li>
-            <li><strong className={styles.textDark}>CIF:</strong> [CIF de la empresa]</li>
-            <li><strong className={styles.textDark}>Dirección:</strong> C/ d' Antoni Gaudí 18 room 6, Sitges, Barcelona</li>
+            <li><strong className={styles.textDark}>CIF:</strong> B44755841</li>
+            <li><strong className={styles.textDark}>Dirección:</strong> Calle Sant Isidre 10, 08818 Olivella, Barcelona</li>
             <li><strong className={styles.textDark}>Email:</strong> info@navagli.com</li>
           </ul>
         </section>
