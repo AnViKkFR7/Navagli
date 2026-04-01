@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import styles from './CTAForm.module.css';
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
 const SERVICE_OPTIONS_KEYS = [
   'integral',
   'kitchen',
@@ -45,9 +48,13 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/navagli-send-email`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'apikey': SUPABASE_ANON_KEY,
+        },
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error('Server error');

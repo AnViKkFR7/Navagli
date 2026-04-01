@@ -1,8 +1,10 @@
-import { Resend } from 'resend';
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+};
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
-function escapeHtml(str) {
+function escapeHtml(str: string): string {
   return String(str ?? '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -10,7 +12,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-const SERVICE_LABELS = {
+const SERVICE_LABELS: Record<string, string> = {
   integral: 'Reforma integral',
   kitchen: 'Reforma Cocina',
   bathroom: 'Reforma Baño',
@@ -21,29 +23,68 @@ const SERVICE_LABELS = {
   other: 'Otros',
 };
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+Deno.serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: CORS_HEADERS });
   }
 
-  const { name, city, serviceType, email, phone, description } = req.body ?? {};
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
+  let body: Record<string, string>;
+  try {
+    body = await req.json();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
+      status: 400,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
+  const { name, city, serviceType, email, phone, description } = body;
 
   if (!name || !city || !serviceType || !email || !phone) {
-    return res.status(400).json({ error: 'Missing required fields' });
+    return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+      status: 400,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: 'Invalid email address' });
+    return new Response(JSON.stringify({ error: 'Invalid email address' }), {
+      status: 400,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
   }
 
   const serviceLabel = SERVICE_LABELS[serviceType] ?? escapeHtml(serviceType);
+  const resendApiKey = Deno.env.get('RESEND_NAVAGLI_API_KEY');
 
+  if (!resendApiKey) {
+    console.error('RESEND_NAVAGLI_API_KEY secret is not set');
+    return new Response(JSON.stringify({ error: 'Server misconfiguration' }), {
+      status: 500,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
+  let emailRes: Response;
   try {
-    await resend.emails.send({
+    emailRes = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${resendApiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
       from: 'Navagli Web <info@navagli.com>',
-      to: 'info@navagli.com',
-      replyTo: email,
+      to: ['info@navagli.com'],
+      reply_to: email,
       subject: `Nueva solicitud de presupuesto – ${serviceLabel}`,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#151515">
@@ -81,11 +122,27 @@ export default async function handler(req, res) {
           </p>
         </div>
       `,
-    });
-
-    return res.status(200).json({ ok: true });
+    }),
+  });
   } catch (err) {
-    console.error('Resend error:', err);
-    return res.status(500).json({ error: 'Failed to send email' });
+    console.error('Fetch to Resend failed:', err);
+    return new Response(JSON.stringify({ error: 'Failed to reach email service' }), {
+      status: 500,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
   }
-}
+
+  if (!emailRes.ok) {
+    const detail = await emailRes.text();
+    console.error('Resend error:', detail);
+    return new Response(JSON.stringify({ error: 'Failed to send email', detail }), {
+      status: 500,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200,
+    headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+  });
+});
