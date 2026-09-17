@@ -1,8 +1,11 @@
 // api/track.js
 import { createClient } from '@supabase/supabase-js';
 
+// La URL del proyecto no es secreta (solo la service role key lo es), así
+// que aceptamos también la variable pública VITE_SUPABASE_URL como fallback
+// si no se ha definido una SUPABASE_URL de servidor aparte.
 const supabase = createClient(
-  process.env.SUPABASE_URL,
+  process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
