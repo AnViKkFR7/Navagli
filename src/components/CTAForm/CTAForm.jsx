@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 import styles from './CTAForm.module.css';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
@@ -37,6 +38,10 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
   const [form, setForm] = useState(INITIAL_STATE);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
+  useEffect(() => {
+    if (inline || isOpen) trackEvent('form_open');
+  }, [inline, isOpen]);
+
   if (!inline && !isOpen) return null;
 
   const handleChange = (e) => {
@@ -60,8 +65,10 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       if (!res.ok) throw new Error('Server error');
       setStatus('success');
       setForm(INITIAL_STATE);
+      trackEvent('form_submit_success');
     } catch {
       setStatus('error');
+      trackEvent('form_submit_error');
     }
   };
 
