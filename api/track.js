@@ -29,9 +29,12 @@ async function activeEventKeys(companyId) {
   return keys;
 }
 
-export default async function handler(req) {
-  if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
-
+// Export nombrado por verbo HTTP: es la convención de Vercel Functions para
+// proyectos sin framework (api/*.js). Un `export default` con firma
+// Request/Response no se invoca correctamente aquí — solo en Next.js App
+// Router. Al exportar POST, Vercel solo llama a esta función en peticiones
+// POST y devuelve 405 automáticamente para el resto.
+export async function POST(req) {
   let body;
   try {
     body = await req.json();
