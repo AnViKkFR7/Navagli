@@ -46,7 +46,7 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>
                     {t('contactPage.phone')}
                   </p>
-                  <p className={styles.infoValue}>+34 XXX XXX XXX</p>
+                  <p className={styles.infoValue}>+34 627 65 37 87</p>
                 </div>
               </div>
               <div className={styles.infoItem}>
@@ -68,8 +68,8 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>
                     {t('contactPage.office')}
                   </p>
-                  <p className={styles.infoValue}>Direccion, Barcelona</p>
-                  <p className={styles.infoValueSub}>08XXX Barcelona, Espana</p>
+                  <p className={styles.infoValue}>C/ d' Antoni Gaudí 18 room 6</p>
+                  <p className={styles.infoValueSub}>08870 Sitges, España</p>
                 </div>
               </div>
               <div className={styles.infoItem}>
