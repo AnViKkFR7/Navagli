@@ -81,6 +81,8 @@
     "sending": "Enviando...",
     "success": "¡Solicitud enviada! Nos pondremos en contacto contigo en breve.",
     "error": "Error al enviar. Por favor, inténtalo de nuevo.",
+    "privacyPrefix": "He leído y acepto la",
+    "privacyLink": "política de privacidad",
     "close": "Cerrar",
     "serviceOptions": {
       "integral": "Reforma integral",

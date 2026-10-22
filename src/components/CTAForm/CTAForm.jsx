@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { trackEvent } from '../../lib/analytics';
+import { submitLead } from '../../lib/leads';
 import styles from './CTAForm.module.css';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
@@ -25,6 +26,7 @@ const INITIAL_STATE = {
   email: '',
   phone: '',
   description: '',
+  honeypot: '',
 };
 
 /**
@@ -52,21 +54,42 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/navagli-send-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'apikey': SUPABASE_ANON_KEY,
-        },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error('Server error');
+    const { honeypot, ...fields } = form;
+
+    if (honeypot) {
+      setStatus('success');
+      setForm(INITIAL_STATE);
+      return;
+    }
+
+    const sendEmail = fetch(`${SUPABASE_URL}/functions/v1/navagli-send-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'apikey': SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify(fields),
+    }).then((res) => res.ok, () => false);
+
+    const saveLead = submitLead({
+      name: fields.name,
+      email: fields.email,
+      phone: fields.phone,
+      message: [
+        `Ciudad: ${fields.city}`,
+        `Servicio: ${fields.serviceType}`,
+        fields.description && `\n${fields.description}`,
+      ].filter(Boolean).join('\n'),
+    }).then((result) => result.ok);
+
+    const [emailOk, leadOk] = await Promise.all([sendEmail, saveLead]);
+
+    if (emailOk || leadOk) {
       setStatus('success');
       setForm(INITIAL_STATE);
       trackEvent('form_submit_success');
-    } catch {
+    } else {
       setStatus('error');
       trackEvent('form_submit_error');
     }
@@ -173,6 +196,29 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
           className={styles.textarea}
         />
       </div>
+
+      {/* Trampa anti-bots: una persona nunca lo ve ni lo rellena. */}
+      <input
+        type="text"
+        name="honeypot"
+        value={form.honeypot}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }}
+      />
+
+      <label className={styles.privacy}>
+        <input type="checkbox" name="privacy" required />
+        <span>
+          {t('form.privacyPrefix')}{' '}
+          <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer">
+            {t('form.privacyLink')}
+          </a>{' '}
+          <span className={styles.required}>*</span>
+        </span>
+      </label>
 
       {status === 'error' && (
         <p className={styles.errorMsg}>{t('form.error')}</p>

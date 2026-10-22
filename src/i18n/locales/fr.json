@@ -81,6 +81,8 @@
     "sending": "Envoi en cours...",
     "success": "Demande envoyée ! Nous vous recontacterons très prochainement.",
     "error": "Échec de l'envoi. Veuillez réessayer.",
+    "privacyPrefix": "J'ai lu et j'accepte la",
+    "privacyLink": "politique de confidentialité",
     "close": "Fermer",
     "serviceOptions": {
       "integral": "Rénovation complète",
