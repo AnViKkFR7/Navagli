@@ -26,7 +26,7 @@ const INITIAL_STATE = {
   email: '',
   phone: '',
   description: '',
-  honeypot: '',
+  company_website: '',
 };
 
 /**
@@ -38,6 +38,7 @@ const INITIAL_STATE = {
 export default function CTAForm({ isOpen, onClose, inline = false }) {
   const { t } = useTranslation();
   const [form, setForm] = useState(INITIAL_STATE);
+  const [invalid, setInvalid] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   useEffect(() => {
@@ -54,49 +55,43 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    const { honeypot, ...fields } = form;
-
-    if (honeypot) {
-      setStatus('success');
-      setForm(INITIAL_STATE);
-      return;
-    }
-
-    const sendEmail = fetch(`${SUPABASE_URL}/functions/v1/navagli-send-email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'apikey': SUPABASE_ANON_KEY,
-      },
-      body: JSON.stringify(fields),
-    }).then((res) => res.ok, () => false);
-
-    const saveLead = submitLead({
+    setInvalid(false);
+    const { company_website, ...fields } = form;
+    const result = await submitLead({
       name: fields.name,
       email: fields.email,
       phone: fields.phone,
+      company_website,
       message: [
         `Ciudad: ${fields.city}`,
-        `Servicio: ${fields.serviceType}`,
-        fields.description && `\n${fields.description}`,
+        `Servicio: ${t('form.serviceOptions.' + fields.serviceType)}`,
+        fields.description,
       ].filter(Boolean).join('\n'),
-    }).then((result) => result.ok);
+    });
 
-    const [emailOk, leadOk] = await Promise.all([sendEmail, saveLead]);
-
-    if (emailOk || leadOk) {
+    if (result.ok) {
       setStatus('success');
       setForm(INITIAL_STATE);
-      trackEvent('form_submit_success');
+      // Email is an additional notification; the inbox is the source of truth.
+      if (!company_website && SUPABASE_URL && SUPABASE_ANON_KEY) {
+        void fetch(`${SUPABASE_URL}/functions/v1/navagli-send-email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            apikey: SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify(fields),
+        }).catch(() => {});
+      }
     } else {
+      setInvalid(result.reason === 'invalid');
       setStatus('error');
-      trackEvent('form_submit_error');
     }
   };
 
   const formContent = status === 'success' ? (
-    <div className={styles.successBox}>
+    <div className={styles.successBox} role="status">
       <p className={styles.successMsg}>{t('form.success')}</p>
       <button
         type="button"
@@ -107,7 +102,7 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       </button>
     </div>
   ) : (
-    <form id="cta-form" onSubmit={handleSubmit} className={styles.form}>
+    <form id="cta-form" onSubmit={handleSubmit} className={styles.form} aria-busy={status === 'sending'}>
       <div className={styles.fieldRow}>
         <div>
           <label className={styles.label}>
@@ -116,6 +111,7 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
           <input
             type="text"
             name="name"
+            maxLength={120}
             value={form.name}
             onChange={handleChange}
             required
@@ -157,30 +153,33 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
         </select>
       </div>
 
+      <p>{t('form.contactRequired')}</p>
       <div className={styles.fieldRow}>
         <div>
           <label className={styles.label}>
-            {t('form.email')} <span className={styles.required}>*</span>
+            {t('form.email')}
           </label>
           <input
             type="email"
             name="email"
+            maxLength={160}
             value={form.email}
             onChange={handleChange}
-            required
+            required={!form.email.trim() && !form.phone.trim()}
             className={styles.input}
           />
         </div>
         <div>
           <label className={styles.label}>
-            {t('form.phone')} <span className={styles.required}>*</span>
+            {t('form.phone')}
           </label>
           <input
             type="tel"
             name="phone"
+            maxLength={40}
             value={form.phone}
             onChange={handleChange}
-            required
+            required={!form.email.trim() && !form.phone.trim()}
             className={styles.input}
           />
         </div>
@@ -190,6 +189,7 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
         <label className={styles.label}>{t('form.description')}</label>
         <textarea
           name="description"
+          maxLength={3800}
           value={form.description}
           onChange={handleChange}
           rows={5}
@@ -200,8 +200,8 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       {/* Trampa anti-bots: una persona nunca lo ve ni lo rellena. */}
       <input
         type="text"
-        name="honeypot"
-        value={form.honeypot}
+        name="company_website"
+        value={form.company_website}
         onChange={handleChange}
         tabIndex={-1}
         autoComplete="off"
@@ -221,7 +221,7 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       </label>
 
       {status === 'error' && (
-        <p className={styles.errorMsg}>{t('form.error')}</p>
+        <p className={styles.errorMsg} role="alert">{t(invalid ? 'form.invalid' : 'form.error')}</p>
       )}
       <button type="submit" className={styles.submitBtn} disabled={status === 'sending'}>
         {status === 'sending' ? t('form.sending') : t('form.submit')}

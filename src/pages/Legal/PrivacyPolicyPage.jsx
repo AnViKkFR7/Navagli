@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div id="privacy-policy" className={styles.pageWrapper}>
       <h1 className={styles.pageTitle}>Política de Privacidad</h1>
-      <p className={styles.dateLine}>Última actualización: marzo 2026</p>
+      <p className={styles.dateLine}>Última actualización: 22 de octubre de 2026</p>
 
       <div className={styles.sections}>
         <section>
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
             con las siguientes finalidades:
           </p>
           <ul className={styles.listDisc}>
-            <li>Gestionar solicitudes de presupuesto y consultas.</li>
+            <li>Guardar los datos de contacto y el mensaje en nuestra bandeja de solicitudes para gestionar presupuestos y consultas. Se registra también la página de origen y la campaña, si existe.</li>
             <li>Responder a las comunicaciones del usuario.</li>
             <li>Enviar información comercial, únicamente si el usuario ha dado su consentimiento.</li>
           </ul>
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
           <ul className={styles.listDisc}>
             <li>
               <strong className={styles.textDark}>Supabase Inc.</strong> — Almacenamiento de datos
-              de proyectos en la nube. Servidores en AWS EU (Frankfurt). Consulta su{' '}
+              de proyectos y solicitudes de contacto en la nube. Servidores en AWS EU (Frankfurt). Consulta su{' '}
               <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>política de privacidad</a>.
             </li>
             <li>

@@ -70,6 +70,8 @@
     "button": "Demander un devis"
   },
   "form": {
+    "contactRequired": "Indiquez un email ou un téléphone pour recevoir une réponse.",
+    "invalid": "Vérifiez vos données : nom et email ou téléphone requis.",
     "title": "Demander un devis",
     "name": "Nom",
     "city": "Ville",
@@ -245,11 +247,23 @@
     }
   },
   "cookieBanner": {
-    "ariaLabel": "Consentement aux cookies",
-    "title": "Nous utilisons des cookies",
-    "body": "Nous utilisons nos propres cookies et des cookies tiers pour améliorer votre expérience de navigation et analyser le trafic sur notre site.",
+    "ariaLabel": "Préférences de confidentialité",
+    "title": "Vos préférences de confidentialité",
+    "body": "Notre mesure fonctionne sans cookies et peut être désactivée. Les cookies statistiques et publicitaires nécessitent votre consentement ; ces services ne sont pas chargés actuellement.",
     "moreInfo": "Politique de cookies",
-    "accept": "Accepter",
-    "decline": "Fermer sans accepter"
+    "accept": "Tout accepter",
+    "decline": "Fermer sans accepter",
+    "preferences": "Préférences de cookies",
+    "necessary": "Nécessaires (toujours actifs)",
+    "measurement": "Mesure sans cookies",
+    "analytics": "Statistiques de tiers",
+    "marketing": "Publicité",
+    "save": "Enregistrer",
+    "onlyNecessary": "Nécessaires uniquement",
+    "gpc": "Votre navigateur refuse la mesure (GPC)."
+  },
+  "notFound": {
+    "title": "Cette page n’existe pas",
+    "home": "Retour à l’accueil"
   }
 }

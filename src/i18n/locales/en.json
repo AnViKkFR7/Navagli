@@ -70,6 +70,8 @@
     "button": "Request a quote"
   },
   "form": {
+    "contactRequired": "Provide an email or phone number so we can reply.",
+    "invalid": "Check your details: we need your name and an email or phone number.",
     "title": "Request a quote",
     "name": "Name",
     "city": "City",
@@ -245,11 +247,23 @@
     }
   },
   "cookieBanner": {
-    "ariaLabel": "Cookie consent",
-    "title": "We use cookies",
-    "body": "We use our own and third-party cookies to improve your browsing experience and analyse traffic on our website.",
-    "moreInfo": "Cookie Policy",
-    "accept": "Accept",
-    "decline": "Close without accepting"
+    "ariaLabel": "Privacy preferences",
+    "title": "Your privacy preferences",
+    "body": "Our own measurement works without cookies and you can turn it off. Analytics and advertising cookies require your consent; these services are currently not loaded.",
+    "moreInfo": "Cookie policy",
+    "accept": "Accept all",
+    "decline": "Close without accepting",
+    "preferences": "Cookie preferences",
+    "necessary": "Necessary (always active)",
+    "measurement": "Cookieless measurement",
+    "analytics": "Third-party analytics",
+    "marketing": "Advertising",
+    "save": "Save preferences",
+    "onlyNecessary": "Necessary only",
+    "gpc": "Your browser requests no measurement (GPC)."
+  },
+  "notFound": {
+    "title": "This page does not exist",
+    "home": "Back to home"
   }
 }

@@ -46,7 +46,7 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>
                     {t('contactPage.phone')}
                   </p>
-                  <p className={styles.infoValue}>+34 627 65 37 87</p>
+                  <a href="tel:+34627653787" className={styles.infoValue}>+34 627 65 37 87</a>
                 </div>
               </div>
               <div className={styles.infoItem}>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>
                     {t('contactPage.email')}
                   </p>
-                  <p className={styles.infoValue}>info@navagli.com</p>
+                  <a href="mailto:info@navagli.com" className={styles.infoValue}>info@navagli.com</a>
                 </div>
               </div>
               <div className={styles.infoItem}>

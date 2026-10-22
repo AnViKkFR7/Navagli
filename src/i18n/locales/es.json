@@ -70,6 +70,8 @@
     "button": "Solicitar presupuesto"
   },
   "form": {
+    "contactRequired": "Indica un email o un teléfono para poder responderte.",
+    "invalid": "Revisa los datos: necesitamos tu nombre y un email o teléfono.",
     "title": "Solicitar presupuesto",
     "name": "Nombre",
     "city": "Población",
@@ -245,11 +247,23 @@
     }
   },
   "cookieBanner": {
-    "ariaLabel": "Consentimiento de cookies",
-    "title": "Usamos cookies",
-    "body": "Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el tráfico de nuestro sitio web.",
+    "ariaLabel": "Preferencias de privacidad",
+    "title": "Tus preferencias de privacidad",
+    "body": "La medición propia funciona sin cookies y puedes desactivarla. Las cookies de analítica y publicidad solo se permiten con tu consentimiento; actualmente no cargamos estos servicios.",
     "moreInfo": "Política de cookies",
-    "accept": "Aceptar",
-    "decline": "Cerrar sin aceptar"
+    "accept": "Aceptar todas",
+    "decline": "Cerrar sin aceptar",
+    "preferences": "Preferencias de cookies",
+    "necessary": "Necesarias (siempre activas)",
+    "measurement": "Medición sin cookies",
+    "analytics": "Analítica de terceros",
+    "marketing": "Publicidad",
+    "save": "Guardar preferencias",
+    "onlyNecessary": "Solo necesarias",
+    "gpc": "Tu navegador solicita no ser medido (GPC)."
+  },
+  "notFound": {
+    "title": "Esta página no existe",
+    "home": "Volver al inicio"
   }
 }

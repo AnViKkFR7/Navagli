@@ -50,11 +50,11 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <Phone size={15} className={styles.contactIcon} />
-                <span>+34 627 65 37 87</span>
+                <a href="tel:+34627653787" className={styles.serviceLink}>+34 627 65 37 87</a>
               </li>
               <li className={styles.contactItem}>
                 <Mail size={15} className={styles.contactIcon} />
-                <span>info@navagli.com</span>
+                <a href="mailto:info@navagli.com" className={styles.serviceLink}>info@navagli.com</a>
               </li>
               <li className={styles.contactItem}>
                 <MapPin size={15} className={styles.contactIcon} />
@@ -106,6 +106,9 @@ export default function Footer() {
           </div>
           
           <div className={styles.bottomLinks}>
+            <button type="button" className={styles.bottomLink} style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit' }} onClick={() => window.dispatchEvent(new Event('moira:cookie-preferences'))}>
+              {t('cookieBanner.preferences')}
+            </button>
             <Link to="/aviso-legal" className={styles.bottomLink}>
               {t('footer.legalNotice')}
             </Link>

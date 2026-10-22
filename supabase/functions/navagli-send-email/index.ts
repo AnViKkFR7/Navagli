@@ -47,7 +47,7 @@ Deno.serve(async (req) => {
 
   const { name, city, serviceType, email, phone, description } = body;
 
-  if (!name || !city || !serviceType || !email || !phone) {
+  if (!name?.trim() || !city || !serviceType || (!email?.trim() && !phone?.trim())) {
     return new Response(JSON.stringify({ error: 'Missing required fields' }), {
       status: 400,
       headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
@@ -55,7 +55,7 @@ Deno.serve(async (req) => {
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  if (email && !emailRegex.test(email)) {
     return new Response(JSON.stringify({ error: 'Invalid email address' }), {
       status: 400,
       headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
@@ -84,7 +84,7 @@ Deno.serve(async (req) => {
     body: JSON.stringify({
       from: 'Navagli Web <info@navagli.com>',
       to: ['info@navagli.com'],
-      reply_to: email,
+      ...(email ? { reply_to: email } : {}),
       subject: `Nueva solicitud de presupuesto – ${serviceLabel}`,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#151515">

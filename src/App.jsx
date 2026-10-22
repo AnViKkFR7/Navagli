@@ -11,6 +11,7 @@ import ContactPage from './pages/Contact/ContactPage';
 import LegalNoticePage from './pages/Legal/LegalNoticePage';
 import CookiesPolicyPage from './pages/Legal/CookiesPolicyPage';
 import PrivacyPolicyPage from './pages/Legal/PrivacyPolicyPage';
+import NotFoundPage from './pages/NotFound/NotFoundPage';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/aviso-legal" element={<LegalNoticePage />} />
           <Route path="/politica-cookies" element={<CookiesPolicyPage />} />
           <Route path="/politica-privacidad" element={<PrivacyPolicyPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

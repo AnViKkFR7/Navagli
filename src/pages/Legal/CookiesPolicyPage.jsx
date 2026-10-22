@@ -4,219 +4,37 @@ export default function CookiesPolicyPage() {
   return (
     <div id="cookies-policy" className={styles.pageWrapper}>
       <h1 className={styles.pageTitle}>Política de Cookies</h1>
-      <p className={styles.dateLine}>Última actualización: marzo 2026</p>
-
+      <p className={styles.dateLine}>Última actualización: 22 de octubre de 2026</p>
       <div className={styles.sections}>
-
-        {/* 1 */}
         <section>
-          <h2 className={styles.sectionTitle}>¿Qué son las cookies?</h2>
-          <p className={styles.bodyText}>
-            Las cookies son pequeños archivos de texto que los sitios web depositan en tu dispositivo
-            cuando los visitas. Permiten que el sitio funcione correctamente, recuerde tus
-            preferencias y, en su caso, recopile información estadística de uso.
-          </p>
+          <h2 className={styles.sectionTitle}>Responsable</h2>
+          <p className={styles.bodyText}>Inversiones y Construcciones Navagli S.L., CIF B44755841. Calle Sant Isidre 10, 08818 Olivella, Barcelona. Contacto: info@navagli.com.</p>
         </section>
-
-        {/* 2 */}
         <section>
-          <h2 className={styles.sectionTitle}>Responsable del tratamiento</h2>
-          <p className={styles.bodyText}>
-            <strong className={styles.textDark}>Inversiones y Construcciones Navagli S.L.</strong>
-            <br />
-            Correo electrónico: info@navagli.com
-            <br />
-            Barcelona, España
-          </p>
+          <h2 className={styles.sectionTitle}>Medición propia sin cookies</h2>
+          <p className={styles.bodyText}>Medimos visitas, páginas vistas, clics de contacto, solicitudes recibidas, profundidad de lectura, tiempo con la pestaña visible y páginas no encontradas. Esta medición no utiliza cookies ni guarda identificadores en el almacenamiento de tu navegador. Su base es el interés legítimo de mejorar la web (artículo 6.1.f RGPD), con derecho de oposición (artículo 21 RGPD); se distingue de las cookies sujetas al artículo 22.2 LSSI.</p>
+          <p className={styles.bodyText}>El servidor genera un hash diario a partir de la dirección IP y el navegador; no guarda la IP ni el agente de usuario completo en los eventos. La sal cambia cada día y se elimina a las 48 horas. Se registran la ruta normalizada sin parámetros, dispositivo, idioma, país, región, ciudad, dominio de origen y campaña de entrada. Los eventos se purgan a los 35 días y se conservan resúmenes diarios sin identificador de visitante.</p>
+          <p className={styles.bodyText}>Puedes oponerte desactivando «Medición sin cookies» en las preferencias del pie de página. Respetamos también la señal Global Privacy Control de tu navegador. Elegir «Solo necesarias» rechaza cookies opcionales y conserva tu decisión sobre la medición propia.</p>
         </section>
-
-        {/* 3 */}
         <section>
-          <h2 className={styles.sectionTitle}>Cookies utilizadas en este sitio</h2>
-          <p className={styles.bodyText}>
-            Este sitio web utiliza exclusivamente cookies técnicas y de preferencia estrictamente
-            necesarias para su funcionamiento. No se utilizan cookies de seguimiento, publicidad ni
-            perfilado de usuarios.
-          </p>
-
-          <div className={styles.tableWrapper}>
-            <table className={styles.table}>
-              <thead>
-                <tr className={styles.tableHeadRow}>
-                  <th className={styles.th}>Cookie / clave</th>
-                  <th className={styles.th}>Tipo</th>
-                  <th className={styles.th}>Proveedor</th>
-                  <th className={styles.th}>Finalidad</th>
-                  <th className={styles.th}>Duración</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className={styles.tableRow}>
-                  <td className={styles.td}>i18nextLng</td>
-                  <td className={styles.td}>Técnica (localStorage)</td>
-                  <td className={styles.td}>i18next — propio</td>
-                  <td className={styles.td}>Guardar preferencia de idioma seleccionado por el usuario</td>
-                  <td className={styles.td}>Persistente</td>
-                </tr>
-                <tr className={styles.tableRow}>
-                  <td className={styles.td}>navagli_cookies_accepted</td>
-                  <td className={styles.td}>Técnica (localStorage)</td>
-                  <td className={styles.td}>Propio</td>
-                  <td className={styles.td}>Registrar que el usuario ha dado su consentimiento al aviso de cookies</td>
-                  <td className={styles.td}>Persistente</td>
-                </tr>
-                <tr className={styles.tableRow}>
-                  <td className={styles.td}>sb-* (sesión Supabase)</td>
-                  <td className={styles.td}>Técnica (cookie/localStorage)</td>
-                  <td className={styles.td}>Supabase Inc. — proveedor de infraestructura</td>
-                  <td className={styles.td}>
-                    Gestión de la sesión y autenticación con la API de base de datos (Supabase).
-                    Solo se activan cuando se realizan consultas al backend. Los datos se almacenan en
-                    servidores de AWS en la región EU (Frankfurt).
-                  </td>
-                  <td className={styles.td}>Sesión / 1 hora</td>
-                </tr>
-                <tr className={styles.tableRow}>
-                  <td className={styles.td}>__vercel_live_token</td>
-                  <td className={styles.td}>Técnica (cookie)</td>
-                  <td className={styles.td}>Vercel Inc. — proveedor de alojamiento</td>
-                  <td className={styles.td}>
-                    Gestión de la infraestructura de despliegue y funcionalidades de red (CDN,
-                    enrutamiento serverless). Presente únicamente en entornos de vista previa de
-                    Vercel; no se activa en producción.
-                  </td>
-                  <td className={styles.td}>Sesión</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className={styles.bodyText} style={{ marginTop: '1rem' }}>
-            Las claves marcadas como <em>localStorage</em> son mecanismos de almacenamiento local del
-            navegador, no cookies en sentido estricto, pero quedan incluidas en esta política por
-            transparencia y en aplicación del artículo 22.2 de la LSSI-CE.
-          </p>
-        </section>
-
-        {/* 4 */}
-        <section>
-          <h2 className={styles.sectionTitle}>Proveedores de servicios de terceros</h2>
-
-          <h3 className={styles.sectionTitle} style={{ fontSize: '1rem', marginTop: '1rem' }}>
-            Supabase Inc.
-          </h3>
-          <p className={styles.bodyText}>
-            Navagli utiliza <strong className={styles.textDark}>Supabase</strong> como plataforma de
-            base de datos en la nube. Supabase puede almacenar datos técnicos de conexión en sus
-            servidores. Para más información consulta su{' '}
-            <a
-              href="https://supabase.com/privacy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.accentLink}
-            >
-              política de privacidad
-            </a>
-            .
-          </p>
-
-          <h3 className={styles.sectionTitle} style={{ fontSize: '1rem', marginTop: '1.5rem' }}>
-            Vercel Inc.
-          </h3>
-          <p className={styles.bodyText}>
-            El sitio web está alojado y distribuido a través de <strong className={styles.textDark}>Vercel</strong>,
-            plataforma de despliegue en la nube. Vercel puede registrar datos técnicos de acceso
-            (dirección IP, agente de usuario, tiempo de respuesta) con fines de seguridad y
-            rendimiento de la red. Para más información consulta su{' '}
-            <a
-              href="https://vercel.com/legal/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.accentLink}
-            >
-              política de privacidad
-            </a>
-            .
-          </p>
-
-          <h3 className={styles.sectionTitle} style={{ fontSize: '1rem', marginTop: '1.5rem' }}>
-            Resend Inc.
-          </h3>
-          <p className={styles.bodyText}>
-            El envío de emails generados desde el formulario de solicitud de presupuesto se
-            gestiona a través de <strong className={styles.textDark}>Resend</strong>, servicio de
-            entrega de correo electrónico transaccional. Los datos introducidos en el formulario
-            (nombre, población, tipo de servicio, email, teléfono y descripción) son transmitidos
-            a los servidores de Resend para su envío a la dirección info@navagli.com. Resend no
-            utiliza estos datos con fines propios ni establece cookies en el navegador del usuario.
-            Para más información consulta su{' '}
-            <a
-              href="https://resend.com/legal/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.accentLink}
-            >
-              política de privacidad
-            </a>
-            .
-          </p>
-        </section>
-
-        {/* 5 */}
-        <section>
-          <h2 className={styles.sectionTitle}>¿Cómo gestionar o eliminar las cookies?</h2>
-          <p className={styles.bodyText}>
-            Puedes retirar tu consentimiento en cualquier momento eliminando las claves de
-            almacenamiento desde las herramientas de desarrollador de tu navegador
-            (<em>Application → Local Storage → {window.location.origin}</em>) o borrando los datos
-            de navegación del sitio.
-          </p>
-          <p className={styles.bodyText}>
-            También puedes configurar tu navegador para bloquear o eliminar cookies. Ten en cuenta
-            que deshabilitar las cookies técnicas puede afectar al correcto funcionamiento del sitio:
-          </p>
+          <h2 className={styles.sectionTitle}>Almacenamiento necesario</h2>
           <ul className={styles.listDisc}>
-            <li>
-              <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>Google Chrome</a>
-            </li>
-            <li>
-              <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>Mozilla Firefox</a>
-            </li>
-            <li>
-              <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>Safari</a>
-            </li>
-            <li>
-              <a href="https://support.microsoft.com/es-es/windows/microsoft-edge-datos-de-exploraci%C3%B3n-y-privacidad-bb8174ba-9d73-dcf2-9b4a-c582b4e640dd" target="_blank" rel="noopener noreferrer" className={styles.accentLink}>Microsoft Edge</a>
-            </li>
+            <li><strong>i18nextLng:</strong> preferencia de idioma en localStorage, hasta que la cambies o elimines los datos del sitio.</li>
+            <li><strong>moira.consent.v1:</strong> preferencias de privacidad en localStorage. La decisión caduca al año y se solicita de nuevo si cambian las finalidades.</li>
           </ul>
+          <p className={styles.bodyText}>Este almacenamiento recuerda tus elecciones y no se utiliza para identificarte en la medición.</p>
         </section>
-
-        {/* 6 */}
         <section>
-          <h2 className={styles.sectionTitle}>Base legal</h2>
-          <p className={styles.bodyText}>
-            El uso de cookies técnicas está amparado por el interés legítimo del titular del sitio
-            web para garantizar su correcto funcionamiento (art. 6.1.f RGPD y art. 22.2 LSSI-CE),
-            sin necesidad de consentimiento previo. Para cualquier otra cookie se recabará el
-            consentimiento explícito del usuario.
-          </p>
-          <p className={styles.bodyText}>
-            Esta política se ajusta al <strong className={styles.textDark}>Reglamento (UE) 2016/679 (RGPD)</strong>,
-            la <strong className={styles.textDark}>Ley Orgánica 3/2018 (LOPDGDD)</strong> y la{' '}
-            <strong className={styles.textDark}>Ley 34/2002 de Servicios de la Sociedad de la Información (LSSI-CE)</strong>.
-          </p>
+          <h2 className={styles.sectionTitle}>Cookies de analítica y publicidad de terceros</h2>
+          <p className={styles.bodyText}>Las cookies de analítica (por ejemplo, Google Analytics) y publicidad (por ejemplo, Meta) requieren consentimiento explícito y previo (artículo 6.1.a RGPD y artículo 22.2 LSSI). Actualmente no cargamos estos servicios. Los interruptores de analítica y publicidad guardan tu elección, pero no instalan herramientas de terceros.</p>
         </section>
-
-        {/* 7 */}
         <section>
-          <h2 className={styles.sectionTitle}>Actualizaciones de esta política</h2>
-          <p className={styles.bodyText}>
-            Navagli se reserva el derecho de modificar esta política para adaptarla a cambios
-            legislativos o a nuevas funcionalidades del sitio. Se recomienda revisarla periódicamente.
-            La fecha de última actualización aparece al inicio de este documento.
-          </p>
+          <h2 className={styles.sectionTitle}>Proveedores y preferencias</h2>
+          <p className={styles.bodyText}>La web se aloja en Vercel y utiliza Supabase para almacenar los datos. Estos proveedores pueden tratar datos técnicos para prestar sus servicios. Consulta la política de privacidad para conocer el tratamiento de las solicitudes de contacto.</p>
+          <p className={styles.bodyText}>Puedes cambiar tus opciones en cualquier momento:</p>
+          <button type="button" className={styles.accentLink} onClick={() => window.dispatchEvent(new Event('moira:cookie-preferences'))}>Preferencias de cookies</button>
+          <p className={styles.bodyText}>También puedes borrar el almacenamiento del sitio o bloquear cookies desde las preferencias de tu navegador. Puedes ejercer tus derechos de protección de datos escribiendo a info@navagli.com.</p>
         </section>
-
       </div>
     </div>
   );

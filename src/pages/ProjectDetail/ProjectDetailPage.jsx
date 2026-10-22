@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Carousel from '../../components/Carousel/Carousel';
 import CTASection from '../../components/CTASection/CTASection';
 import { getProjectById } from '../../services/projectsService';
+import NotFoundPage from '../NotFound/NotFoundPage';
 import styles from './ProjectDetailPage.module.css';
 
 export default function ProjectDetailPage() {
@@ -29,14 +30,7 @@ export default function ProjectDetailPage() {
   }
 
   if (!project) {
-    return (
-      <div className={styles.notFoundScreen}>
-        <p className={styles.notFoundText}>Proyecto no encontrado</p>
-        <Link to="/proyectos" className={styles.notFoundLink}>
-          ← {t('projects.viewAll')}
-        </Link>
-      </div>
-    );
+    return <NotFoundPage />;
   }
 
   const images =
