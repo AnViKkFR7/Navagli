@@ -35,7 +35,6 @@ export default function Header() {
   ];
 
   const navLinks = [
-    { to: '/blog', label: 'Blog' },
     { to: '/proyectos',           label: t('nav.projects') },
     { to: '/quienes-somos',       label: t('nav.about') },
     { to: '/pide-tu-presupuesto', label: t('nav.contact') },
