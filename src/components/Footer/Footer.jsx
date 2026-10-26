@@ -21,7 +21,7 @@ export default function Footer() {
           <div id="footer-brand">
             <Link to="/">
               <img
-                src="/img/Logo_Navagli.png"
+                src="/img/Logo_Navagli.webp"
                 alt="Navagli"
                 className={styles.logo}
               />

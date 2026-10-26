@@ -5,8 +5,8 @@ import CTASection from '../../components/CTASection/CTASection';
 import styles from './AsesoramientoProfesionalPage.module.css';
 
 const PILLARS = [
-  { key: 'arch',       img: '/img/proyecto_arquitectura.jpg' },
-  { key: 'designer',   img: '/img/ayuda_interiorismo.jpg' },
+  { key: 'arch',       img: '/img/proyecto_arquitectura.webp' },
+  { key: 'designer',   img: '/img/ayuda_interiorismo.webp' },
   { key: 'specialist', img: '/img/tecnicos.jpg' },
 ];
 

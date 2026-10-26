@@ -2,6 +2,12 @@
 
 Web React + Vite desplegada en Vercel.
 
+## Imágenes
+
+Los originales se conservan en `img/`; `public/img/` contiene las versiones utilizadas por la web. Las fotos sobredimensionadas se limitan a 2560 píxeles en su lado mayor y se convierten a WebP con calidad 92. Los PNG convertidos usan WebP sin pérdida, con las dimensiones originales y la transparencia intacta. El favicon conserva su formato PNG. Las fotos con un ahorro inferior al 20 % se mantienen intactas para evitar recomprimirlas sin una mejora significativa.
+
+`image-optimization-report.json` recoge tamaños, dimensiones y tratamiento por imagen. Para regenerar los WebP desde sus originales: `python scripts/optimize-images.py` (requiere Pillow con soporte WebP). El script no modifica los originales, las referencias del código ni elimina archivos antiguos de `public/`.
+
 ## Desarrollo y comprobaciones
 
 ```sh

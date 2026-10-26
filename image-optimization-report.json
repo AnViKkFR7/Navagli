@@ -1,0 +1,302 @@
+[
+  {
+    "source": "ayuda_interiorismo.jpg",
+    "output": "ayuda_interiorismo.webp",
+    "before": 19556877,
+    "after": 377064,
+    "original_dimensions": [
+      7538,
+      5028
+    ],
+    "dimensions": [
+      2560,
+      1708
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "bathroom.jpg",
+    "output": "bathroom.webp",
+    "before": 4907969,
+    "after": 299918,
+    "original_dimensions": [
+      3584,
+      5376
+    ],
+    "dimensions": [
+      1707,
+      2560
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "fachada.jpg",
+    "output": "fachada.webp",
+    "before": 12456720,
+    "after": 552974,
+    "original_dimensions": [
+      4343,
+      6514
+    ],
+    "dimensions": [
+      1707,
+      2560
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "interiorism.jpg",
+    "output": "interiorism.webp",
+    "before": 5400215,
+    "after": 291944,
+    "original_dimensions": [
+      3497,
+      4896
+    ],
+    "dimensions": [
+      1828,
+      2560
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "Isotipo_Navagli.png",
+    "output": "Isotipo_Navagli.webp",
+    "before": 274840,
+    "after": 58856,
+    "original_dimensions": [
+      3555,
+      4145
+    ],
+    "dimensions": [
+      3555,
+      4145
+    ],
+    "mode": "lossless"
+  },
+  {
+    "source": "kitchen.jpg",
+    "output": "kitchen.webp",
+    "before": 2872178,
+    "after": 285374,
+    "original_dimensions": [
+      3584,
+      5376
+    ],
+    "dimensions": [
+      1707,
+      2560
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "landing-image1.jpg",
+    "output": "landing-image1.jpg",
+    "before": 197232,
+    "after": 197232,
+    "original_dimensions": [
+      1480,
+      1112
+    ],
+    "dimensions": [
+      1480,
+      1112
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "landing-image2.jpg",
+    "output": "landing-image2.jpg",
+    "before": 148874,
+    "after": 148874,
+    "original_dimensions": [
+      1480,
+      830
+    ],
+    "dimensions": [
+      1480,
+      830
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "landing-image3.jpg",
+    "output": "landing-image3.jpg",
+    "before": 320118,
+    "after": 320118,
+    "original_dimensions": [
+      1480,
+      830
+    ],
+    "dimensions": [
+      1480,
+      830
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "landing-image4.jpg",
+    "output": "landing-image4.jpg",
+    "before": 161598,
+    "after": 161598,
+    "original_dimensions": [
+      1480,
+      986
+    ],
+    "dimensions": [
+      1480,
+      986
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "Logo_Navagli.png",
+    "output": "Logo_Navagli.webp",
+    "before": 44386,
+    "after": 12972,
+    "original_dimensions": [
+      956,
+      543
+    ],
+    "dimensions": [
+      956,
+      543
+    ],
+    "mode": "lossless"
+  },
+  {
+    "source": "microcemento.png",
+    "output": "microcemento.webp",
+    "before": 188758,
+    "after": 100778,
+    "original_dimensions": [
+      523,
+      462
+    ],
+    "dimensions": [
+      523,
+      462
+    ],
+    "mode": "lossless"
+  },
+  {
+    "source": "papel-pintado.png",
+    "output": "papel-pintado.webp",
+    "before": 420506,
+    "after": 225378,
+    "original_dimensions": [
+      439,
+      490
+    ],
+    "dimensions": [
+      439,
+      490
+    ],
+    "mode": "lossless"
+  },
+  {
+    "source": "pared-estuco-veneciano.jpg",
+    "output": "pared-estuco-veneciano.jpg",
+    "before": 81610,
+    "after": 81610,
+    "original_dimensions": [
+      736,
+      581
+    ],
+    "dimensions": [
+      736,
+      581
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "pared-mate.jpg",
+    "output": "pared-mate.jpg",
+    "before": 66853,
+    "after": 66853,
+    "original_dimensions": [
+      894,
+      894
+    ],
+    "dimensions": [
+      894,
+      894
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "pared-microcemento.png",
+    "output": "pared-microcemento.webp",
+    "before": 156274,
+    "after": 92152,
+    "original_dimensions": [
+      241,
+      410
+    ],
+    "dimensions": [
+      241,
+      410
+    ],
+    "mode": "lossless"
+  },
+  {
+    "source": "proyecto_arquitectura.jpg",
+    "output": "proyecto_arquitectura.webp",
+    "before": 8912375,
+    "after": 296720,
+    "original_dimensions": [
+      5571,
+      3715
+    ],
+    "dimensions": [
+      2560,
+      1707
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "rehabilitacion.jpg",
+    "output": "rehabilitacion.webp",
+    "before": 741587,
+    "after": 216848,
+    "original_dimensions": [
+      1000,
+      645
+    ],
+    "dimensions": [
+      1000,
+      645
+    ],
+    "mode": "quality 92"
+  },
+  {
+    "source": "tecnicos.jpg",
+    "output": "tecnicos.jpg",
+    "before": 288261,
+    "after": 288261,
+    "original_dimensions": [
+      2000,
+      1121
+    ],
+    "dimensions": [
+      2000,
+      1121
+    ],
+    "mode": "unchanged"
+  },
+  {
+    "source": "tiling.jpg",
+    "output": "tiling.webp",
+    "before": 12984167,
+    "after": 748974,
+    "original_dimensions": [
+      6000,
+      4000
+    ],
+    "dimensions": [
+      2560,
+      1707
+    ],
+    "mode": "quality 92"
+  }
+]

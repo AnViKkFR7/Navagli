@@ -6,9 +6,9 @@ import styles from './PinturaDecorativaPage.module.css';
 
 const TECHNIQUES = [
   { key: 'venetian',    img: '/img/pared-estuco-veneciano.jpg' },
-  { key: 'microcement', img: '/img/pared-microcemento.png' },
+  { key: 'microcement', img: '/img/pared-microcemento.webp' },
   { key: 'chalk',       img: '/img/pared-mate.jpg' },
-  { key: 'effects',     img: '/img/papel-pintado.png' },
+  { key: 'effects',     img: '/img/papel-pintado.webp' },
 ];
 const STEPS = ['s1', 's2', 's3', 's4'];
 

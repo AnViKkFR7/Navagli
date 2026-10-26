@@ -61,7 +61,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className={styles.logoLink}>
           <img
-            src="/img/Isotipo_Navagli.png"
+            src="/img/Isotipo_Navagli.webp"
             alt="Navagli"
             className={styles.logoImg}
           />

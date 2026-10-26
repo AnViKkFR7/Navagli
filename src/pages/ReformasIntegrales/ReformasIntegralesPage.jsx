@@ -4,12 +4,12 @@ import CTASection from '../../components/CTASection/CTASection';
 import styles from './ReformasIntegralesPage.module.css';
 
 const AREAS = [
-  { key: 'kitchen',  img: '/img/kitchen.jpg' },
-  { key: 'bathroom', img: '/img/bathroom.jpg' },
-  { key: 'floors',   img: '/img/tiling.jpg' },
-  { key: 'exterior', img: '/img/fachada.jpg' },
-  { key: 'interior', img: '/img/interiorism.jpg' },
-  { key: 'rehab',    img: '/img/rehabilitacion.jpg' },
+  { key: 'kitchen',  img: '/img/kitchen.webp' },
+  { key: 'bathroom', img: '/img/bathroom.webp' },
+  { key: 'floors',   img: '/img/tiling.webp' },
+  { key: 'exterior', img: '/img/fachada.webp' },
+  { key: 'interior', img: '/img/interiorism.webp' },
+  { key: 'rehab',    img: '/img/rehabilitacion.webp' },
 ];
 
 const STEPS = ['s1', 's2', 's3', 's4'];
