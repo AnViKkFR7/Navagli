@@ -265,5 +265,18 @@
   "notFound": {
     "title": "This page does not exist",
     "home": "Back to home"
+  },
+  "blog": {
+    "title": "Ideas to transform your home",
+    "subtitle": "Renovations, materials and interiors: inspiration and advice from our team.",
+    "loading": "Loading articles…",
+    "error": "We could not load the blog.",
+    "retry": "Try again",
+    "back": "Back to the blog",
+    "read": "Read article",
+    "empty": "New articles are coming soon.",
+    "pagination": "Blog pages",
+    "previous": "Previous",
+    "next": "Next"
   }
 }

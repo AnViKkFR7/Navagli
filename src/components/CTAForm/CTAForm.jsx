@@ -35,7 +35,7 @@ const INITIAL_STATE = {
  *
  * @param {{ isOpen: boolean, onClose: () => void, inline?: boolean }} props
  */
-export default function CTAForm({ isOpen, onClose, inline = false }) {
+export default function CTAForm({ isOpen, onClose, inline = false, sourceItem }) {
   const { t } = useTranslation();
   const [form, setForm] = useState(INITIAL_STATE);
   const [invalid, setInvalid] = useState(false);
@@ -62,6 +62,9 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       email: fields.email,
       phone: fields.phone,
       company_website,
+      source_item: sourceItem,
+      consent_given: new FormData(e.currentTarget).get('privacy') === 'on',
+      consent_text_version: 'navagli-contact-2026-10-v1',
       message: [
         `Ciudad: ${fields.city}`,
         `Servicio: ${t('form.serviceOptions.' + fields.serviceType)}`,
@@ -210,13 +213,12 @@ export default function CTAForm({ isOpen, onClose, inline = false }) {
       />
 
       <label className={styles.privacy}>
-        <input type="checkbox" name="privacy" required />
+        <input type="checkbox" name="privacy" />
         <span>
           {t('form.privacyPrefix')}{' '}
           <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer">
             {t('form.privacyLink')}
           </a>{' '}
-          <span className={styles.required}>*</span>
         </span>
       </label>
 

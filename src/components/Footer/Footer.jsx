@@ -36,6 +36,7 @@ export default function Footer() {
           <div id="footer-services">
             <h3 className={styles.colHeading}>{t('footer.services')}</h3>
             <ul className={styles.serviceList}>
+              <li><Link to="/blog" className={styles.serviceLink}>Blog</Link></li>
               {services.map((s) => (
                 <li key={s.to}>
                   <Link to={s.to} className={styles.serviceLink}>{s.label}</Link>

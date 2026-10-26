@@ -13,9 +13,12 @@ async function submitLead(input) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        company_id: COMPANY_ID,
         ...input,
+        company_id: COMPANY_ID,
         source_path: window.location.pathname,
+        source_referrer: document.referrer || undefined,
+        ...Object.fromEntries(['source', 'medium', 'campaign', 'term', 'content'].map((key) =>
+          [`utm_${key}`, new URLSearchParams(window.location.search).get(`utm_${key}`) ?? undefined])),
         source_campaign: new URLSearchParams(window.location.search).get("utm_campaign") ?? undefined
       })
     });

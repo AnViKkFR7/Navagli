@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div id="privacy-policy" className={styles.pageWrapper}>
       <h1 className={styles.pageTitle}>Política de Privacidad</h1>
-      <p className={styles.dateLine}>Última actualización: 22 de octubre de 2026</p>
+      <p className={styles.dateLine}>Última actualización: 26 de octubre de 2026</p>
 
       <div className={styles.sections}>
         <section>
@@ -26,7 +26,8 @@ export default function PrivacyPolicyPage() {
             con las siguientes finalidades:
           </p>
           <ul className={styles.listDisc}>
-            <li>Guardar los datos de contacto y el mensaje en nuestra bandeja de solicitudes para gestionar presupuestos y consultas. Se registra también la página de origen y la campaña, si existe.</li>
+            <li>Guardar los datos de contacto y el mensaje en nuestra bandeja de solicitudes para gestionar presupuestos y consultas. Se registra también la página de origen, el proyecto consultado cuando corresponda, la página de referencia y los parámetros de campaña que acompañen a la solicitud.</li>
+            <li>Registrar si se ha marcado la casilla de privacidad y la versión del texto mostrado. La casilla es opcional y su estado se conserva separado de la solicitud de respuesta.</li>
             <li>Responder a las comunicaciones del usuario.</li>
             <li>Enviar información comercial, únicamente si el usuario ha dado su consentimiento.</li>
           </ul>

@@ -100,7 +100,7 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* CTA */}
-      <CTASection />
+      <CTASection sourceItem={`${project.title} · ${project.slug || project.id}`} />
     </>
   );
 }

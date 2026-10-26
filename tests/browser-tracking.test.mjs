@@ -50,6 +50,11 @@ test('production browser tracking deduplicates pages, measures visibility, scrol
   analytics.trackNotFound();
   analytics.trackNotFound();
   assert.equal((await events()).filter((x) => x.event_type === 'not_found').length, 1);
+  const beforeGpc = blobs.length;
+  Object.defineProperty(navigator, 'globalPrivacyControl', { value: true, configurable: true });
+  analytics.trackEvent('phone_click');
+  assert.equal(blobs.length, beforeGpc, 'GPC takes effect even when enabled after initialization');
+  Object.defineProperty(navigator, 'globalPrivacyControl', { value: false, configurable: true });
   assert.equal(analytics.keyForClick({ closest: (selector) => selector === '[data-track-event]' ? { getAttribute: () => 'custom_click' } : null }), 'custom_click');
 });
 
@@ -63,6 +68,19 @@ test('lead conversion is emitted only after a saved request, never on error or h
     assert.equal(result.ok, status < 400);
   }
   assert.equal(notifications, 1);
+  window.location.search = '?utm_source=google&utm_medium=cpc&utm_campaign=kitchen&utm_term=reforma&utm_content=hero';
+  let payload;
+  globalThis.fetch = async (_, options) => {
+    payload = JSON.parse(options.body);
+    return new Response(null, { status: 201 });
+  };
+  await submitLead({ name: 'Test', phone: '123', company_id: 'forged', source_item: 'Cocina · kitchen', consent_given: false });
+  assert.equal(payload.company_id, company);
+  assert.equal(payload.source_item, 'Cocina · kitchen');
+  assert.equal(payload.utm_term, 'reforma');
+  assert.equal(payload.utm_content, 'hero');
+  assert.equal(payload.source_campaign, 'kitchen');
+  assert.equal(payload.source_referrer, document.referrer);
 });
 
 test('development tracking sends no events', async () => {

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/Home/HomePage';
@@ -12,6 +13,8 @@ import LegalNoticePage from './pages/Legal/LegalNoticePage';
 import CookiesPolicyPage from './pages/Legal/CookiesPolicyPage';
 import PrivacyPolicyPage from './pages/Legal/PrivacyPolicyPage';
 import NotFoundPage from './pages/NotFound/NotFoundPage';
+const BlogPage = lazy(() => import('./pages/Blog/BlogPage'));
+const blogPage = <Suspense fallback={<div role="status" style={{ padding: '10rem 2rem' }}>Blog…</div>}><BlogPage /></Suspense>;
 
 export default function App() {
   return (
@@ -23,6 +26,8 @@ export default function App() {
           <Route path="/pintura-decorativa" element={<PinturaDecorativaPage />} />
           <Route path="/asesoramiento-profesional" element={<AsesoramientoProfesionalPage />} />
           <Route path="/proyectos" element={<ProjectsPage />} />
+          <Route path="/blog" element={blogPage} />
+          <Route path="/blog/:slug" element={blogPage} />
           <Route path="/proyectos/:id" element={<ProjectDetailPage />} />
           <Route path="/sobre-nosotros" element={<AboutPage />} />
           <Route path="/quienes-somos" element={<AboutPage />} />

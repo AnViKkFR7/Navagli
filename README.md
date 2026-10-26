@@ -31,6 +31,10 @@ Los archivos se han adaptado de `company-site-snippet` a JavaScript. No se modif
 
 `submitLead` envía nombre, email o teléfono, mensaje, página y campaña a `/api/lead`. La bandeja debe confirmar la inserción (201) antes de mostrar éxito y emitir `moira:lead-sent`, que cuenta una única conversión `form_submit`. El honeypot recibe 200 sin insertar ni contar conversión. Un fallo de la bandeja muestra error aunque el correo pueda funcionar.
 
+El servidor exige un `VITE_COMPANY_ID` válido, rechaza un ID distinto enviado por el navegador y comprueba `company_modules` (`module_key = 'crm'`, `is_enabled = true`). Sin empresa configurada o con CRM desactivado devuelve 503; un error de consulta devuelve 500. No se aceptan IDs de contactos enviados por el cliente.
+
+La solicitud conserva `source_item` (título e identificador público del proyecto desde su ficha), `source_referrer`, los cinco campos `utm_*` y `source_campaign`. La casilla de privacidad es opcional: solo registra `consent_given: true` cuando se marca y se envía `consent_text_version`. La versión actual es `navagli-contact-2026-10-v1`; debe cambiarse cuando cambie el texto. Instala en el backend las migraciones `COMPANY_MODULES.sql`, `CRM_CONTACTS_PIPELINE.sql` y `CRM_LEAD_ITEM_ATTRIBUTION.sql` antes del despliegue.
+
 La notificación adicional por email utiliza la función Supabase `navagli-send-email`; no determina el éxito de la solicitud. Despliega también la actualización de esa función para admitir email o teléfono como único canal de contacto.
 
 ### Medición y privacidad
@@ -47,4 +51,23 @@ La medición no crea identificadores en el navegador. El servidor normaliza ruta
 4. Visita una URL inexistente y comprueba el evento de página no encontrada.
 5. Cambia la medición desde «Preferencias de cookies» en el pie y comprueba que no se envían eventos tras oponerte.
 
-Sin configuración de servidor, `/api/track` devuelve 204 sin insertar y `/api/lead` devuelve 500. Los tests usan respuestas simuladas; no envían solicitudes reales al panel.
+Sin configuración de servidor, `/api/track` devuelve 204 sin insertar. `/api/lead` devuelve 503 si falta la empresa configurada y 500 si faltan las credenciales privadas. Los tests usan respuestas simuladas; no envían solicitudes reales al panel.
+
+## Blog público
+
+Rutas: `/blog` (9 artículos por página), `/blog/:slug` y `/sitemap.xml`. El menú y el pie enlazan al blog. Las consultas usan exclusivamente la clave pública, el `VITE_COMPANY_ID` de este despliegue y `status = 'published'`. Los errores se muestran como fallos de carga; no se ocultan como un blog vacío. Los artículos ausentes, de otra empresa o no publicados devuelven 404 al abrir directamente su URL en Vercel.
+
+El contenido Markdown se representa con `react-markdown`, HTML embebido desactivado y transformación segura de URLs. Las imágenes publicadas se consultan solo para los IDs de posts devueltos, en orden, con sus textos alternativos; se admiten imágenes HTTPS.
+
+Configura `VITE_SITE_URL` con el dominio público HTTPS definitivo. Si el blog vive en una instancia distinta de la usada para los proyectos, configura también `VITE_BLOG_SUPABASE_URL` y `VITE_BLOG_SUPABASE_ANON_KEY` (clave anon/public, nunca service role). Si se omiten ambas, se usan `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`. Estas variables públicas deben estar disponibles tanto en la compilación como en las funciones de Vercel.
+
+Antes de desplegar:
+
+1. Aplica `CONTENT_SEO_FIELDS.sql` en el backend y verifica las políticas RLS públicas de posts y medios.
+2. Ejecuta el fichero completo `CONTENT_SEO_FIELDS_AUDIT.sql` de la guía en Supabase SQL Editor. Corrige los slugs publicados inválidos o duplicados desde el panel.
+3. Ejecuta `npm run blog:preflight` como comprobación adicional de solo lectura para esta empresa, con `.env` configurado. Detecta posts publicados sin slug válido y duplicados visibles para la clave pública. No sustituye la auditoría SQL de la guía.
+4. Ejecuta build y tests y prueba las rutas en un despliegue de Vercel con esas variables.
+
+Las reglas de `vercel.json` sirven las rutas del blog desde una función que carga la plantilla compilada y entrega título, descripción, canonical, Open Graph y contenido en el HTML inicial. El sitemap solo añade artículos publicados de esta empresa con slug válido. Las páginas de listado tienen canonical por página. Vite por sí solo permite probar las vistas, pero no ejecuta las funciones: comprueba 404 HTTP, metadatos iniciales y sitemap usando Vercel.
+
+No se han aplicado migraciones ni publicado cambios en el backend desde este repositorio. Las pruebas cubren consultas y respuestas simuladas, incluida la representación HTML sin ejecutar JavaScript; la verificación del contenido real requiere la configuración y la auditoría anteriores.

@@ -7,7 +7,7 @@ import styles from './CTASection.module.css';
  * CTA banner section with a modal form trigger.
  * Can be used at the bottom of any page.
  */
-export default function CTASection() {
+export default function CTASection({ sourceItem }) {
   const { t } = useTranslation();
   const [formOpen, setFormOpen] = useState(false);
 
@@ -26,7 +26,7 @@ export default function CTASection() {
         </div>
       </section>
 
-      <CTAForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
+      <CTAForm isOpen={formOpen} onClose={() => setFormOpen(false)} sourceItem={sourceItem} />
     </>
   );
 }

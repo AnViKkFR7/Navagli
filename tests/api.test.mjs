@@ -8,9 +8,15 @@ const request = (body, headers = {}) => new Request('https://navagli.com/api', {
 });
 const inserted = [];
 let definitions = 0;
+let crmEnabled = true;
 globalThis.fetch = async (url, options) => {
   const path = new URL(url).pathname;
   if (path.endsWith('/companies')) return Response.json({ id: company_id });
+  if (path.endsWith('/company_modules')) {
+    assert.equal(new URL(url).searchParams.get('company_id'), `eq.${company_id}`);
+    assert.equal(new URL(url).searchParams.get('module_key'), 'eq.crm');
+    return Response.json({ is_enabled: crmEnabled });
+  }
   if (path.endsWith('/analytics_event_definitions')) { definitions++; return Response.json([]); }
   if (path.endsWith('/rpc/analytics_salt')) return Response.json('daily-salt-from-db');
   if (path.endsWith('/lead') || path.endsWith('/analytics_events')) {
@@ -24,12 +30,48 @@ test('endpoints handle missing configuration, invalid bodies and honeypots', asy
   delete process.env.SUPABASE_URL;
   delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   delete process.env.ANALYTICS_SALT;
+  process.env.VITE_COMPANY_ID = company_id;
   assert.equal((await track(request({}))).status, 204);
   assert.equal((await lead(request(null))).status, 400);
   assert.equal((await lead(request({ company_website: 'spam' }))).status, 200);
   assert.equal((await lead(request({ company_id, name: 'Test' }))).status, 400);
   assert.equal((await lead(request({ company_id, name: 'Test', phone: '123' }))).status, 500);
   assert.equal(inserted.length, 0);
+});
+
+test('lead endpoint requires deployment tenant and an enabled CRM module', async () => {
+  process.env.SUPABASE_URL = 'https://example.supabase.co';
+  process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-server-key';
+  const body = { company_id, name: 'Test', phone: '123' };
+  const count = inserted.length;
+  delete process.env.VITE_COMPANY_ID;
+  assert.equal((await lead(request(body))).status, 503);
+  process.env.VITE_COMPANY_ID = 'invalid';
+  assert.equal((await lead(request(body))).status, 503);
+  process.env.VITE_COMPANY_ID = company_id;
+  crmEnabled = false;
+  assert.equal((await lead(request(body))).status, 503);
+  crmEnabled = true;
+  assert.equal(inserted.length, count);
+});
+
+test('lead attribution is limited to public fields and consent requires an explicit boolean and text version', async () => {
+  const body = { company_id, name: 'Test', phone: '123', source_item: 'x'.repeat(250),
+    source_referrer: 'https://example.com', source_path: '/proyectos/test', source_campaign: 'reformas',
+    utm_source: 'google', utm_medium: 'cpc', utm_campaign: 'reformas', utm_term: 'cocinas', utm_content: 'banner',
+    consent_given: true, consent_text_version: 'navagli-contact-2026-10-v1', contact_id: 'forged' };
+  assert.equal((await lead(request(body))).status, 201);
+  const saved = inserted.at(-1).body;
+  assert.equal(saved.source_item.length, 200);
+  assert.equal(saved.utm_content, 'banner');
+  assert.equal(saved.utm_term, 'cocinas');
+  assert.equal(saved.source_referrer, 'https://example.com');
+  assert.equal(saved.consent_given, true);
+  assert.equal('contact_id' in saved, false);
+  for (const values of [{ consent_given: false }, { consent_given: 'true' }, { consent_text_version: '' }]) {
+    assert.equal((await lead(request({ ...body, ...values }))).status, 201);
+    assert.equal(inserted.at(-1).body.consent_given, false);
+  }
 });
 
 test('leads are saved, trimmed and limited; email or phone is sufficient', async () => {

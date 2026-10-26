@@ -265,5 +265,18 @@
   "notFound": {
     "title": "Esta página no existe",
     "home": "Volver al inicio"
+  },
+  "blog": {
+    "title": "Ideas para transformar tu hogar",
+    "subtitle": "Reformas, materiales e interiorismo: inspiración y consejos de nuestro equipo.",
+    "loading": "Cargando artículos…",
+    "error": "No hemos podido cargar el blog.",
+    "retry": "Volver a intentar",
+    "back": "Volver al blog",
+    "read": "Leer artículo",
+    "empty": "Próximamente compartiremos nuevos artículos.",
+    "pagination": "Páginas del blog",
+    "previous": "Anterior",
+    "next": "Siguiente"
   }
 }

@@ -265,5 +265,18 @@
   "notFound": {
     "title": "Cette page n’existe pas",
     "home": "Retour à l’accueil"
+  },
+  "blog": {
+    "title": "Des idées pour transformer votre intérieur",
+    "subtitle": "Rénovation, matériaux et décoration : inspiration et conseils de notre équipe.",
+    "loading": "Chargement des articles…",
+    "error": "Impossible de charger le blog.",
+    "retry": "Réessayer",
+    "back": "Retour au blog",
+    "read": "Lire l’article",
+    "empty": "De nouveaux articles seront bientôt disponibles.",
+    "pagination": "Pages du blog",
+    "previous": "Précédent",
+    "next": "Suivant"
   }
 }

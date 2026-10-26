@@ -33,7 +33,7 @@ function acquisition() {
   };
 }
 function send(payload) {
-  if (!ENABLED_ENV || !enabled || typeof window === "undefined") return;
+  if (!ENABLED_ENV || !enabled || globalPrivacyControl() || typeof window === "undefined") return;
   if (!COMPANY_ID) {
     console.warn("[analytics] VITE_COMPANY_ID no est\xE1 configurado \u2014 evento descartado");
     return;
