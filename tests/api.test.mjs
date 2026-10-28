@@ -63,10 +63,14 @@ test('lead attribution is limited to public fields and consent requires an expli
   assert.equal((await lead(request(body))).status, 201);
   const saved = inserted.at(-1).body;
   assert.equal(saved.source_item.length, 200);
-  assert.equal(saved.utm_content, 'banner');
-  assert.equal(saved.utm_term, 'cocinas');
+  assert.equal(saved.source_utm_source, 'google');
+  assert.equal(saved.source_utm_medium, 'cpc');
+  assert.equal(saved.source_utm_content, 'banner');
+  assert.equal(saved.source_utm_term, 'cocinas');
   assert.equal(saved.source_referrer, 'https://example.com');
   assert.equal(saved.consent_given, true);
+  assert.ok(saved.consent_at);
+  assert.equal(saved.consent_source, 'public_contact_form');
   assert.equal('contact_id' in saved, false);
   for (const values of [{ consent_given: false }, { consent_given: 'true' }, { consent_text_version: '' }]) {
     assert.equal((await lead(request({ ...body, ...values }))).status, 201);

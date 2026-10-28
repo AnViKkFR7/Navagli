@@ -57,10 +57,12 @@ async function saveLead(req) {
     source_item: clean(body.source_item, 200),
     source_referrer: clean(body.source_referrer, 2048),
     source_campaign: clean(body.source_campaign, MAX.campaign),
-    ...Object.fromEntries(['source', 'medium', 'campaign', 'term', 'content'].map((key) =>
-      [`utm_${key}`, clean(body[`utm_${key}`], MAX.campaign)])),
+    ...Object.fromEntries(['source', 'medium', 'term', 'content'].map((key) =>
+      [`source_utm_${key}`, clean(body[`utm_${key}`], MAX.campaign)])),
     consent_given: body.consent_given === true && Boolean(clean(body.consent_text_version, 120)),
+    consent_at: body.consent_given === true && clean(body.consent_text_version, 120) ? new Date().toISOString() : null,
     consent_text_version: clean(body.consent_text_version, 120),
+    consent_source: body.consent_given === true && clean(body.consent_text_version, 120) ? 'public_contact_form' : null,
   });
   if (error) {
     console.error("[lead] insert failed", error);
