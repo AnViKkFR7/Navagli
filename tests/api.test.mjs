@@ -9,8 +9,11 @@ const request = (body, headers = {}) => new Request('https://navagli.com/api', {
 const inserted = [];
 let definitions = 0;
 let crmEnabled = true;
+let failedTable = null;
+let backendError = null;
 globalThis.fetch = async (url, options) => {
   const path = new URL(url).pathname;
+  if (failedTable && path.endsWith(`/${failedTable}`)) return Response.json(backendError, { status: 401 });
   if (path.endsWith('/companies')) return Response.json({ id: company_id });
   if (path.endsWith('/company_modules')) {
     assert.equal(new URL(url).searchParams.get('company_id'), `eq.${company_id}`);
@@ -108,4 +111,28 @@ test('analytics derives identity on server and reserved conversions skip definit
   await track(request(body, { ...headers, 'sec-fetch-site': 'cross-site' }));
   await track(request(body, { ...headers, 'user-agent': 'Googlebot' }));
   assert.equal(inserted.length, count);
+});
+
+test('lead failures distinguish invalid credentials and schema problems without exposing backend details', async () => {
+  const count = inserted.length;
+  const body = { company_id, name: 'Test', phone: '123' };
+  failedTable = 'companies';
+  backendError = { message: 'Invalid API key', hint: 'secret-backend-hint' };
+  const auth = await lead(request(body));
+  assert.equal(auth.status, 500);
+  assert.equal((await auth.json()).code, 'LEAD_BACKEND_AUTH');
+  assert.equal(inserted.length, count);
+  failedTable = 'lead';
+  backendError = { code: 'PGRST204', message: 'Missing column', details: 'private-value' };
+  const schema = await lead(request(body));
+  assert.equal(schema.status, 500);
+  const schemaBody = await schema.text();
+  assert.ok(schemaBody.includes('LEAD_SCHEMA_MISMATCH'));
+  assert.ok(!schemaBody.includes('private-value'));
+  failedTable = 'company_modules';
+  backendError = { code: 'PGRST205', message: 'Missing table' };
+  const moduleResponse = await lead(request(body));
+  assert.equal(moduleResponse.status, 503);
+  failedTable = null;
+  backendError = null;
 });

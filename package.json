@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "node --test tests/*.test.mjs",
     "blog:preflight": "node --env-file=.env scripts/blog-preflight.mjs",
-    "items:preflight": "node --env-file=.env scripts/items-seo-preflight.mjs"
+    "items:preflight": "node --env-file=.env scripts/items-seo-preflight.mjs",
+    "leads:check": "node --env-file=.env scripts/check-leads.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.1",

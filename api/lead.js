@@ -11,6 +11,19 @@ const clean = (value, max) => {
   return trimmed.length > 0 ? trimmed : null;
 };
 const looksLikeEmail = (value) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value);
+function backendFailure(stage, error) {
+  const backendCode = typeof error?.code === 'string' ? error.code : null;
+  const authentication = error?.status === 401 || /invalid api key|invalid jwt|jwt expired/i.test(error?.message || '');
+  const schema = ['42P01', '42703', 'PGRST204', 'PGRST205'].includes(backendCode);
+  const code = authentication ? 'LEAD_BACKEND_AUTH' : schema ? 'LEAD_SCHEMA_MISMATCH'
+    : stage === 'configuration' ? 'LEAD_CONFIG_MISSING' : 'LEAD_BACKEND_ERROR';
+  // Do not log Postgres details or request bodies: they can contain personal data.
+  console.error('[lead] backend failure', { stage, code, backendCode });
+  return Response.json({ error: 'No se ha podido guardar la solicitud.', code }, {
+    status: stage === 'crm_lookup' && schema ? 503 : 500,
+    headers: { 'Cache-Control': 'no-store' },
+  });
+}
 async function saveLead(req) {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
   let body;
@@ -38,14 +51,14 @@ async function saveLead(req) {
     return new Response("Bad request", { status: 400 });
   }
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    return new Response('Server error', { status: 500 });
+    return backendFailure('configuration');
   }
   const { data: company, error: companyError } = await getSupabase().from("companies").select("id").eq("id", company_id).maybeSingle();
-  if (companyError) return new Response('Server error', { status: 500 });
+  if (companyError) return backendFailure('company_lookup', companyError);
   if (!company) return new Response("Bad request", { status: 400 });
   const { data: crm, error: moduleError } = await getSupabase().from('company_modules')
     .select('is_enabled').eq('company_id', company_id).eq('module_key', 'crm').maybeSingle();
-  if (moduleError) return new Response('Server error', { status: 500 });
+  if (moduleError) return backendFailure('crm_lookup', moduleError);
   if (!crm?.is_enabled) return new Response('Service unavailable', { status: 503 });
   const { error } = await getSupabase().from("lead").insert({
     company_id,
@@ -55,27 +68,25 @@ async function saveLead(req) {
     message,
     source_path: clean(body.source_path, MAX.path),
     source_item: clean(body.source_item, 200),
-    source_referrer: clean(body.source_referrer, 2048),
+    source_referrer: clean(body.source_referrer, 500),
     source_campaign: clean(body.source_campaign, MAX.campaign),
     ...Object.fromEntries(['source', 'medium', 'term', 'content'].map((key) =>
-      [`source_utm_${key}`, clean(body[`utm_${key}`], MAX.campaign)])),
+      [`source_utm_${key}`, clean(body[`source_utm_${key}`] ?? body[`utm_${key}`], MAX.campaign)])),
     consent_given: body.consent_given === true && Boolean(clean(body.consent_text_version, 120)),
     consent_at: body.consent_given === true && clean(body.consent_text_version, 120) ? new Date().toISOString() : null,
     consent_text_version: clean(body.consent_text_version, 120),
     consent_source: body.consent_given === true && clean(body.consent_text_version, 120) ? 'public_contact_form' : null,
   });
   if (error) {
-    console.error("[lead] insert failed", error);
-    return new Response("Server error", { status: 500 });
+    return backendFailure('insert', error);
   }
   return new Response("OK", { status: 201 });
 }
 async function POST(req) {
   try {
     return await saveLead(req);
-  } catch {
-    console.error('[lead] request failed');
-    return new Response('Server error', { status: 500 });
+  } catch (error) {
+    return backendFailure('request', error);
   }
 }
 export {

@@ -39,6 +39,8 @@ Los archivos se han adaptado de `company-site-snippet` a JavaScript. No se modif
 
 ### Formularios
 
+Diagnóstico sin insertar solicitudes ni recuperar datos personales: `npm run leads:check`. Comprueba la empresa, el módulo CRM y las columnas con las credenciales privadas del entorno local. Un 401 / «Invalid API key» requiere sustituir `SUPABASE_SERVICE_ROLE_KEY` por una service-role/secret válida de la **misma instancia** que `SUPABASE_URL`; la clave anon/public no sirve para escribir leads. En producción, verifica esas dos variables en Vercel y redespliega tras cambiarlas. No publiques ni pegues la clave en logs o chats. El endpoint registra la etapa del fallo y devuelve códigos `LEAD_BACKEND_AUTH`, `LEAD_CONFIG_MISSING`, `LEAD_SCHEMA_MISMATCH` o `LEAD_BACKEND_ERROR`, sin incluir los datos de la solicitud.
+
 `submitLead` envía nombre, email o teléfono, mensaje, página y campaña a `/api/lead`. La bandeja debe confirmar la inserción (201) antes de mostrar éxito y emitir `moira:lead-sent`, que cuenta una única conversión `form_submit`. El honeypot recibe 200 sin insertar ni contar conversión. Un fallo de la bandeja muestra error aunque el correo pueda funcionar.
 
 El servidor exige un `VITE_COMPANY_ID` válido, rechaza un ID distinto enviado por el navegador y comprueba `company_modules` (`module_key = 'crm'`, `is_enabled = true`). Sin empresa configurada o con CRM desactivado devuelve 503; un error de consulta devuelve 500. No se aceptan IDs de contactos enviados por el cliente.
