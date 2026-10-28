@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/proyectos" element={<ProjectsPage />} />
           <Route path="/blog" element={blogPage} />
           <Route path="/blog/:slug" element={blogPage} />
-          <Route path="/proyectos/:id" element={<ProjectDetailPage />} />
+          <Route path="/proyectos/:identifier" element={<ProjectDetailPage />} />
           <Route path="/sobre-nosotros" element={<AboutPage />} />
           <Route path="/quienes-somos" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />

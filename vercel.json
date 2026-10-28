@@ -1,9 +1,12 @@
 {
   "outputDirectory": "dist",
   "functions": {
-    "api/blog-page.js": { "includeFiles": "dist/index.html" }
+    "api/blog-page.js": { "includeFiles": "dist/index.html" },
+    "api/project-page.js": { "includeFiles": "dist/index.html" }
   },
   "rewrites": [
+    { "source": "/proyectos", "destination": "/api/project-page" },
+    { "source": "/proyectos/:identifier", "destination": "/api/project-page?identifier=:identifier" },
     { "source": "/blog", "destination": "/api/blog-page" },
     { "source": "/blog/:slug", "destination": "/api/blog-page?slug=:slug" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },

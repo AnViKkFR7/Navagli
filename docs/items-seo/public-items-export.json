@@ -1,0 +1,30 @@
+{
+  "company_id": "b58a5ab9-dd4a-4bbe-8289-2cf3a134e49a",
+  "item_type": "proyecto-reforma-navagli",
+  "exported_at": "2026-10-28T10:06:22.719Z",
+  "items": [
+    {
+      "id": "a4ca89ab-6cb3-44b5-bff4-8467cdffb2bf",
+      "company_id": "b58a5ab9-dd4a-4bbe-8289-2cf3a134e49a",
+      "item_type": "proyecto-reforma-navagli",
+      "title": "Reforma integral en Oasis de Sitges",
+      "summary": "Este proyecto de reforma, realizado en Oasis de Sitges, destaca por la combinación de diseño contemporáneo, materiales de alta calidad y una ejecución cuidada al detalle.",
+      "slug": null,
+      "seo_title": null,
+      "seo_description": null,
+      "seo_og_image_url": null,
+      "updated_at": "2026-03-28T20:58:29.43198+00:00",
+      "attributes": {
+        "what_was_done": [
+          "Se ha diseñado un baño principal con elegantes baldosas de gran formato que aportan continuidad visual y amplitud, complementadas con mamparas laminadas y un inodoro suspendido que refuerza la estética moderna y funcional del espacio.",
+          "El segundo baño apuesta por un acabado en microcemento, creando un ambiente más minimalista y uniforme, ideal para quienes buscan un estilo actual y sofisticado.",
+          "La cocina, totalmente equipada, se convierte en uno de los puntos centrales de la vivienda gracias al uso de mármol natural, que aporta carácter y distinción, junto con soluciones prácticas pensadas para el día a día.",
+          "Por último, la instalación de tarima de parquet laminado en toda la vivienda aporta calidez, confort y continuidad, logrando un equilibrio perfecto entre estética y funcionalidad."
+        ],
+        "description": "Este proyecto de reforma, realizado en Oasis de Sitges, destaca por la combinación de diseño contemporáneo, materiales de alta calidad y una ejecución cuidada al detalle.\\n\nLa vivienda cuenta con dos baños completamente renovados, cada uno con una personalidad propia, una cocina totalmente renovada y una nueva tarima de parquet en toda la vivienda.\\n\nUn proyecto que refleja una cuidada selección de materiales y un diseño pensado para mejorar la calidad de vida, combinando estilo, durabilidad y confort."
+      },
+      "cover_image": "https://pakbxfdewswzkipeddhr.supabase.co/storage/v1/object/public/items-media/b58a5ab9-dd4a-4bbe-8289-2cf3a134e49a/a4ca89ab-6cb3-44b5-bff4-8467cdffb2bf/1774730822326_a4d98df8-269b-47f0-9a53-3f13a9ca8727.png",
+      "cover_alt": "Reforma integral en Oasis de Sitges"
+    }
+  ]
+}

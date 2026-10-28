@@ -1,27 +1,31 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Carousel from '../../components/Carousel/Carousel';
 import CTASection from '../../components/CTASection/CTASection';
-import { getProjectById } from '../../services/projectsService';
+import { getProject, PROJECT_SEO_ENABLED } from '../../services/projectsService';
+import { projectMetadata, projectPath } from '../../lib/projects';
+import ProjectSeo from '../../components/ProjectSeo/ProjectSeo';
 import NotFoundPage from '../NotFound/NotFoundPage';
 import styles from './ProjectDetailPage.module.css';
 
 export default function ProjectDetailPage() {
-  const { id } = useParams();
+  const { identifier } = useParams();
   const { t } = useTranslation();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [state, setState] = useState({ identifier: null, status: 'loading' });
 
   useEffect(() => {
-    getProjectById(id).then((data) => {
-      setProject(data);
-      setLoading(false);
+    let cancelled = false;
+    getProject(identifier).then((project) => {
+      if (!cancelled) setState({ identifier, status: 'ready', project });
+    }).catch(() => {
+      if (!cancelled) setState({ identifier, status: 'error' });
     });
-  }, [id]);
+    return () => { cancelled = true; };
+  }, [identifier]);
 
-  if (loading) {
+  if (state.identifier !== identifier) {
     return (
       <div className={styles.loadingScreen}>
         <div className={styles.spinner} />
@@ -29,9 +33,16 @@ export default function ProjectDetailPage() {
     );
   }
 
-  if (!project) {
-    return <NotFoundPage />;
+  if (state.status === 'error') {
+    return <section className={styles.loadingScreen} role="alert">
+      <ProjectSeo metadata={{ title: 'Error al cargar el proyecto | Navagli', robots: 'noindex' }} />
+      <p>{t('projects.loadError')}</p><button onClick={() => window.location.reload()}>{t('projects.retry')}</button>
+    </section>;
   }
+  const project = state.project;
+  if (!project) return <><ProjectSeo metadata={{ title: 'Proyecto no encontrado | Navagli', robots: 'noindex' }} /><NotFoundPage /></>;
+  const canonicalPath = projectPath(project, PROJECT_SEO_ENABLED);
+  if (PROJECT_SEO_ENABLED && canonicalPath !== `/proyectos/${identifier}`) return <Navigate to={canonicalPath} replace />;
 
   const images =
     project.images && project.images.length > 0
@@ -44,9 +55,10 @@ export default function ProjectDetailPage() {
 
   return (
     <>
+      <ProjectSeo metadata={projectMetadata(project, import.meta.env.VITE_SITE_URL || window.location.origin, PROJECT_SEO_ENABLED)} />
       {/* Carousel */}
       <div id="project-carousel" className={styles.carouselWrapper}>
-        <Carousel images={images} />
+        <Carousel key={project.id} images={images} alts={project.image_alts} />
       </div>
 
       {/* Back link */}

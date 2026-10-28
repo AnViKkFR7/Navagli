@@ -10,10 +10,14 @@ import styles from './HomePage.module.css';
 export default function HomePage() {
   const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
+  const [projectsError, setProjectsError] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
   useEffect(() => {
-    getProjects().then(setProjects);
+    let cancelled = false;
+    getProjects(1, 3).then((data) => { if (!cancelled) setProjects(data.projects); })
+      .catch(() => { if (!cancelled) setProjectsError(true); });
+    return () => { cancelled = true; };
   }, []);
 
   return (
@@ -98,7 +102,7 @@ export default function HomePage() {
               {t('projects.viewAll')} →
             </Link>
           </div>
-          <ProjectGrid projects={projects} limit={3} />
+          {projectsError ? <p role="alert">{t('projects.loadError')}</p> : <ProjectGrid projects={projects} limit={3} />}
         </div>
       </section>
 

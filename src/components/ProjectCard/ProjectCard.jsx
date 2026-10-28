@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MapPin } from 'lucide-react';
 import styles from './ProjectCard.module.css';
+import { projectPath } from '../../lib/projects';
+import { PROJECT_SEO_ENABLED } from '../../services/projectsService';
 
 /**
  * Displays a single project card.
@@ -13,14 +15,14 @@ export default function ProjectCard({ project, className = '' }) {
 
   return (
     <Link
-      to={`/proyectos/${project.id}`}
+      to={projectPath(project, PROJECT_SEO_ENABLED)}
       className={`${styles.card} ${className}`}
     >
       {/* Image */}
       <div className={styles.cardImageWrapper}>
         <img
           src={project.cover_image || '/img/landing-image1.jpg'}
-          alt={project.title}
+          alt={project.cover_alt || project.title}
           className={styles.cardImg}
           loading="lazy"
         />

@@ -1,5 +1,7 @@
 import { blogConfig } from './_lib/blog.js';
 import { escapeHtml, validSlug } from '../src/lib/blog.js';
+import { projectsConfig } from './_lib/projects.js';
+import { projectSitemapPaths } from '../src/lib/projects.js';
 
 export async function GET() {
   try {
@@ -15,11 +17,14 @@ export async function GET() {
     }
     const origin = new URL(siteUrl).origin;
     const paths = ['/', '/reformas-integrales', '/pintura-decorativa', '/asesoramiento-profesional', '/proyectos', '/quienes-somos', '/contacto', '/blog'];
-    const urls = [...paths, ...posts.filter((post) => validSlug(post.slug)).map((post) => `/blog/${post.slug}`)];
+    const projectPaths = process.env.VITE_ITEMS_SEO_ENABLED === 'true'
+      ? await projectSitemapPaths(projectsConfig().client, true) : [];
+    const urls = [...paths, ...projectPaths, ...posts.filter((post) => validSlug(post.slug)).map((post) => `/blog/${post.slug}`)];
     return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((path) => `<url><loc>${escapeHtml(origin + path)}</loc></url>`).join('')}</urlset>`, {
-      headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, s-maxage=60' },
+      // Read current publication state on every request; no stale archive/slug cache to invalidate.
+      headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'no-store' },
     });
   } catch {
-    return new Response('Sitemap unavailable', { status: 503 });
+    return new Response('Sitemap unavailable', { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
 }

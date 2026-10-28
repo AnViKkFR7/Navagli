@@ -68,6 +68,7 @@ test('initial HTML contains escaped SEO, canonical, real content and safe Markdo
 });
 
 test('unpublished and foreign slugs return HTTP 404; sitemap contains only published company posts', async () => {
+  process.env.VITE_ITEMS_SEO_ENABLED = 'false';
   process.env.VITE_BLOG_SUPABASE_URL = 'https://example.supabase.co';
   process.env.VITE_BLOG_SUPABASE_ANON_KEY = 'public-anon-key';
   process.env.VITE_COMPANY_ID = companyId;

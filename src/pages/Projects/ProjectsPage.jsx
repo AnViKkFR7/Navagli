@@ -1,23 +1,34 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useSearchParams } from 'react-router-dom';
 import ProjectGrid from '../../components/ProjectGrid/ProjectGrid';
 import { getProjects } from '../../services/projectsService';
 import styles from './ProjectsPage.module.css';
+import { pageNumber } from '../../lib/projects';
+import ProjectSeo from '../../components/ProjectSeo/ProjectSeo';
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [params] = useSearchParams();
+  const page = pageNumber(params.get('page'));
+  const [state, setState] = useState({ page: null, status: 'loading' });
 
   useEffect(() => {
-    getProjects().then((data) => {
-      setProjects(data);
-      setLoading(false);
+    let cancelled = false;
+    getProjects(page).then((data) => {
+      if (!cancelled) setState({ page, status: 'ready', ...data });
+    }).catch(() => {
+      if (!cancelled) setState({ page, status: 'error' });
     });
-  }, []);
+    return () => { cancelled = true; };
+  }, [page]);
+  const loading = state.page !== page;
 
   return (
     <>
+      <ProjectSeo metadata={{ title: 'Proyectos | Navagli', description: '',
+        robots: !loading && state.status === 'error' ? 'noindex' : 'index,follow',
+        url: `${new URL(import.meta.env.VITE_SITE_URL || window.location.origin).origin}/proyectos${page > 1 ? `?page=${page}` : ''}` }} />
       {/* Page hero */}
       <section id="page-hero" className={styles.pageHero}>
         <div className={styles.heroInner}>
@@ -43,8 +54,16 @@ export default function ProjectsPage() {
                 </div>
               ))}
             </div>
+          ) : state.status === 'error' ? (
+            <div role="alert"><p>{t('projects.loadError')}</p><button onClick={() => window.location.reload()}>{t('projects.retry')}</button></div>
           ) : (
-            <ProjectGrid projects={projects} />
+            <>
+              {state.projects.length ? <ProjectGrid projects={state.projects} /> : <p>{t('projects.empty')}</p>}
+              <nav aria-label={t('projects.pagination')} style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginTop: '2rem' }}>
+                {page > 1 && <Link to={`/proyectos?page=${page - 1}`}>← {t('projects.previous')}</Link>}
+                {state.hasNext && <Link to={`/proyectos?page=${page + 1}`}>{t('projects.next')} →</Link>}
+              </nav>
+            </>
           )}
         </div>
       </section>

@@ -18,6 +18,10 @@ npm run lint
 npm test
 ```
 
+## SEO de proyectos (Items)
+
+Implementación, inventario, preflight de solo lectura y plan de activación en [`docs/items-seo/README.md`](docs/items-seo/README.md). Las consultas de proyectos usan el tenant y tipo fijos de Navagli, sin fallback a mocks. La activación de slugs indexables exige `VITE_ITEMS_SEO_ENABLED=true` tras revisar el export real y los metadatos. Con la opción desactivada se conservan las fichas UUID publicadas con `noindex`; el listado sigue disponible. No se ha ejecutado SQL ni desplegado esta migración.
+
 Vite sirve el frontend; para probar `/api/lead` y `/api/track` hace falta el entorno de funciones de Vercel. La medición se desactiva en desarrollo.
 
 ## Integración con moira ordo

@@ -23,6 +23,12 @@
     "learnMore": "Learn more"
   },
   "projects": {
+    "loadError": "Projects could not be loaded. Please try again later.",
+    "retry": "Try again",
+    "empty": "There are no published projects yet.",
+    "pagination": "Project pages",
+    "previous": "Previous",
+    "next": "Next",
     "sectionLabel": "Projects",
     "title": "Featured projects",
     "viewAll": "View all projects",

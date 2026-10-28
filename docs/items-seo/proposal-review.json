@@ -1,0 +1,19 @@
+{
+  "source_sha256": "a45a0952ce46801de2f4c5a31e46c3ef047ae5445404db0ef14bf4ca206b307e",
+  "previous_url": "/proyectos/a4ca89ab-6cb3-44b5-bff4-8467cdffb2bf",
+  "proposed_url": "/proyectos/reforma-integral-oasis-sitges",
+  "title_length": 45,
+  "description_length": 123,
+  "previous_slug": null,
+  "proposal": {
+    "id": "a4ca89ab-6cb3-44b5-bff4-8467cdffb2bf",
+    "company_id": "b58a5ab9-dd4a-4bbe-8289-2cf3a134e49a",
+    "item_type": "proyecto-reforma-navagli",
+    "slug": "reforma-integral-oasis-sitges",
+    "seo_title": "Reforma integral en Oasis de Sitges | Navagli",
+    "seo_description": "Reforma integral en Oasis de Sitges: dos baños renovados, cocina con mármol natural y parquet laminado en toda la vivienda.",
+    "seo_og_image_url": "https://pakbxfdewswzkipeddhr.supabase.co/storage/v1/object/public/items-media/b58a5ab9-dd4a-4bbe-8289-2cf3a134e49a/a4ca89ab-6cb3-44b5-bff4-8467cdffb2bf/1774730822326_a4d98df8-269b-47f0-9a53-3f13a9ca8727.png"
+  },
+  "approval": "pending",
+  "applied": false
+}

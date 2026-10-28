@@ -23,6 +23,12 @@
     "learnMore": "Conocer más"
   },
   "projects": {
+    "loadError": "No se han podido cargar los proyectos. Inténtalo de nuevo más tarde.",
+    "retry": "Volver a intentar",
+    "empty": "Todavía no hay proyectos publicados.",
+    "pagination": "Páginas de proyectos",
+    "previous": "Anterior",
+    "next": "Siguiente",
     "sectionLabel": "Proyectos",
     "title": "Proyectos destacados",
     "viewAll": "Ver todos los proyectos",
